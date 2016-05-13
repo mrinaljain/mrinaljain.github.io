@@ -86,6 +86,153 @@
     position: relative;
 	}
 	</style>
+	<style type="text/css">
+		#promotedGalleryWrapper, .promoted-gallery-wrapper, .banner-thumbnail-wrapper, .sqs-featured-posts-gallery {
+    background-color: #000;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+@media only screen and (max-device-height: 768px)
+.collection-type-index.view-list.transparent-header .index-section:not(:first-of-type) .banner-thumbnail-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.collection-type-index.transparent-header.view-list .index-section:not(:first-of-type) .banner-thumbnail-wrapper, .collection-type-index.transparent-header.collection-type-page .index-section:not(:first-of-type) .banner-thumbnail-wrapper {
+    padding: 130px 0;
+}
+@media only screen and (max-device-height: 768px)
+.view-list.transparent-header .banner-thumbnail-wrapper, .collection-type-page.transparent-header .banner-thumbnail-wrapper, .collection-type-blog.view-item.transparent-header .banner-thumbnail-wrapper {
+    padding: 60px 0 20px;
+}
+.transparent-header.view-list .banner-thumbnail-wrapper, .transparent-header.collection-type-page .banner-thumbnail-wrapper {
+    padding: 180px 0 155px;
+}
+@media only screen and (max-device-height: 768px)
+.view-list .banner-thumbnail-wrapper, .collection-type-page .banner-thumbnail-wrapper, .collection-type-blog.view-item .banner-thumbnail-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.view-list .banner-thumbnail-wrapper, .collection-type-page .banner-thumbnail-wrapper, .collection-type-index .banner-thumbnail-wrapper {
+    min-height: 0;
+    padding: 130px 0;
+}
+.banner-thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    width: 100%;
+}
+#promotedGalleryWrapper, .promoted-gallery-wrapper, .banner-thumbnail-wrapper, .sqs-featured-posts-gallery {
+    background-color: #000;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+#promotedGalleryWrapper .color-overlay, .promoted-gallery-wrapper .color-overlay, .banner-thumbnail-wrapper .color-overlay, .sqs-featured-posts-gallery .color-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 99;
+}
+#thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-animation: feature-bg-anim 1.5s ease-in-out;
+    animation: feature-bg-anim 1.5s ease-in-out;
+}
+figure {
+    margin: 0;
+}
+.desc-wrapper {
+    -webkit-animation: feature-text-anim 1.75s ease-in-out;
+    animation: feature-text-anim 1.75s ease-in-out;
+    z-index: 100;
+    position: relative;
+    width: 100%;
+    max-width: 956px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 32px;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+.desc-wrapper p {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 0px;
+    font-family: "adobe-garamond-pro";
+    font-size: 24px;
+    line-height: 1.5em;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    margin: 20px auto;
+    -webkit-transform: translatez(0);
+}
+.desc-wrapper p>strong, .desc-wrapper p>em>strong {
+    display: block;
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-family: "proxima-nova";
+    font-size: 70px;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+}
+body:not(.collection-type-gallery).banner-button-style-outline .desc-wrapper p:last-child>a, body:not(.collection-type-gallery).banner-button-style-outline.has-promoted-gallery #promotedGalleryWrapper .sqs-gallery-block-slideshow .meta-description p:last-child>a, body:not(.collection-type-gallery).banner-button-style-outline.has-promoted-gallery .promoted-gallery-wrapper .sqs-gallery-block-slideshow .meta-description p:last-child>a {
+    background-color: transparent;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    border: 2px solid #fff !important;
+    color: #fff;
+}
+.desc-wrapper p:last-child>a {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: "proxima-nova";
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    padding: 1em 1.75em;
+    background-color: #fff;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+    display: inline-block;
+    line-height: 1em;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+    -webkit-transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+    -moz-transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+    -ms-transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+    -o-transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+    transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+}
+	</style>
 	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -107,7 +254,7 @@
 					</div>
 					<div class="row hero-content">
 						<div class="col-md-12">
-							<h1 class="animated fadeInDown">An Exclusive, Premium HTML5 &amp; CSS3 Website by Mrinal Jain.</h1>
+							<h1 class="animated fadeInDown"><span style="background-color: rgba(00,00,00,0.5);">(Web Developer, Graphics Designer, Developer Evanglist)</span></h1>
 							<a href="http://tympanus.net/codrops/?p=22554" class="use-btn animated fadeInUp">Use it for free</a> <a href="#about" class="learn-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
 						</div>
 					</div>
@@ -118,7 +265,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h1><a href="http://www.youtube.com/embed/9No-FiEInLA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> Watch the Video</a></h1>
+						<!-- <h1><a href="http://www.youtube.com/embed/9No-FiEInLA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> Watch the Video</a></h1> -->
 					</div>
 				</div>
 			</div>
@@ -371,11 +518,34 @@
 				<div class="row">
 					<div class="col-md-12 text-center wp4">
 						<h1>Seen Enough?</h1>
-						<a href="http://tympanus.net/codrops/?p=22554" class="download-btn">Download! <i class="fa fa-download"></i></a>
+						<a target="_blank" href="doc/mrinal.pdf" download class="download-btn">Download! <i class="fa fa-download"></i></a>
 					</div>
 				</div>
 			</div>
 		</section>
+		<!-- trying new stuff -->
+		<section id="home-hire-me" class="index-section empty" data-url-id="home-hire-me">
+    <div class="promoted-gallery-wrapper"></div>
+    
+    <div class="banner-thumbnail-wrapper has-description" data-content-field="main-image" id="yui_3_17_2_1_1463165459487_1536">
+      <div class="color-overlay"></div>
+      <figure id="thumbnail" class="loading content-fill" style="overflow: hidden;"><img data-src="http://static1.squarespace.com/static/5300d507e4b0fa8137bdc65d/t/5708633fe707ebc05c0d529a/1460167489335/hire-a-squarespace-specialist-today-header.jpg" data-image="http://static1.squarespace.com/static/5300d507e4b0fa8137bdc65d/t/5708633fe707ebc05c0d529a/1460167489335/hire-a-squarespace-specialist-today-header.jpg" data-image-dimensions="1800x938" data-image-focal-point="0.5,0.5" style="top: -152px; left: 0px; width: 1349px; height: 703px; position: relative;" alt="hire-a-squarespace-specialist-today-header.jpg" class="" src="https://static1.squarespace.com/static/5300d507e4b0fa8137bdc65d/t/5708633fe707ebc05c0d529a/1460167489335/hire-a-squarespace-specialist-today-header.jpg?format=1500w" data-image-resolution="1500w"></figure>
+      <div class="desc-wrapper" data-collection-id="5708633fe707ebc05c0d529a" id="yui_3_17_2_1_1463165459487_1535"><p>Got a Squarespace site, need some help from an expert?</p><p id="yui_3_17_2_1_1463165459487_1164"><strong data-shrink-original-size="70" style="letter-spacing: 0.0571429em;">Hire a squarespace developer today</strong></p><p id="yui_3_17_2_1_1463165459487_1534"><a href="/#" id="yui_3_17_2_1_1463165459487_1533">Hire Me Today</a></p></div>
+    </div>
+    
+    <div class="index-section-wrapper page-content">
+      <div class="content-inner" data-content-field="main-content">
+        
+      </div>
+    </div>
+  </section>	
+
+
+
+
+
+
+		<!-- trying new stuff -->
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -383,7 +553,7 @@
 						<h1 class="footer-logo">
 						<img src="img/logo-blue.png" alt="Footer Logo Blue">
 						</h1>
-						<p>© Boxify 2015 - <a href="http://tympanus.net/codrops/licensing/">Licence</a> - Designed &amp; Developed by <a href="http://www.peterfinlan.com/">Peter Finlan</a></p>
+						<p>© Mrinal 2016 - <a href=#">Licence</a> - Designed &amp; Developed by <a href="#">Mrinal Jain</a></p>
 					</div>
 					<div class="col-md-7">
 						<ul class="footer-nav">
