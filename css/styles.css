@@ -622,12 +622,23 @@ section.video i {
     transition: color 300ms ease-in-out;
 }
 section.video h1 {
+        margin-bottom: 20px;
+    color: #24374b;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 22px;
+    color: rgb(38, 38, 38);
 }
 section.video {
-    padding: 60px 0;
+    padding: 15px 0;
     background-color: #f6f7f9;
+}
+section.video p {
+        color: #323a45;
+    vertical-align: middle;
+    font-size: 30px;
+    line-height: 33px;
+    -webkit-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
 section.video a {
     color: #323a45
