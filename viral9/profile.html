@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Coderthemes">
+
+  <link rel="shortcut icon" href="assets/images/favicon/android-icon-48x48.png">
+
+  <title>Profile | Viral9</title>
+
+  <link href="assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+  <link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/pages.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+  <link href="assets/plugins/toggles/toggles.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="assets/plugins/tagsinput/jquery.tagsinput.css">-->
+  <script src="assets/js/modernizr.min.js"></script>
+
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+
+</head>
+
+
+<body class="fixed-left">
+  <!-- Start Side Nav -->
+  <div id="slide-out" class="side-nav" style="width: 250px;">
+    <ul>
+      <li class="homeli">
+        <div class="row">
+          <div class="col-xs-5 image">
+            <div class="userimg" style="background-image: url(http://mrinaljain.com/images/profile-pic.jpg)">
+            </div>
+          </div>
+          <div class="col-xs-7 name">
+            <h1 class="panel-title"><a href="#">Mrinal Jain</a></h1>
+            <p class="email">mrinal@wittyfeed.com</p>
+            <button type="button" class="btn btn-danger btn-xs logout">Logout</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a class="waves-effect" href="dashboard.html"><i class="fa fa-tachometer" aria-hidden="true"></i> DASHBOARD</a>
+      </li>
+      <li>
+        <a class="waves-effect" href="myfeed.html"><i class="fa fa-rss-square" aria-hidden="true"></i> MYFEED</a>
+      </li>
+      <li>
+        <a class="waves-effect" href="campaign.html"><i class="fa fa-flag" aria-hidden="true"></i> CAMPAIGNS</a>
+      </li>
+      <li>
+        <a class="waves-effect" href="mylinks.html"><i class="fa fa-link" aria-hidden="true"></i> MY LINKS</a>
+      </li>
+      <li>
+        <a class="waves-effect" href="payment.html"><i class="fa fa-credit-card" aria-hidden="true"></i> PAYMENT</a>
+      </li>
+      <li>
+        <a class="waves-effect" href="domain.html"><i class="fa fa-globe" aria-hidden="true"></i> DOMAIN</a>
+      </li>
+      <li>
+        <a class="waves-effect" href="favourites.html"><i class="fa fa-heart" aria-hidden="true"></i> FAVOURITES</a>
+      </li>
+    </ul>
+    <div class="col s12 sideNav-footer">
+      <ul class="list-inline list-unstyled">
+        <li><a href=""> About Us</a>
+        </li>
+        <li><a href="!#"> Privacy Policy </a>
+        </li>
+        <li><a href="!#"> Content Guidelines</a>
+        </li>
+        <li><a href="!#"> Advertise</a>
+        </li>
+        <li><a href="!#"> Terms of use </a>
+        </li>
+        <li><a target="!#">Sitemap</a>
+        </li>
+        <li><a href="!#"> Contact us</a>
+        </li>
+      </ul>
+      <p> Vatsana Technologies © 2016 </p>
+    </div>
+  </div>
+  <!-- Start Side Nav -->
+  <!-- Begin page -->
+  <div id="wrapper">
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+      <!-- LOGO -->
+      <div class="topbar-left">
+        <div class="">
+          <a href="index.html" class="logo hidden-xs "><img src="assets/images/Viral9.png" alt=""></a>
+          <a href="index.html" class="logo hidden-lg hidden-md hidden-sm"><img src="assets/images/logo_small.png" alt="" style="width: 100%;"></a>
+        </div>
+      </div>
+      <!-- Button mobile view to collapse sidebar menu -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="">
+            <div class="pull-left hidden-lg hidden-md">
+              <button class="button-menu-mobile open-sedenav">
+                                   <i class="fa fa-bars" aria-hidden="true"></i>
+                                </button>
+              <span class="clearfix"></span>
+            </div>
+            <ul class="nav navbar-nav navbar-left pull-left hidden-sm hidden-xs headernav">
+              <li class="navitems"><a href="dashboard.html"><i class="fa fa-tachometer" aria-hidden="true"></i> DASHBOARD</a></li>
+              <li class="navitems"><a href="myfeed.html"><i class="fa fa-rss-square" aria-hidden="true"></i> MY FEED</a></li>
+              <li class="navitems"><a href="campaign.html"><i class="fa fa-flag" aria-hidden="true"></i> CAMPAIGN</a></li>
+              <li class="navitems"><a href="mylinks.html"><i class="fa fa-link" aria-hidden="true"></i> MY LINKS</a></li>
+              <li class="navitems"><a href="payment.html"><i class="fa fa-credit-card" aria-hidden="true"></i> PAYMENTS</a></li>
+              <li class="morenavitems dropdown profiledrop moredrop">
+                <a href="#" class="dropdown-toggle profile " data-toggle="dropdown " aria-expanded="true "><i class="fa fa-credit-card" aria-hidden="true"></i> MORE</a>
+                <ul class="dropdown-menu profiledropadv moredropadv" style="margin-top:10px;">
+                  <li>
+                    <a href="favourites.html"><i class="fa fa-heart" aria-hidden="true"></i>  Favourites</a>
+                  </li>
+                  <li><a href="domain.html"><i class="fa fa-globe" aria-hidden="true"></i> Domains</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right pull-right">
+              <li class="searchli">
+                <a href="# " class="right-bar-toggle waves-effect waves-light" data-toggle="modal" data-target="#full-width-modal">
+                  <img src="assets/images/heart-circular.png " alt=" ">
+                </a>
+              </li>
+              <li class="dropdown" style="float:left">
+                <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" id="notify" data-toggle="dropdown" aria-expanded="true">
+                  <img src="assets/images/bell.png" alt=" ">
+                  <span class="badge badge-xs badge-danger">3</span>
+                </a>
+              </li>
+              <ul class="dropdown-menu dropdown-menu-lg notifybox  " aria-labelledby="notify">
+                <li class=" notifi-title notification notifyTitle notifyBackground "><span class="badge badge-danger value-margin">5</span>Unread Notification <a href="#" class="pull-right readAllText"> Read all</a></li>
+
+                <!-- list item-->
+                <li class="list-group ">
+                  <ul class="scroll list-unstyled" id="style-3">
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <hr>
+                    <!-- list item-->
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+
+                    <!-- last list item -->
+
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <hr>
+                    <!-- last list item -->
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+
+                    <hr>
+                    <!-- last list item -->
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+
+                    <hr>
+                    <!-- last list item -->
+                    <li>
+                      <a href="javascript:void(0);" class="list-group-item ">
+                        <div class="media ">
+                          <div class="media-body clearfix ">
+                            <div class="row inRow">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-notify img-responsive  imgBorder ">
+                              </div>
+                              <div class="media-heading col-lg-9 col-md-9 col-sm-9 col-xs-9 lineFix">
+                                <h5 class="oneLineHeading">Ondemand payment</h5><span class="pull-right timeSize"><small>3 mint ago</small></span>
+                                <p class="m-0 paragraphColor">
+                                  <small>Your ondemand payment is  approved <br>by viral9</small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+
+
+
+                  </ul>
+                </li>
+                <hr>
+                <!-- list item-->
+
+
+                <!-- last list item -->
+                <a href="javascript:void(0);" class="list-group-item flat ">
+                  <small>See all <i class="fa fa-chevron-down" aria-hidden="true"></i></small>
+                </a>
+              </ul>
+
+              <li class="dropdown profiledrop hidden-xs">
+                <a href="#" class="dropdown-toggle profile " data-toggle="dropdown " aria-expanded="true "><img src="http://mrinaljain.com/images/profile-pic.jpg" alt="user-img " class="img-circle"> </a>
+                <ul class="dropdown-menu profiledropadv">
+                  <li><a href="javascript:void(0)"><i class="md md-face-unlock "></i> Profile</a></li>
+                  <li><a href="javascript:void(0)"><i class="md md-settings-power "></i> Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page profileContent">
+      <!-- Start content -->
+      <div class="content">
+        <div class="container">
+
+          <div class="row profileheader">
+            <div class="col-lg-12 col-md-12 userdetail">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 userimg">
+                  <span class="mini-stat-icon"><img src="assets/images/users/avatar-1.jpg" alt="" class="img-circle img-responsive"></span>
+                  <div class="mini-stat-info">
+                    <span class="name" style="display:inline"><p style="display:inline">Bhavishya Garg</p></span>
+                    <i class="fa fa-pencil editname" aria-hidden="true"></i>
+                    <p class="email">Bhavishya@wittyfeed.com</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 usercontact text-center">
+                  <div class="usercontactform row">
+                    <div class="col-lg-8 pull-right">
+                      <form action="">
+                        <div class="form-group input-group">
+                          <span class="input-group-addon ">+91</span>
+                          <input type="email" class="form-control input-sm" id="" placeholder="Contact Number">
+                        </div>
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="" placeholder="Pin Code">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-10 usertabs">
+              <ul class="nav nav-tabs tabs" style="width: 100%;">
+                <li class="active tab" style="width:18%">
+                  <a href="#fbpage" data-toggle="tab" aria-expanded="false" class="">
+
+                    <span class="">Facebook Pages</span>
+                  </a>
+                </li>
+                <li class="tab" style="width:18%">
+                  <a href="#pwdpage" class="pwdpage" data-toggle="tab" aria-expanded="false">
+
+                    <span class="">Change Passsword</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row profilebody">
+            <div class="tab-content">
+
+              <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 tab-pane active" id="fbpage">
+                <div class="panel panel-border panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Facebook Pages List</h3>
+                    <button class="btn btn-default addpage" data-toggle="modal" data-target="#myModal">Add Page</button>
+                  </div>
+                  <div class="panel-body table-rep-plugin p-0">
+                    <div class="table-wrapper">
+                      <div class="table-responsive" data-pattern="priority-columns">
+                        <table id="tech-companies-1" class="table table-small-font">
+                          <thead>
+                            <tr>
+                              <th style="display: table-cell;">PAGE NAME</th>
+                              <th>TOTAL POSTS</th>
+                              <th>ENGAGEMENT</th>
+                              <th>BOUNCE RATE</th>
+                              <th>EARNING</th>
+                              <th>ACTION</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-2">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-10">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="1" style="display: table-cell;" class="pageName">
+                                <div class="pagecard row">
+                                  <div class="imgsmall pull-left col-xs-3">
+                                    <img src="assets/images/gallery/3.jpg" alt="">
+                                  </div>
+                                  <div class="pageNameText col-xs-9">
+                                    <p class="pagetext">The Amazing Things in the World </p>
+
+                                    <p class="pagetags">
+                                      <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Sports</span>
+                                      </span>
+                                      <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td style="text-align:center">1253</td>
+                              <td class="engagement">
+                                <div class="progress">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                    <span class="sr-only">95% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="bouncerate">12.5%</td>
+                              <td class="earnd">$145</td>
+                              <td class="action">
+                                <button class="btn btn-orange white-bg">Remove</button>
+                              </td>
+                            </tr>
+                            <!--
+<tr class="">
+  <td colspan="1" style="display: table-cell;" class="pageName">
+    <div class="pagecard row">
+      <div class="imgsmall pull-left col-xs-3">
+        <img src="assets/images/gallery/3.jpg" alt="">
+      </div>
+      <div class="pageNameText col-xs-9">
+        <p class="pagetext">The Amazing Things in the World </p>
+
+        <p class="pagetags">
+          <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+          </span>
+          <span class="tag tagsvisible">
+                                    <span>Sports</span>
+          </span>
+          <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+          </span>
+        </p>
+      </div>
+    </div>
+  </td>
+  <td style="text-align:center">1253</td>
+  <td class="engagement">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+        <span class="sr-only">95% Complete</span>
+      </div>
+    </div>
+  </td>
+  <td class="bouncerate">12.5%</td>
+  <td class="earnd">$145</td>
+  <td class="action">
+    <button class="btn btn-orange white-bg">Remove</button>
+  </td>
+</tr>
+<tr class="">
+  <td colspan="1" style="display: table-cell;" class="pageName">
+    <div class="pagecard row">
+      <div class="imgsmall pull-left col-xs-3">
+        <img src="assets/images/gallery/3.jpg" alt="">
+      </div>
+      <div class="pageNameText col-xs-9">
+        <p class="pagetext">The Amazing Things in the World </p>
+
+        <p class="pagetags">
+          <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+          </span>
+          <span class="tag tagsvisible">
+                                    <span>Sports</span>
+          </span>
+          <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+          </span>
+        </p>
+      </div>
+    </div>
+  </td>
+  <td style="text-align:center">1253</td>
+  <td class="engagement">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+        <span class="sr-only">95% Complete</span>
+      </div>
+    </div>
+  </td>
+  <td class="bouncerate">12.5%</td>
+  <td class="earnd">$145</td>
+  <td class="action">
+    <button class="btn btn-orange white-bg">Remove</button>
+  </td>
+</tr>
+<tr class="">
+  <td colspan="1" style="display: table-cell;" class="pageName">
+    <td colspan="1" style="display: table-cell;" class="pageName">
+      <div class="pagecard row">
+        <div class="imgsmall pull-left col-xs-3">
+          <img src="assets/images/gallery/3.jpg" alt="">
+        </div>
+        <div class="pageNameText col-xs-9">
+          <p class="pagetext">The Amazing Things in the World </p>
+
+          <p class="pagetags">
+            <span class="tag tagsvisible">
+                                    <span>Celebrity</span>
+            </span>
+            <span class="tag tagsvisible">
+                                    <span>Sports</span>
+            </span>
+            <span class="tag tagsvisible">
+                                    <span>Bizare</span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </td>
+    <td style="text-align:center">1253</td>
+    <td class="engagement">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+          <span class="sr-only">95% Complete</span>
+        </div>
+      </div>
+    </td>
+    <td class="bouncerate">12.5%</td>
+    <td class="earnd">$145</td>
+    <td class="action">
+      <button class="btn btn-orange white-bg">Remove</button>
+    </td>
+</tr>
+-->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 tab-pane " id="pwdpage">
+                <div class="wrapper-page">
+                  <div class="panel panel-color panel-primary panel-pages">
+
+                    <div class="panel-heading">
+                      <h3 class="text-center m-t-10 text-white"> Change Password </h3>
+                    </div>
+
+                    <div class="panel-body">
+                      <form method="post" action="#" role="form" class="text-center">
+                        <div style="display:none" class="alert alert-info alert-dismissable">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button> Enter your <b>Email</b> and instructions will be sent to you!
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <input type="email" class="form-control  input-lg" placeholder="Old Password" required="">
+                            <input type="email" class="form-control input-lg" placeholder="New Password" required="">
+                            <input type="email" class="form-control input-lg" placeholder="Confirm Password" required="">
+
+                          </div>
+                        </div>
+                        <button class="btn-orange btn btn-lg">SAVE</button>
+
+                      </form>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- covntainer -->
+        </div>
+        <!-- content -->
+      </div>
+      <!-- ============================================================== -->
+      <div class="modal fade in" id="myModal" role="dialog">
+        <div class="modal-dialog popupBox ">
+          <div class="modal-content popupBox no-padding">
+            <div class="modal-header popupBGColor">
+              <h3>Select the page</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.(come all pages list)</p>
+            </div>
+            <div class="modal-body popup-body">
+              <div class="col-lg-12 exteriorBox">
+                <div class="col-lg-3 imageBox">
+
+                </div>
+                <div class="col-lg-10">
+                  <h3 class="heading-inLine">Amazing things in the world</h3><span class="pull-right paddingOnLikes">Likes:125k</span>
+                  <div class="col-lg-12 addTag">
+                    <h4>Add Tag</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- End Right content here -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src=" assets/js/jquery.min.js "></script>
+    <script src="assets/js/bootstrap.min.js "></script>
+    <script src="assets/js/detect.js "></script>
+    <script src="assets/js/fastclick.js "></script>
+    <script src="assets/js/jquery.slimscroll.js "></script>
+    <script src="assets/js/jquery.blockUI.js "></script>
+    <script src="assets/js/waves.js "></script>
+    <script src="assets/js/wow.min.js "></script>
+    <script src="assets/js/jquery.nicescroll.js "></script>
+    <script src="assets/js/jquery.scrollTo.min.js "></script>
+
+    <script src="assets/js/jquery.app.js "></script>
+    <script src="assets/plugins/toggles/toggles.min.js"></script>
+
+    <!-- jQuery  -->
+    <script src="assets/plugins/moment/moment.js "></script>
+
+    <!-- jQuery  -->
+    <script src="assets/plugins/waypoints/lib/jquery.waypoints.js "></script>
+    <script src="assets/plugins/counterup/jquery.counterup.min.js "></script>
+    <!-- <script src="assets/plugins/tagsinput/jquery.tagsinput.min.js"></script>-->
+
+    <!-- Sweet-Alert  -->
+    <script src="assets/plugins/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="assets/pages/jquery.sweet-alert.init.js"></script>
+
+    <!-- jQuery  -->
+    <script src="assets/pages/jquery.todo.js "></script>
+
+    <!-- jQuery  -->
+    <script src="assets/pages/jquery.chat.js "></script>
+
+    <script src="assets/js/script.js"></script>
+
+    <script type="text/javascript ">
+
+
+    </script>
+
+</body>
+
+</html>
