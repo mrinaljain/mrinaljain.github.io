@@ -23,13 +23,13 @@
 define('DB_NAME', 'mrinal_db');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'mrinal_db');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'empire');
+define('DB_PASSWORD', '(Itsmejustf0rme))');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'mrinal.database.windows.net');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
