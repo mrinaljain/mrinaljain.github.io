@@ -1,21 +1,93 @@
 {
-    "name": "flutter_app",
-    "short_name": "flutter_app",
+    "name": "STAGE: Latest Haryanvi Ragini, comedy & Video Songs",
+    "short_name": "STAGE",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#252525",
+    "theme_color": "#7a0600",
+    "description": "STAGE brings to you the most loved Haryanvi poetry, comedy and ragni videos in the form of Haryanvi shows, collection and singles with just one click",
     "orientation": "portrait-primary",
-    "prefer_related_applications": false,
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "play",
+            "url": "https://play.google.com/store/apps/details?id=in.stage"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Favourites",
+            "short_name": "Favourite",
+            "description": "Favourite Videos",
+            "url": "/my-videos",
+            "icons": [
+                {
+                    "src": "icons/icon-196.png",
+                    "sizes": "196x196"
+                }
+            ]
+        },
+        {
+            "name": "Settings",
+            "short_name": "Settings",
+            "description": "Settings",
+            "url": "/setting",
+            "icons": [
+                {
+                    "src": "icons/icon-196.png",
+                    "sizes": "196x196"
+                }
+            ]
+        }
+    ],
+    "categories": [
+        "entertainment",
+        "music",
+        "lifestyle"
+    ],
     "icons": [
         {
-            "src": "icons/Icon-192.png",
-            "sizes": "192x192",
+            "src": "icons/icon-196.png",
+            "sizes": "196x196",
             "type": "image/png"
         },
         {
-            "src": "icons/Icon-512.png",
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-100.png",
+            "sizes": "100x100",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-196.png",
+            "sizes": "196x196",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
