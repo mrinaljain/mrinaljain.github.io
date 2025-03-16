@@ -1,12 +1,8 @@
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import Head from "next/head";
 
 export default function Home() {
-  return (
-    <Head>
-      <title>Mrinal Jain</title>
-      <meta name="description" content="Mrinal Jain Portfolio" />
+  return (<>
 
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6">
       {/* Hero Section */}
@@ -48,6 +44,6 @@ export default function Home() {
         </a>
       </div>
     </div>
-    </Head>
+  </>
   );
 }
