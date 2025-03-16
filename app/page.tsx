@@ -1,8 +1,13 @@
+import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-// import { Button } from "@/components/ui/button";
+import Head from "next/head";
 
 export default function Home() {
   return (
+    <Head>
+      <title>Mrinal Jain</title>
+      <meta name="description" content="Mrinal Jain Portfolio" />
+
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6">
       {/* Hero Section */}
       <div className="text-center">
@@ -11,12 +16,12 @@ export default function Home() {
           Software Engineer | Tech Consultant | Full Stack Developer
         </p>
         <div className="mt-4 space-x-4">
-          <button className="bg-blue-500 hover:bg-blue-600 rounded-xs px-2 py-1.5 cursor-pointer">
+            <Link href="/mrinaljain_cv_feb2025.pdf" className="bg-blue-500 hover:bg-blue-600 rounded-xs px-2 py-1.5 cursor-pointer" >
             Download Resume
-          </button>
-          <button className="bg-green-500 hover:bg-green-600 rounded-xs px-2 py-1.5 cursor-pointer">
+            </Link>
+            <Link href="https://www.linkedin.com/in/mrinaljain/" className="bg-green-500 hover:bg-green-600 rounded-xs px-2 py-1.5 cursor-pointer">
             Let&apos;s Connect
-          </button>
+            </Link>
         </div>
       </div>
 
@@ -32,16 +37,17 @@ export default function Home() {
 
       {/* Social Links */}
       <div className="flex space-x-6 mt-10">
-        <a href="#" className="text-gray-400 hover:text-white text-2xl">
+          <a href="https://github.com/mrinaljain" className="text-gray-400 hover:text-white text-2xl">
           <FaGithub />
         </a>
-        <a href="#" className="text-gray-400 hover:text-white text-2xl">
+          <a href="https://www.linkedin.com/in/mrinaljain/" className="text-gray-400 hover:text-white text-2xl">
           <FaLinkedin />
         </a>
-        <a href="#" className="text-gray-400 hover:text-white text-2xl">
+          <a href="mailto:jain.mrinal140@gmail.com" className="text-gray-400 hover:text-white text-2xl">
           <FaEnvelope />
         </a>
       </div>
     </div>
+    </Head>
   );
 }
