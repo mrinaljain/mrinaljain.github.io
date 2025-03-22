@@ -1,8 +1,22 @@
+import IntroVideo from "@/components/video";
 import Link from "next/link";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
-  return (<>
+  return (
+    <>
+      <section className="flex flex-col md:flex-row h-screen">
+        <div className="w-full md:w-4/5 relative">
+          <IntroVideo />
+
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+        </div>
+
+        <div className="w-full md:w-3/5 flex flex-col items-center justify-center p-8 text-center md:text-left">
+          <h1 className="text-4xl font-bold">Hi, I&apos;m Mrinal Jain</h1>
+          <p className="mt-4 text-lg text-gray-700">Tech Consultant | Speaker | Community Builder</p>
+          <a href="#contact" className="mt-6 bg-blue-600 px-6 py-3 rounded-lg text-white hover:bg-blue-700 transition">Let&apos;s Connect</a>
+        </div>
+      </section>
 
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6">
       {/* Hero Section */}
@@ -19,30 +33,7 @@ export default function Home() {
             Let&apos;s Connect
             </Link>
         </div>
-      </div>
-
-      {/* About Section */}
-      <div className="max-w-2xl text-center mt-10">
-        <h2 className="text-2xl font-semibold">About Me</h2>
-        <p className="text-gray-400 mt-2">
-          I’m a software engineer with 7+ years of experience, specializing in
-          React, Flutter, and Node.js. Passionate about building scalable,
-          high-performance applications for OTT and B2C platforms.
-        </p>
-      </div>
-
-      {/* Social Links */}
-      <div className="flex space-x-6 mt-10">
-          <a href="https://github.com/mrinaljain" className="text-gray-400 hover:text-white text-2xl">
-          <FaGithub />
-        </a>
-          <a href="https://www.linkedin.com/in/mrinaljain/" className="text-gray-400 hover:text-white text-2xl">
-          <FaLinkedin />
-        </a>
-          <a href="mailto:jain.mrinal140@gmail.com" className="text-gray-400 hover:text-white text-2xl">
-          <FaEnvelope />
-        </a>
-      </div>
+        </div>
     </div>
   </>
   );
