@@ -1,10 +1,14 @@
+// import Experience from "@/components/Experiences";
+// import NewspaperSection from "@/components/NewsPaperSection";
 import IntroVideo from "@/components/video";
 import YouTubeVideos from "@/components/YouTubeVideos";
+// import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
+
       <section className="flex flex-col md:flex-row h-screen">
         <IntroVideo />
         <div className="w-full md:w-2/5 flex flex-col items-center justify-center p-8 text-center md:text-left bg-white">
@@ -14,14 +18,8 @@ export default function Home() {
         </div>
       </section>
       <YouTubeVideos />
-      <div className=" flex flex-col items-center justify-center bg-gray-900 text-white p-6">
-      {/* Hero Section */}
-        <div className="mt-4 space-x-4 text-center">
-            <Link href="/mrinaljain_cv_feb2025.pdf" className="bg-blue-500 hover:bg-blue-600 rounded-xs px-2 py-1.5 cursor-pointer" >
-            Download Resume
-          </Link>
-        </div>
-    </div>
+      {/* <Experience /> */}
+      {/* <NewspaperSection /> */}
   </>
   );
 }

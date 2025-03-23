@@ -25,7 +25,7 @@ export default function YouTubeVideos() {
             // if (response.ok) {
             setVideos(youtubeVideos);
             // } else {
-               setError("Failed to fetch videos.");
+            // setError("Failed to fetch videos.");
             // }
          } catch (error) {
             setError("An error occurred while fetching videos." + error);
