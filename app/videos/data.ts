@@ -27,6 +27,13 @@ export const youtubeVideos = [
       description: " In this podcast episode, we delve into Mrinal's journey from a young computer enthusiast to becoming a prominent figure in the tech industry.",
       publishedAt: "2024-05-12T00:00:00Z",
    },
+   {
+      id: "Y6kcAWIL-R4",
+      title: "How to Build your Community A Team ",
+      thumbnail: "https://img.youtube.com/vi/Y6kcAWIL-R4/maxresdefault.jpg",
+      description: "Mrinal Jain, Community Lead for Facebook Developer Circle, Indore,  joining us and sharing the Community A-Team model which he primarily developed for managing the core team of volunteers for his community.",
+      publishedAt: "2024-05-12T00:00:00Z",
+   },
    
 ];
 

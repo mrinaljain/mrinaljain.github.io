@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Define TypeScript interface for news items
 interface NewsItem {
    id: number;
    title: string;
@@ -10,6 +12,7 @@ interface NewsItem {
    date: string;
    link: string;
 }
+
 const coverages: NewsItem[] = [
    {
       id: 1,
