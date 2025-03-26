@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { youtubeVideos } from "../app/videos/data";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 // Define the TypeScript interface for video data
 interface Video {

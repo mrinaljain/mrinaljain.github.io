@@ -35,7 +35,7 @@ export default function Experiences() {
          </h2>
 
          <div className="relative border-l-4 border-gray-500 ml-5">
-            {experiences.map((exp, index) => (
+            {experiences.map((exp) => (
                <div key={exp.id} className="mb-10 ml-6 relative">
                   {/* Timeline Dot */}
                   <div className="absolute -left-6 top-2 w-10 h-10 bg-white border-4 border-gray-500 rounded-full flex items-center justify-center">
