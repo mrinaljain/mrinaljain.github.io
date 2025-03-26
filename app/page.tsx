@@ -1,7 +1,8 @@
 // import Experience from "@/components/Experiences";
 // import NewspaperSection from "@/components/NewsPaperSection";
-import NewspaperSection from "@/components/NewsPaperSection";
-import SocialLinks from "@/components/SocialLinks";
+// import NewspaperSection from "@/components/NewsPaperSection";
+// import SocialLinks from "@/components/SocialLinks";
+import Header from "@/components/Header";
 import IntroVideo from "@/components/video";
 import YouTubeVideos from "@/components/YouTubeVideos";
 // import Head from "next/head";
@@ -10,7 +11,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-
+      <Header />
       <section className="flex flex-col md:flex-row h-screen">
         <IntroVideo />
         <div className="w-full md:w-2/5 flex flex-col items-center justify-center p-8 text-center md:text-left bg-white">
