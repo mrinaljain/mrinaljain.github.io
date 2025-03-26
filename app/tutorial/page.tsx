@@ -1,3 +1,10 @@
-// https://www.youtube.com/watch?v=BhM1Ig12jNw
+// app/about/page.tsx
 
-//https://www.youtube.com/watch?v=Y6kcAWIL-R4&pp=ygUUbXJpbmFsIGphaW4gIGluZG9yZSA%3D
+export default function Tutorial() {
+   return (
+      <div>
+         <h1>Talks Page</h1>
+         <p>This is the about page in Next.js with TypeScript.</p>
+      </div>
+   );
+}
