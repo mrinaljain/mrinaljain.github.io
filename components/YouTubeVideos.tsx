@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { youtubeVideos } from "../app/videos/data";
 import Image from "next/image";
+// import Link from "next/link";
 
 // Define the TypeScript interface for video data
 interface Video {
@@ -25,7 +26,7 @@ export default function YouTubeVideos() {
             // if (response.ok) {
             setVideos(youtubeVideos);
             // } else {
-               setError("Failed to fetch videos.");
+            // setError("Failed to fetch videos.");
             // }
          } catch (error) {
             setError("An error occurred while fetching videos." + error);
@@ -41,7 +42,7 @@ export default function YouTubeVideos() {
       <section className="py-12 bg-gray-50">
          <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold text-center mb-8">Featured Videos</h2>
-
+            {/* <Link href="/talk"> View All</Link> */}
             {/* Loading State */}
             {loading && <p className="text-center">Loading videos...</p>}
             {error && <p className="text-center text-red-500">{error}</p>}
