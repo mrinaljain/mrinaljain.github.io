@@ -1,7 +1,6 @@
-// import Experience from "@/components/Experiences";
-// import NewspaperSection from "@/components/NewsPaperSection";
 // import NewspaperSection from "@/components/NewsPaperSection";
 // import SocialLinks from "@/components/SocialLinks";
+import Experiences from "@/components/Experiences";
 import Header from "@/components/Header";
 import IntroVideo from "@/components/video";
 import YouTubeVideos from "@/components/YouTubeVideos";
@@ -25,7 +24,7 @@ export default function Home() {
         </div>
       </section>
       <YouTubeVideos />
-      {/* <Experience /> */}
+      <Experiences />
       {/* <NewspaperSection /> */}
   </>
   );
