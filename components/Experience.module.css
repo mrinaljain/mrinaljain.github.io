@@ -1,0 +1,61 @@
+.timelineContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 20px;
+}
+
+.experienceCard {
+   background: #fff;
+   padding: 20px;
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+   transition: transform 0.3s ease-in-out;
+}
+
+.experienceCard:hover {
+   transform: translateY(-5px);
+}
+
+.cardHeader {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.companyLogo {
+   width: 50px;
+   height: 50px;
+   object-fit: contain;
+   border-radius: 8px;
+}
+
+.companyName {
+   font-size: 1.2rem;
+   font-weight: bold;
+}
+
+.year {
+   font-size: 0.9rem;
+   color: gray;
+}
+
+.role {
+   font-size: 1.1rem;
+   font-weight: 600;
+   color: #333;
+}
+
+.location {
+   font-size: 0.9rem;
+   color: gray;
+}
+
+.projectList {
+   list-style-type: disc;
+   padding-left: 20px;
+   font-size: 0.95rem;
+}
