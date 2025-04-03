@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mrinaljain.com"),
   title: "Mrinal Jain | Tech Consultant, Speaker & Developer",
   description: "Tech Consultant, Developer, and Speaker with expertise in Flutter, React, and SaaS applications. Explore my projects, talks, and insights.",
-  keywords: "Mrinal Jain, Tech Consultant, Flutter Developer, React Developer, SaaS, Engineering Manager, Speaker, Personal Branding, Software Engineer",
+  keywords: "Mrinal Jain, Tech Consultant, Flutter Developer, React Developer, Engineering Manager, Tech Speaker, Software Engineer",
   applicationName: "Mrinal Jain",
   authors: [{ name: "Mrinal Jain", url: "https://www.linkedin.com/in/mrinaljain/" }],
   robots: { index: true, follow: true },
@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
   generator: "VSCode",
   openGraph: {
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     url: "https://mrinaljain.com",
     siteName: "Mrinal Jain",
     type: "website",
-    images: [{ url: "https://yourwebsite.com/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://mrinaljain.com/og-image.JPG", width: 1200, height: 630 }],
   },
   formatDetection: {
     telephone: false,
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@mrinal_geek",
     creator: "@mrinal_geek",
-    images: "https://yourwebsite.com/twitter-image.jpg",
+    images: "https://yourwebsite.com/og-image.JPG",
   },
 };
 
@@ -68,7 +67,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <GoogleTagManager gtmId="G-DY3RQS5E8M" />
+        <GoogleAnalytics gaId="G-DY3RQS5E8M" />
 
       </body>
     </html>
