@@ -1,10 +1,9 @@
-import { Metadata } from "next";
-interface PageProps {
+interface Params {
    params: {
       slug: string;
    }
 }
-export async function generateMetadata({ params }: PageProps): Promise<Metadata | undefined> {
+export async function generateMetadata({ params }: Params) {
    // make api calls here and get page data  and use data in tag below
 
    return {
@@ -23,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata 
 
 
 const page = async ({ params,
-}: PageProps) => {
+}: Params) => {
    // const { slug } = await params;
    return <div>My Post page : {params.slug}</div>
 }
