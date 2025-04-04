@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@mrinal_geek",
     creator: "@mrinal_geek",
-    images: "https://yourwebsite.com/oprngraph-image.jpeg",
+    images: "https://mrinaljain.com/og-image.JPG",
   },
 };
 
