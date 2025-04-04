@@ -1,5 +1,8 @@
+import { Metadata } from "next";
 
-export async function generateMetadata({ params }: Params) {
+export async function generateMetadata({ params }: Params):Promise<Metadata | undefined> {
+   // make api calls here and get page data  and use data in tag below
+
    return {
       title: `#${params.slug}`,
       description: `Talks with the tag ${params.slug}`,
@@ -22,7 +25,7 @@ interface Params {
 const page = async ({ params,
 }: Params) => {
    // const { slug } = await params;
-   return <div>My Post: {params.slug}</div>
+   return <div>My Post page : {params.slug}</div>
 }
 
 
