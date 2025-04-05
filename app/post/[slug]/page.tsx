@@ -1,13 +1,12 @@
-import { Metadata } from "next"
+// app/post/[slug]/page.tsx
 
 type Props = {
    params: {
       slug: string
    }
 }
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-   // make api calls here and get page data  and use data in tag below
 
+export async function generateMetadata({ params }: Props) {
    return {
       title: `#${params.slug}`,
       description: `Talks with the tag ${params.slug}`,
@@ -22,10 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
    }
 }
 
-
-const Page = async ({ params }: Props) => {
-   return <div>My Post page : {params.slug}</div>
-}
-
+// ✅ FIXED HERE
+const Page = async (props: Props) => {
+   const { params } = props;
+   return <div>My Post page : {params.slug}</div>;
+};
 
 export default Page;
