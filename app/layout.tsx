@@ -48,12 +48,6 @@ export const metadata: Metadata = {
     google: "0e75-VwaqN5FEq06g4S0sJ5JVbV6OK5WShoxiy2Y2Fk",
     yandex: "63db5177f1385edc"
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@mrinal_geek",
-    creator: "@mrinal_geek",
-    images: "https://yourwebsite.com/oprngraph-image.jpeg",
-  },
 };
 
 export default function RootLayout({

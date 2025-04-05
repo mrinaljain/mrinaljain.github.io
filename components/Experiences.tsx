@@ -1,9 +1,3 @@
-"use client"
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import styles from "./Experience.module.css";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
    faJs,
@@ -18,8 +12,8 @@ import {
    faPython,
    IconDefinition
 } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
 interface Experience {
    company: string;
    logo: string;
@@ -30,33 +24,9 @@ interface Experience {
    technologies: IconDefinition[];
 }
 const ExperienceTimeline = () => {
-   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-   useEffect(() => {
-      sectionsRef.current.forEach((section,) => {
-         if (section) {
-            gsap.fromTo(
-               section,
-               { opacity: 0, x: 50 },
-               {
-                  opacity: 1,
-                  x: 0,
-                  duration: 1,
-                  scrollTrigger: {
-                     trigger: section,
-                     start: "top 80%",
-                     end: "top 30%",
-                     scrub: true
-                  }
-               }
-            );
-         }
-      });
-   }, []);
 
-   // const scrollToSection = (index: number) => {
-   //    sectionsRef.current[index]?.scrollIntoView({ behavior: "smooth", block: "center" });
-   // };
+
    const experienceData: Experience[] = [
       {
          company: "AMEX",
@@ -136,55 +106,40 @@ const ExperienceTimeline = () => {
    ];
 
    return (
-      <div className="relative flex flex-col items-center gap-6 p-6">
-         {/* Timeline Line */}
-         {/* <div className="absolute left-5 top-0 bottom-0 w-1 bg-blue-500 rounded-lg"></div> */}
-         <h2 className="text-3xl font-semibold text-center mb-8">Experience</h2>
-
+      <div className="flex flex-col items-center gap-6 p-6">
          {experienceData.map((exp, index) => (
-            <div key={index} className="relative flex items-start">
-               {/* Clickable Timeline Dot */}
-               {/* <button
-                  className="absolute left-4 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
-                  onClick={() => scrollToSection(index)}
-               ></button> */}
-
-               {/* Experience Card */}
-               <div
-                  ref={(el) => {
-                     if (el) sectionsRef.current[index] = el;
-                  }} className={`w-full max-w-xl bg-white shadow-lg rounded-lg p-6 flex transition-transform duration-300 hover:scale-105  ml-6 
-                     ${index % 2 === 0 ? "self-start" : "self-end"}`}
-               >
-                  {/* Left Section: Company Logo */}
-                  <div className="w-16 flex-shrink-0">
-                     <Image src={exp.logo} width={56} height={56} alt={exp.company} className="w-14 h-14 rounded-md" />
-                  </div>
-
-                  {/* Right Section: Details */}
-                  <div className="flex-grow ml-4">
+            <div
+               key={index}
+               className="w-full md:w-2/3 bg-white shadow-lg rounded-lg p-5 transition-transform duration-300"
+            >
+               {/* Company Info Section */}
+               <div className="flex items-center gap-4">
+                  <Image src={exp.logo} width={56} height={56} alt={exp.company} className="w-14 h-14 rounded-md" />
+                  <div>
                      <h2 className="text-xl font-bold">{exp.company}</h2>
                      <h3 className="text-md text-gray-600">{exp.designation}</h3>
                      <p className="text-sm text-gray-500">{exp.location} • {exp.year}</p>
-
-                     {/* Project Highlights */}
-                     <ul className="mt-3 list-disc list-inside text-sm text-gray-700">
-                        {exp.projects.map((project, idx) => (
-                           <li key={idx}>{project}</li>
-                        ))}
-                     </ul>
-
-                     {/* Technologies Used */}
-                     <div className="flex flex-wrap gap-3 mt-4 text-blue-600 text-lg">
-                        {exp.technologies.map((icon, idx) => (
-                           <FontAwesomeIcon key={idx} icon={icon} className="w-6 h-6" />
-                        ))}
-                     </div>
                   </div>
+               </div>
+
+               {/* Project Highlights */}
+               <ul className="mt-3 list-disc list-inside text-sm text-gray-700">
+                  {exp.projects.map((project, idx) => (
+                     <li key={idx}>{project}</li>
+                  ))}
+               </ul>
+
+               {/* Technologies Used */}
+               <div className="flex flex-wrap gap-3 mt-4 text-blue-600 text-lg">
+                  {exp.technologies.map((icon, idx) => (
+                     <FontAwesomeIcon key={idx} icon={icon} className="w-6 h-6" />
+                  ))}
                </div>
             </div>
          ))}
       </div>
+
+
    );
 };
 
