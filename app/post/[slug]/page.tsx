@@ -22,13 +22,20 @@ export async function generateMetadata({ params }: PageProps) {
       },
    }
 }
+export async function generateStaticParams(): Promise<PageParams[]> {
+   // Replace with real data fetch if needed
+   return [
+      { slug: "nextjs" },
+      { slug: "typescript" },
+      { slug: "flutter" },
+   ];
+}
 
 
-const page = async ({ params,
+const Page = async ({ params,
 }: PageProps) => {
-   // const { slug } = await params;
    return <div>My Post page : {params.slug}</div>
 }
 
 
-export default page;
+export default Page;
