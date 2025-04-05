@@ -1,9 +1,12 @@
-interface Params {
-   params: {
-      slug: string;
-   }
+interface PageParams {
+   slug: string;
 }
-export async function generateMetadata({ params }: Params) {
+
+interface PageProps {
+   params: PageParams;
+}
+
+export async function generateMetadata({ params }: PageProps) {
    // make api calls here and get page data  and use data in tag below
 
    return {
@@ -22,7 +25,7 @@ export async function generateMetadata({ params }: Params) {
 
 
 const page = async ({ params,
-}: Params) => {
+}: PageProps) => {
    // const { slug } = await params;
    return <div>My Post page : {params.slug}</div>
 }
