@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mrinaljain.com"),
-  title: "Mrinal Jain | Tech Consultant, Speaker & Developer",
+  metadataBase: new URL("https://mrinaljain.com/"),
+  title: { default: "Mrinal Jain | Tech Consultant, Speaker & Developer", template: '%s | Tech Consultant, Speaker & Developer' },
   description: "Tech Consultant, Developer, and Speaker with expertise in Flutter, React, and SaaS applications. Explore my projects, talks, and insights.",
   keywords: "Mrinal Jain, Tech Consultant, Flutter Developer, React Developer, Engineering Manager, Tech Speaker, Software Engineer",
   applicationName: "Mrinal Jain",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   creator: "Mrinal Jain",
   publisher: "Mrinal Jain",
   alternates: {
-    canonical: "https://mrinaljain.com",
+    canonical: "https://mrinaljain.com/",
   },
   icons: {
     icon: "/favicon.ico",
@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mrinal Jain | Tech Consultant, Speaker & Developer",
     description: "Tech Consultant, Developer, and Speaker with expertise in Flutter, React, and SaaS applications. Explore my projects, talks, and insights",
-    url: "https://mrinaljain.com",
-    siteName: "Mrinal Jain",
+    url: "https://mrinaljain.com/",
+    siteName: "Mrinal Jain - Portfolio",
     type: "website",
-    images: [{ url: "https://mrinaljain.com/og-image.JPG", width: 1200, height: 630 }],
+    locale: "en_US",
   },
   formatDetection: {
     telephone: false,
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "0e75-VwaqN5FEq06g4S0sJ5JVbV6OK5WShoxiy2Y2Fk",
-    yandex: "yandex-site-verification-code"
+    yandex: "63db5177f1385edc"
   },
   twitter: {
     card: "summary_large_image",
     site: "@mrinal_geek",
     creator: "@mrinal_geek",
-    images: "https://yourwebsite.com/og-image.JPG",
+    images: "https://yourwebsite.com/oprngraph-image.jpeg",
   },
 };
 
