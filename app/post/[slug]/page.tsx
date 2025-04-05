@@ -1,12 +1,11 @@
-interface PageParams {
-   slug: string;
-}
+import { Metadata } from "next"
 
-interface PageProps {
-   params: PageParams;
+type Props = {
+   params: {
+      slug: string
+   }
 }
-
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
    // make api calls here and get page data  and use data in tag below
 
    return {
@@ -22,18 +21,9 @@ export async function generateMetadata({ params }: PageProps) {
       },
    }
 }
-export async function generateStaticParams(): Promise<PageParams[]> {
-   // Replace with real data fetch if needed
-   return [
-      { slug: "nextjs" },
-      { slug: "typescript" },
-      { slug: "flutter" },
-   ];
-}
 
 
-const Page = ({ params,
-}: PageProps) => {
+const Page = async ({ params }: Props) => {
    return <div>My Post page : {params.slug}</div>
 }
 
