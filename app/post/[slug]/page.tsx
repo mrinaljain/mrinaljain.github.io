@@ -1,19 +1,19 @@
-// app/post/[slug]/page.tsx
+import { Metadata } from "next";
 
 type Props = {
-   params: {
-      slug: string
-   }
-}
+   params: Promise<{ slug: string }>;
+};
 
-export async function generateMetadata({ params }: Props) {
+
+export async function generateMetadata({ params, }: Props): Promise<Metadata> {
+   const pageSlug = (await params).slug;
    return {
-      title: `#${params.slug}`,
-      description: `Talks with the tag ${params.slug}`,
+      title: `#${pageSlug}`,
+      description: `Talks with the tag ${pageSlug}`,
       openGraph: {
-         title: `#${params.slug}`,
-         description: `Talks with the tag ${params.slug}`,
-         url: `https://mrinaljain.com/${params.slug}`,
+         title: `#${pageSlug}`,
+         description: `Talks with the tag ${pageSlug}`,
+         url: `https://mrinaljain.com/${pageSlug}`,
          siteName: "Mrinal Jain - Portfolio",
          type: "website",
          locale: "en_US",
@@ -21,10 +21,9 @@ export async function generateMetadata({ params }: Props) {
    }
 }
 
-// ✅ FIXED HERE
-const Page = async (props: Props) => {
-   const { params } = props;
-   return <div>My Post page : {params.slug}</div>;
+const Page = async ({ params, }: Props) => {
+   const pageslug = (await params).slug;
+   return <div>My Post page : {pageslug}</div>;
 };
 
 export default Page;
