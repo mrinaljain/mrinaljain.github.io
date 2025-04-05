@@ -32,8 +32,9 @@ export async function generateStaticParams(): Promise<PageParams[]> {
 }
 
 
-const Page = async ({ params,
-}: PageProps) => {
+const Page = async (props: PageProps) => {
+   const { params } = props;
+
    return <div>My Post page : {params.slug}</div>
 }
 
