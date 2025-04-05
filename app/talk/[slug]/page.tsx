@@ -1,20 +1,20 @@
-interface PageParams {
-   slug: string;
-}
+import { Metadata } from "next";
 
-interface PageProps {
-   params: PageParams;
-}
+type Props = {
+   params: Promise<{ slug: string }>;
+};
 
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params, }: Props): Promise<Metadata> {
+   const pageSlug = (await params).slug;
+
    return {
-      title: `#${params.slug}`,
-      description: `Talks with the tag ${params.slug}`,
+      title: `#${pageSlug}`,
+      description: `Talks with the tag ${pageSlug}`,
       openGraph: {
-         title: `#${params.slug}`,
-         description: `Talks with the tag ${params.slug}`,
-         url: `https://mrinaljain.com/${params.slug}`,
+         title: `#${pageSlug}`,
+         description: `Talks with the tag ${pageSlug}`,
+         url: `https://mrinaljain.com/${pageSlug}`,
          siteName: "Mrinal Jain - Portfolio",
          type: "website",
          locale: "en_US",
@@ -23,11 +23,10 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 
-const Page = async ({ params,
-}: PageProps) => {
-   // const { slug } = await params;
-   return <div>My Post: {params.slug}</div>
-}
+const Page = async ({ params, }: Props) => {
+   const pageslug = (await params).slug;
+   return <div>My Post page : {pageslug}</div>;
+};
 
 
 export default Page;
