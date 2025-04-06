@@ -4,12 +4,13 @@ import {
    faReact,
    faNodeJs,
    faHtml5,
-   faCss3,
+   faCss,
    faAws,
    faGitAlt,
-   faDocker,
+   faAngular,
    faBootstrap,
-   faPython,
+   faDartLang,
+   faFlutter,
    IconDefinition
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
@@ -24,9 +25,6 @@ interface Experience {
    technologies: IconDefinition[];
 }
 const ExperienceTimeline = () => {
-
-
-
    const experienceData: Experience[] = [
       {
          company: "AMEX",
@@ -41,7 +39,7 @@ const ExperienceTimeline = () => {
             "Built CI/CD pipelines for 6 platforms, reducing release time by 40% and increasing release frequency by 30%.",
             "Implemented a microservices architecture with NodeJS, Express, and MongoDB, cutting app response time by 20%."
          ],
-         technologies: [faReact, faJs, faNodeJs, faAws, faGitAlt]
+         technologies: [faReact, faJs, faNodeJs, faGitAlt]
 
       },
       {
@@ -57,7 +55,7 @@ const ExperienceTimeline = () => {
             "Engineered an in-house payment aggregator, boosting successful payments by 35% and reducing drop-off by 20%.",
             "Built an A/B testing mechanism for payment flows, trailers, and thumbnails, increasing conversion rates by 25%."
          ],
-         technologies: [faReact, faDocker, faNodeJs, faAws, faGitAlt]
+         technologies: [faFlutter, faReact, faNodeJs, faAws, faGitAlt, faDartLang]
 
       },
       {
@@ -86,7 +84,7 @@ const ExperienceTimeline = () => {
             "Integrated Arya’s KYC API for seamless ID verification, streamlining the KYC process.",
             "Redesigned a cheque scanning UI, improving manual processing efficiency by 40%."
          ],
-         technologies: [faReact, faNodeJs, faAws, faGitAlt]
+         technologies: [faAngular, faNodeJs, faGitAlt, faHtml5, faBootstrap, faCss,]
 
       },
       {
@@ -100,17 +98,19 @@ const ExperienceTimeline = () => {
             "Built HTML-based email marketing templates, improving top-of-funnel conversion.",
             "Enhanced user interaction features for comments, increasing time spent on the platform by 30%."
          ],
-         technologies: [faReact, faPython, faBootstrap, faHtml5, faCss3, faNodeJs, faAws, faGitAlt]
+         technologies: [faHtml5, faBootstrap, faCss, faGitAlt]
 
       }
    ];
 
    return (
-      <div className="flex flex-col items-center gap-6 p-6">
+      <div className="relative flex flex-col items-center gap-10 p-6">
+         <h2 className="text-3xl font-semibold text-center mb-8">Experience</h2>
+
          {experienceData.map((exp, index) => (
             <div
                key={index}
-               className="w-full md:w-2/3 bg-white shadow-lg rounded-lg p-5 transition-transform duration-300"
+               className="relative w-full md:w-2/3 bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:scale-[1.01] hover:shadow-[-10px_10px_15px_-4px_rgba(0,0,0,0.25)]"
             >
                {/* Company Info Section */}
                <div className="flex items-center gap-4">
@@ -130,9 +130,9 @@ const ExperienceTimeline = () => {
                </ul>
 
                {/* Technologies Used */}
-               <div className="flex flex-wrap gap-3 mt-4 text-blue-600 text-lg">
+               <div className="flex flex-wrap gap-4 mt-4 text-blue-600 text-lg">
                   {exp.technologies.map((icon, idx) => (
-                     <FontAwesomeIcon key={idx} icon={icon} className="w-6 h-6" />
+                     <FontAwesomeIcon key={idx} icon={icon} className="w-7 h-7" />
                   ))}
                </div>
             </div>

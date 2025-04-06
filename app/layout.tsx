@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mrinaljain.com/"),
-  title: { default: "Mrinal Jain | Tech Consultant, Speaker & Developer", template: ' Mrinal Jain | %s' },
+  title: { default: "Mrinal Jain | Introvert Influencer", template: ' Mrinal Jain | %s' },
   description: "Tech Consultant, Developer, and Speaker with expertise in Flutter, React, and SaaS applications. Explore my projects, talks, and insights.",
-  keywords: "Mrinal Jain, Tech Consultant, Flutter Developer, React Developer, Engineering Manager, Tech Speaker, Software Engineer",
+  keywords: "Mrinal Jain, Introvert Influencer, Tech Consultant, Flutter Developer, React Developer, Engineering Manager, Tech Speaker, Software Engineer",
   applicationName: "Mrinal Jain",
   authors: [{ name: "Mrinal Jain", url: "https://www.linkedin.com/in/mrinaljain/" }],
   robots: { index: true, follow: true },

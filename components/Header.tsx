@@ -33,7 +33,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navbar */}
-            <nav className="hidden md:flex space-x-8 text-white text-lg font-semibold drop-shadow-md">
+            <nav className="hidden md:flex space-x-8 text-white text-lg font-semibold drop-shadow-md invisible">
                <Link href="#about" className="hover:text-gray-300">About</Link>
                <Link href="#experience" className="hover:text-gray-300">Experience</Link>
                <Link href="#projects" className="hover:text-gray-300">Talks</Link>

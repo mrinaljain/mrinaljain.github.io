@@ -57,6 +57,7 @@ function IntroVideo() {
            className="absolute inset-0 w-full h-full object-cover">
            <source src="/mrinal_intro.mp4" type="video/mp4">
            </source>
+           <meta itemProp="name" content="Mrinal Jain | Introvert Influencer"></meta>
         </video>
         {/* Overlay for Better Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/10"></div>
@@ -82,7 +83,7 @@ function IntroVideo() {
 
         {/* Animated Overlay Text */}
         <div className="absolute bottom-10 left-10 text-white text-2xl font-bold">
-           <p className="animate-pulse">Bringing Ideas to Life ✨</p>
+           <h2 className="animate-pulse">Introvert Influencer ✨</h2>
         </div>
      </div>
 
