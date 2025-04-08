@@ -1,7 +1,7 @@
 "use client";
 
 import React, { JSX } from 'react'
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 interface SocialLink {
    id: string;
@@ -14,6 +14,7 @@ const socialLinks: SocialLink[] = [
    { id: "github", href: "https://github.com/mrinaljain", icon: <FaGithub /> },
    { id: "twitter", href: "https://twitter.com/mrinaljain", icon: <FaTwitter /> },
    { id: "email", href: "mailto:jain.mrinal140@gmail.com", icon: <FaEnvelope /> },
+   { id: "facebook", href: "https://www.facebook.com/TheIntrovertInfluencer/", icon: <FaFacebook /> },
 ];
 function SocialLinks() {
   return (
