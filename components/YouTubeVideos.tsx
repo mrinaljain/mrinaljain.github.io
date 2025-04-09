@@ -1,19 +1,11 @@
 "use client"
 import { useEffect, useState } from "react";
-import { youtubeVideos } from "../app/videos/data";
+import { YoutubeVideo, youtubeVideos } from "../data/youtubeVideos";
 import Image from "next/image";
-// import Link from "next/link";
 
-// Define the TypeScript interface for video data
-interface Video {
-   id: string;
-   title: string;
-   thumbnail: string;
-   description: string;
-   publishedAt: string;
-}
+
 export default function YouTubeVideos() {
-   const [videos, setVideos] = useState<Video[]>([]);
+   const [videos, setVideos] = useState<YoutubeVideo[]>([]);
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState("");
 

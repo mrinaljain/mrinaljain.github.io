@@ -3,39 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { NewsItem, newsItems } from "@/data/newsItems";
 
 // Define TypeScript interface for news items
-interface NewsItem {
-   id: number;
-   title: string;
-   image: string;
-   date: string;
-   link: string;
-}
 
-const coverages: NewsItem[] = [
-   {
-      id: 1,
-      title: "Mrinal Jain Featured in TechCrunch",
-      image: "/newspaper1.jpg",
-      date: "March 10, 2024",
-      link: "https://techcrunch.com/article",
-   },
-   {
-      id: 2,
-      title: "Interview with The Economic Times",
-      image: "/newspaper2.jpg",
-      date: "February 5, 2024",
-      link: "https://economictimes.com/interview",
-   },
-   {
-      id: 3,
-      title: "Forbes 30 Under 30 Feature",
-      image: "/newspaper3.jpg",
-      date: "January 15, 2024",
-      link: "https://forbes.com/feature",
-   },
-];
 
 export default function NewspaperSection() {
    const [selectedNews, setSelectedNews] = useState<NewsItem | undefined>(undefined);
@@ -47,7 +18,7 @@ export default function NewspaperSection() {
          </h2>
 
          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-            {coverages.map((news) => (
+            {newsItems.map((news) => (
                <div
                   key={news.id}
                   className="group cursor-pointer bg-white shadow-lg rounded-lg overflow-hidden transition hover:shadow-xl"

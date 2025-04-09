@@ -1,4 +1,11 @@
-export const youtubeVideos = [
+export interface YoutubeVideo {
+   id: string;
+   title: string;
+   thumbnail: string;
+   description: string;
+   publishedAt: string;
+}
+export const youtubeVideos:YoutubeVideo[] = [
    {
       id: "iIbEc5-jKiU",
       title: "The Heart of Tech: Mrinal Jain's Impact on Indian IT",
