@@ -51,7 +51,7 @@ export const structuredResumeJsonLd = {
       "Featured in Firebase Showcase – Google",
       "Founding Organizer – Wittyhacks (Central India’s first 36hr Hackathon)"
    ],
-   "skill": [
+   "skills": [
       "React",
       "Flutter",
       "Node.js",
