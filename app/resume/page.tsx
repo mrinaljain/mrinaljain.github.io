@@ -15,7 +15,7 @@ export default function Resume() {
          <Script
             id="jsonld-resume"
             type="application/ld+json"
-            strategy="afterInteractive"
+            strategy="beforeInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredResumeJsonLd) }}
          />
 

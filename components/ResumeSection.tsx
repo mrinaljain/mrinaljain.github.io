@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
+import 'bootstrap/dist/css/bootstrap.css';
+import './Resume.css'
 import Image from 'next/image'
 
 export default function ResumeSection() {
-  return (
-     <div className="max-w-screen-xl mx-auto px-4 py-8">
+   return (
         <div className="container">
            <div className="row">
               <div className="col-xs-12">
-                 <div id="photo-header" className="text-center">
+              <div id="photoHeader" className="text-center">
                     {/* PHOTO (AVATAR) */}
                     <div id="photo">
                        <Image
@@ -934,7 +935,6 @@ export default function ResumeSection() {
            </div>
         </div>
 
-     </div>
   )
 }
 
