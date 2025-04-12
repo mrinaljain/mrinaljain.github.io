@@ -14,21 +14,33 @@ export default function NotFound() {
          />
 
          <h1 className="text-4xl font-bold text-gray-800 mb-2">404 - Not Found</h1>
-         <p className="text-gray-600 mb-6">Whoops! That page doesn’t exist.</p>
+         <p className="text-gray-400 mb-6 text-lg italic">
+            “Not all those who wander are lost… but this page is.”
+         </p>
 
-         <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/" className="px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-               Go to Home
+         <div className="flex flex-wrap justify-center gap-4">
+            <Link
+               href="/"
+               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded transition-all duration-200"
+            >
+               🏠 Home
             </Link>
-            {/* <Link href="/search" className="px-5 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-               Search
-            </Link> */}
-            {/* <Link href="/help" className="px-5 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-               Help
-            </Link> */}
-            <Link href="/contact" className="px-5 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
-               Contact
+            <Link
+               href="/contact"
+               className="bg-gray-700 hover:bg-gray-600 text-white px-5 py-2 rounded transition-all duration-200"
+            >
+               📩 Contact
             </Link>
+            <Link
+               href="/search"
+               className="bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded transition-all duration-200"
+            >
+               🔍 Search
+            </Link>
+         </div>
+
+         <div className="absolute bottom-6 text-sm text-gray-600">
+            – The Introvert Influencer
          </div>
       </div>
    );
