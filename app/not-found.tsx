@@ -1,4 +1,3 @@
-// app/not-found.tsx (if using App Router)
 
 import Link from "next/link";
 import Image from "next/image";
@@ -7,7 +6,7 @@ export default function NotFound() {
    return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-6 text-center">
          <Image
-            src="/images/ghibli-removebg.png" // <-- Replace with your own image path
+            src="/images/404.png" // <-- Replace with your own image path
             alt="404 Not Found"
             width={300}
             height={300}
