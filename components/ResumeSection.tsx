@@ -743,19 +743,11 @@ export default function ResumeSection() {
                     </h2>
                     <blockquote>
                        <div>
-                          Thomas was hired as a lead developer and, upon the leaving of our
-                          co-founder took over as CTO of Earbits. Thomas is, hands down, one
-                          of those A Players you hear of companies dying to hire. He is
-                          incredibly smart, not just at code but about everything from
-                          classical music to Chinese language and culture. Thomas is great to
-                          work with and, as a well established contributor to open source
-                          projects and several successful ventures, commands the respect of
-                          engineers at all levels. I would suggest doing anything you can to
-                          have him on your team.
+                        I’ve had the pleasure of working with Mrinal Jain at Wittyfeed and the Facebook Developer Circle. He is excellent in application development and great public speaker. As my mentor, Mrinal demonstrated impressive leadership, team management and planning skills. He’s also a vital contributor to the developer community in Central India and is truly an asset to any team. I highly recommend him.
                        </div>
                        <footer>
-                          <a href="" target="_blank">
-                             Joey Flores, Co-founder and CEO of Earbits, Inc.
+                        <a href="https://www.linkedin.com/in/bhavinjawade/" target="_blank">
+                           Bhavin Jawade, Research Scientist Netflix, Inc.
                           </a>
                        </footer>
                     </blockquote>
