@@ -388,7 +388,7 @@ export default function ResumeSection() {
                        <div className="icon pull-left text-center">
                           <span className="fas fa-map-marker fa-fw" />
                        </div>
-                     <div className="title only  pull-right">NewYork US</div>
+                     <div className="title only  pull-right">New York US</div>
                     </div>
                     <div className="contact-item">
                        <div className="icon pull-left text-center">
