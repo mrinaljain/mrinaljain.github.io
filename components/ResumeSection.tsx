@@ -36,12 +36,12 @@ export default function ResumeSection() {
                        <i className="fas fa-user ico" /> About
                     </h2>
                     <p>
-                       I'm a full stack web developer who can build apps from the ground up.
+                     I'm a full stack web developer who can build web and mobile apps from the ground up.
                        I've worked mostly at startups so I am used to wearing many hats. I am
                        a very product focused developer who prioritizes user feedback first
-                       and foremost. I'm generally very flexible when investigating new
-                       roles. My publications and volunteer sections are bullshit for the
-                       purpose of showing the this theme.{" "}
+                     and foremost. I'm generally very flexible when investigating new roles.
+                     I'm skilled in building developer communities, creating technical content, and delivering workshops, demos, and
+                     open-source contributions.
                     </p>
                  </div>
                  {/* WORK EXPERIENCE */}
@@ -53,15 +53,15 @@ export default function ResumeSection() {
                        <div className="row">
                           <div className="details">
                              <div className="where">
-                                Misc Companies
-                                <div className="pull-right">Melbourne</div>
+                              AMEX
+                              <div className="pull-right">Phoinex</div>
                              </div>
-                             <div className="year">May 2020 – Present</div>
+                           <div className="year">Apr 2024 – Present</div>
                           </div>
                        </div>
                        <div className="row">
                           <div className="job-details col-xs-11">
-                             <div className="profession">Product Engineer</div>
+                           <div className="profession">Software Developer</div>
                              <div className="description">
                                 Over the past several years, I've worked at various roles and
                                 companies. Mostly early stage startups, doing full stack product
@@ -81,29 +81,44 @@ export default function ResumeSection() {
                        <div className="row">
                           <div className="details">
                              <div className="where">
-                                Tokenized
-                                <div className="pull-right">Melbourne</div>
+                              STAGE
+                              <div className="pull-right">NOIDA</div>
                              </div>
-                             <div className="year">May 2020 – May 2021</div>
+                           <div className="year">Mar 2019 – Mar 2024</div>
                           </div>
                        </div>
                        <div className="row">
                           <div className="job-details col-xs-11">
-                             <div className="profession">Senior Javascript Developer</div>
-                             <div className="description">
-                                Tokenized is a Bitcoin wallet for issuing, managing and trading
-                                digital tokens. I built out the front end which was packaged as
-                                an electron app. It was a difficult frontend to build because we
-                                store the users keys locally and used them to sign transactions
-                                and contracts.
-                                <div className="highlights">Highlights</div>
-                                <ul className="list-group">
-                                   <li className="list-group-item">React</li>
-                                   <li className="list-group-item">Redux</li>
-                                   <li className="list-group-item">SCSS</li>
-                                   <li className="list-group-item">Product</li>
-                                </ul>
-                             </div>
+                           <div className="profession">Engineering Manager</div>
+                           <div className="description">
+                              Tokenized is a Bitcoin wallet for issuing, managing and trading
+                              digital tokens. I built out the front end which was packaged as
+                              an electron app. It was a difficult frontend to build because we
+                              store the users keys locally and used them to sign transactions
+                              and contracts.
+                              <div className="highlights">Highlights</div>
+                              <ul className="list-group">
+                                 <li className="list-group-item">React</li>
+                                 <li className="list-group-item">Redux</li>
+                                 <li className="list-group-item">SCSS</li>
+                                 <li className="list-group-item">Product</li>
+                              </ul>
+                           </div>
+                           <div className="profession">Engineering Manager</div>
+                           <div className="description">
+                              Tokenized is a Bitcoin wallet for issuing, managing and trading
+                              digital tokens. I built out the front end which was packaged as
+                              an electron app. It was a difficult frontend to build because we
+                              store the users keys locally and used them to sign transactions
+                              and contracts.
+                              <div className="highlights">Highlights</div>
+                              <ul className="list-group">
+                                 <li className="list-group-item">React</li>
+                                 <li className="list-group-item">Redux</li>
+                                 <li className="list-group-item">SCSS</li>
+                                 <li className="list-group-item">Product</li>
+                              </ul>
+                           </div>
                           </div>
                        </div>
                     </div>
@@ -111,10 +126,10 @@ export default function ResumeSection() {
                        <div className="row">
                           <div className="details">
                              <div className="where">
-                                Blockbid
-                                <div className="pull-right">Melbourne</div>
+                              WittyFeed
+                              <div className="pull-right">Indore</div>
                              </div>
-                             <div className="year">March 2018 – January 2020</div>
+                           <div className="year">Feb 2017 – Feb 2019</div>
                           </div>
                        </div>
                        <div className="row">
@@ -147,8 +162,8 @@ export default function ResumeSection() {
                     <div className="job clearfix">
                        <div className="row">
                           <div className="details">
-                             <div className="where">Listium</div>
-                             <div className="year">January 2016 – January 2018</div>
+                           <div className="where">Arya.ai</div>
+                           <div className="year">April 2016 – January 2017</div>
                           </div>
                        </div>
                        <div className="row">
@@ -181,8 +196,8 @@ export default function ResumeSection() {
                     <div className="job clearfix">
                        <div className="row">
                           <div className="details">
-                             <div className="where">Electronic Frontier Foundation</div>
-                             <div className="year">April 2014 – January 2016</div>
+                           <div className="where">YallaSpree</div>
+                           <div className="year">January 2015 – April 2016</div>
                           </div>
                        </div>
                        <div className="row">
@@ -213,8 +228,8 @@ export default function ResumeSection() {
                     <div className="job clearfix">
                        <div className="row">
                           <div className="details">
-                             <div className="where">Earbits</div>
-                             <div className="year">March 2013 – January 2015</div>
+                           <div className="where">WittyHacks</div>
+                           <div className="year">March 2018 – Present</div>
                           </div>
                        </div>
                        <div className="row">
@@ -241,145 +256,8 @@ export default function ResumeSection() {
                           </div>
                        </div>
                     </div>
-                    <div className="job clearfix">
-                       <div className="row">
-                          <div className="details">
-                             <div className="where">JSON Resume</div>
-                             <div className="year">April 2014 – Present</div>
-                          </div>
-                       </div>
-                       <div className="row">
-                          <div className="job-details col-xs-11">
-                             <div className="profession">Founder</div>
-                             <div className="description">
-                                JSON Resume is a community driven open source initiative to
-                                create a JSON based standard for resumes. There is no reason why
-                                there can't be a common standard for writing a resume that can
-                                be extended with an ecosystem of open source tools.
-                                <div className="highlights">Highlights</div>
-                                <ul className="list-group">
-                                   <li className="list-group-item">
-                                      This resume is built with JSON Resume
-                                   </li>
-                                   <li className="list-group-item">Over 3000 stars on Github</li>
-                                   <li className="list-group-item">
-                                      Community developed themes
-                                   </li>
-                                   <li className="list-group-item">
-                                      Tens of thousands of users
-                                   </li>
-                                </ul>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div className="job clearfix">
-                       <div className="row">
-                          <div className="details">
-                             <div className="where">Taskforce.is</div>
-                             <div className="year">June 2013 – January 2016</div>
-                          </div>
-                       </div>
-                       <div className="row">
-                          <div className="job-details col-xs-11">
-                             <div className="profession">Developer</div>
-                             <div className="description">
-                                Worked on many politically charged campaigns against mass
-                                surveillance. Not only technically challenging work but also a
-                                lot of networking and getting my hands dirty with politics. Our
-                                biggest project was "TheDayWeFightBack"..
-                                <div className="highlights">Highlights</div>
-                                <ul className="list-group">
-                                   <li className="list-group-item">
-                                      Generated 37,000,000 banner views
-                                   </li>
-                                   <li className="list-group-item">
-                                      100, 000 phone calls to congress
-                                   </li>
-                                   <li className="list-group-item">500, 000 emails</li>
-                                   <li className="list-group-item">250, 000 signatures</li>
-                                </ul>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div className="job clearfix">
-                       <div className="row">
-                          <div className="details">
-                             <div className="where">Drone Hire</div>
-                             <div className="year">January 2013 – Present</div>
-                          </div>
-                       </div>
-                       <div className="row">
-                          <div className="job-details col-xs-11">
-                             <div className="profession">Co-Founder</div>
-                             <div className="description">
-                                An international directory of civilian drone / UAV operators for
-                                hire. Services include aerial photography, aerial video,
-                                mapping, surveying, precision agriculture, real estate
-                                photography, remote inspections and infrared imaging. Our plan
-                                is to be the place to go when looking for UAV/Drone services.
-                                The website is built in Backbone.js and API is built with
-                                Node.js and Postgres.
-                                <div className="highlights">Highlights</div>
-                                <ul className="list-group">
-                                   <li className="list-group-item">
-                                      The site and blog combined have managed to receive over
-                                      200,000 visitors in 2014.
-                                   </li>
-                                </ul>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div className="job clearfix">
-                       <div className="row">
-                          <div className="details">
-                             <div className="where">BackboneTutorials.com</div>
-                             <div className="year">January 2011 – January 2014</div>
-                          </div>
-                       </div>
-                       <div className="row">
-                          <div className="job-details col-xs-11">
-                             <div className="profession">Founder</div>
-                             <div className="description">
-                                I write tutorials and blog post regarding the popular Javascript
-                                framework Backbone.js. The tutorials cover a range of topics
-                                regarding front end development aimed at beginners, experts and
-                                anyone in between.
-                                <div className="highlights">Highlights</div>
-                                <ul className="list-group">
-                                   <li className="list-group-item">
-                                      Over two million unique visitors a year
-                                   </li>
-                                   <li className="list-group-item">25,000+ ebook downloads</li>
-                                   <li className="list-group-item">300,000+ Youtube views</li>
-                                </ul>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div className="job clearfix">
-                       <div className="row">
-                          <div className="details">
-                             <div className="where">Ephox</div>
-                             <div className="year">January 2011 – June 2012</div>
-                          </div>
-                       </div>
-                       <div className="row">
-                          <div className="job-details col-xs-11">
-                             <div className="profession">Front-end Developer</div>
-                             <div className="description">
-                                Ephox is a worldwide company who is heavily involved with the
-                                development of TinyMce and enterprise editors. My primary role
-                                included building front-end widgets and applications. Worked on
-                                a major product using Backbone.js as a base. Heavily involved in
-                                UI/UX design and wire-framing. Also spend a lot of time
-                                designing API specifications and documentation.
-                             </div>
-                          </div>
-                       </div>
-                    </div>
+
+
                  </div>
                  {/* AWARDS */}
                  <div className="box">
@@ -510,13 +388,13 @@ export default function ResumeSection() {
                        <div className="icon pull-left text-center">
                           <span className="fas fa-map-marker fa-fw" />
                        </div>
-                       <div className="title only  pull-right">Melbourne AU</div>
+                     <div className="title only  pull-right">New York US</div>
                     </div>
                     <div className="contact-item">
                        <div className="icon pull-left text-center">
                           <span className="fas fa-phone fa-fw" />
                        </div>
-                       <div className="title only pull-right">0411021021</div>
+                     <div className="title only pull-right">732-829-8338</div>
                     </div>
                     <div className="contact-item">
                        <div className="icon pull-left text-center">
@@ -524,7 +402,7 @@ export default function ResumeSection() {
                        </div>
                        <div className="title only pull-right">
                           <a href="mailto:thomasalwyndavis@gmail.com" target="_blank">
-                             thomasalwyndavis@gmail.com
+                           jain.mrinal140@gmail.com
                           </a>
                        </div>
                     </div>
@@ -533,8 +411,8 @@ export default function ResumeSection() {
                           <span className="fas fa-globe fa-fw" />
                        </div>
                        <div className="title only pull-right">
-                          <a href="https://lordajax.com" target="_blank">
-                             https://lordajax.com
+                        <a href="https://mrinaljain.com" target="_blank">
+                           https://mrinaljain.com
                           </a>
                        </div>
                     </div>
@@ -544,8 +422,8 @@ export default function ResumeSection() {
                        </div>
                        <div className="title pull-right">twitter</div>
                        <div className="description pull-right">
-                          <a href="https://twitter.com/ajaxdavis" target="_blank">
-                             ajaxdavis
+                        <a href="https://twitter.com/mrinal_geek" target="_blank">
+                           mrinal_geek
                           </a>
                        </div>
                     </div>
@@ -555,8 +433,8 @@ export default function ResumeSection() {
                        </div>
                        <div className="title pull-right">github</div>
                        <div className="description pull-right">
-                          <a href="https://github.com/thomasdavis" target="_blank">
-                             thomasdavis
+                        <a href="https://github.com/mrinaljain" target="_blank">
+                           mrinaljain
                           </a>
                        </div>
                     </div>
@@ -568,14 +446,14 @@ export default function ResumeSection() {
                     </h2>
                     <ul id="education" className="clearfix">
                        <li>
-                          <div className="year pull-left">2008 2009</div>
+                        <div className="year pull-left">2011 2015</div>
                           <div className="description pull-right">
-                             <h3>The University of Queensland</h3>
+                           <h3>Rajiv Gandhi Proudyogiki Vishwavidyalaya</h3>
                              <div className="where" />
                              <p>
-                                <i className="fas fa-graduation-cap ico" /> Bachelors
+                              <i className="fas fa-graduation-cap ico" /> Bachelors of Technology
                              </p>
-                             <p>Software Engineering (incomplete)</p>
+                           <p>Computer Science</p>
                           </div>
                        </li>
                     </ul>
@@ -865,19 +743,11 @@ export default function ResumeSection() {
                     </h2>
                     <blockquote>
                        <div>
-                          Thomas was hired as a lead developer and, upon the leaving of our
-                          co-founder took over as CTO of Earbits. Thomas is, hands down, one
-                          of those A Players you hear of companies dying to hire. He is
-                          incredibly smart, not just at code but about everything from
-                          classical music to Chinese language and culture. Thomas is great to
-                          work with and, as a well established contributor to open source
-                          projects and several successful ventures, commands the respect of
-                          engineers at all levels. I would suggest doing anything you can to
-                          have him on your team.
+                        I’ve had the pleasure of working with Mrinal Jain at Wittyfeed and the Facebook Developer Circle. He is excellent in application development and great public speaker. As my mentor, Mrinal demonstrated impressive leadership, team management and planning skills. He’s also a vital contributor to the developer community in Central India and is truly an asset to any team. I highly recommend him.
                        </div>
                        <footer>
-                          <a href="" target="_blank">
-                             Joey Flores, Co-founder and CEO of Earbits, Inc.
+                        <a href="https://www.linkedin.com/in/bhavinjawade/" target="_blank">
+                           Bhavin Jawade, Research Scientist Netflix, Inc.
                           </a>
                        </footer>
                     </blockquote>
