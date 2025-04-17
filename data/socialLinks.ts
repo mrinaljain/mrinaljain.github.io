@@ -1,4 +1,3 @@
-import { JSX } from 'react';
 import { IconType } from 'react-icons';
 import { FaEnvelope, FaGithub, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 

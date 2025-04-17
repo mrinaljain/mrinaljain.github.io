@@ -2,6 +2,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './Resume.css'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBuildingColumns, faBullseye, faCertificate, faCodeBranch, faHeart, faListCheck, faSquareCheck, faSuitcase, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 export default function ResumeSection() {
    return (
@@ -32,8 +34,9 @@ export default function ResumeSection() {
               <div className="col-xs-12 col-sm-7">
                  {/* ABOUT ME */}
                  <div className="box">
-                    <h2>
-                       <i className="fas fa-user ico" /> About
+                  <h2 className=''>
+                     <FontAwesomeIcon icon={faUser} className="inline-block w-5 h-5" />
+                     About
                     </h2>
                     <p>
                      I'm a full stack web developer who can build web and mobile apps from the ground up.
@@ -47,7 +50,7 @@ export default function ResumeSection() {
                  {/* WORK EXPERIENCE */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-suitcase ico" /> Work Experience
+                     <FontAwesomeIcon icon={faSuitcase} className="inline-block w-5 h-5" />
                     </h2>
                     <div className="job clearfix">
                        <div className="row">
@@ -262,7 +265,7 @@ export default function ResumeSection() {
                  {/* AWARDS */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-certificate ico" /> Awards
+                     <FontAwesomeIcon icon={faCertificate} className='inline-block w-5 h-5' /> Awards
                     </h2>
                     <ul id="awards" className="clearfix">
                        <li>
@@ -283,7 +286,7 @@ export default function ResumeSection() {
                  {/* VOLUNTEER */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-users ico" /> Volunteer
+                     <FontAwesomeIcon icon={faUsers} className="inline-block w-5 h-5" /> Volunteer
                     </h2>
                     <div className="job clearfix">
                        <div className="row">
@@ -321,7 +324,7 @@ export default function ResumeSection() {
                  {/* PROJECTS */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-code-branch ico" /> Projects
+                     <FontAwesomeIcon icon={faCodeBranch} className='inline-block w-5 h-5' /> Projects
                     </h2>
                     <ul className="list-group">
                        <li className="list-group-item">
@@ -382,7 +385,8 @@ export default function ResumeSection() {
                  {/* CONTACT */}
                  <div className="box clearfix">
                     <h2>
-                       <i className="fas fa-bullseye ico" /> Contact
+                     <FontAwesomeIcon icon={faBullseye} className="inline-block w-5 h-5" />
+                     Contact
                     </h2>
                     <div className="contact-item">
                        <div className="icon pull-left text-center">
@@ -442,7 +446,8 @@ export default function ResumeSection() {
                  {/* EDUCATION */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-university ico" /> Education
+                     <FontAwesomeIcon icon={faBuildingColumns} className="inline-block w-5 h-5" />
+                     Education
                     </h2>
                     <ul id="education" className="clearfix">
                        <li>
@@ -461,7 +466,8 @@ export default function ResumeSection() {
                  {/* SKILLS */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-tasks ico" /> Skills
+                     <FontAwesomeIcon icon={faListCheck} className="inline-block w-5 h-5" />
+                     Skills
                     </h2>
                     <div className="skills clearfix">
                        <div className="item-skills">
@@ -706,7 +712,7 @@ export default function ResumeSection() {
                  {/* HOBBIES */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-heart ico" /> Interests
+                     <FontAwesomeIcon icon={faHeart} className="inline-block w-5 h-5" /> Interests
                     </h2>
                     <div className="interests clearfix">
                        <div className="item-interests">Gardening</div>
@@ -739,7 +745,7 @@ export default function ResumeSection() {
                  </div>
                  <div className="box">
                     <h2>
-                       <i className="fas fa-check-square ico" /> References
+                     <FontAwesomeIcon icon={faSquareCheck} className="inline-block w-5 h-5" />References
                     </h2>
                     <blockquote>
                        <div>
