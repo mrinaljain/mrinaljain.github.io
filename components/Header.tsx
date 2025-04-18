@@ -2,11 +2,13 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
    const [isScrolled, setIsScrolled] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
-
+   const path = usePathname();
+   const active = path.split("/")[1];
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY > 100) {
@@ -17,8 +19,10 @@ export default function Header() {
       };
 
       window.addEventListener("scroll", handleScroll);
+      console.log("path", path);
+
       return () => window.removeEventListener("scroll", handleScroll);
-   }, []);
+   }, [path]);
 
    return (
       <header
@@ -33,11 +37,11 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navbar */}
-            <nav className="hidden md:flex space-x-8 text-white text-lg font-semibold drop-shadow-md invisible">
-               <Link href="#about" className="hover:text-gray-300">About</Link>
-               <Link href="#experience" className="hover:text-gray-300">Experience</Link>
-               <Link href="#projects" className="hover:text-gray-300">Talks</Link>
-               <Link href="#contact" className="hover:text-gray-300">Contact</Link>
+            <nav className="hidden md:flex space-x-8 text-white text-lg font-semibold drop-shadow-md">
+               <Link href="/" className={`hover:text-gray-300 ${active === '' ? "text-purple-400" : ""} `}>Home</Link>
+               <Link href="/projects" className="hover:text-gray-300">Projects</Link>
+               <Link href="/talks" className="hover:text-gray-300">Talks</Link>
+               <Link href="/resume" className="hover:text-gray-300">Resume</Link>
             </nav>
 
             {/* Mobile Menu Button */}
