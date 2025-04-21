@@ -1,39 +1,42 @@
 /* eslint-disable react/no-unescaped-entities */
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './Resume.css'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBuildingColumns, faBullseye, faCertificate, faCodeBranch, faEnvelope, faGlobe, faHeart, faListCheck, faLocationPin, faPhone, faSquareCheck, faSuitcase, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export default function ResumeSection() {
    return (
-        <div className="container">
-           <div className="row">
-              <div className="col-xs-12">
-              <div id="photoHeader" className="text-center">
+      <div className="mx-auto px-4 mt-[80px] mb-[15px] bg-white">
+         <div className="w-full">
+            <div className="text-center -mt-[75px]">
                     {/* PHOTO (AVATAR) */}
-                    <div id="photo">
+               <div id="photo" className="inline-block justify-center mb-4 w-[160px] h-[160px]  rounded-full overflow-hidden p-[5px] bg-[#334960]">
                        <Image
                           src="./mrinal_jain.jpeg"
-                          height={150}
-                          width={150}
+                     height={160}
+                     width={160}
                           alt="avatar"
+                     className="rounded-full border-4 border-gray-200 shadow-md"
                        />
                     </div>
-                    <div id="text-header">
-                       <h1>
+               <div id="textHeader">
+                  <h1 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug">
                           Mrinal Jain
                           <br />
-                          <span>Software Developer</span>
+                     <span className="text-base md:text-lg font-medium text-gray-500">Software Developer</span>
                        </h1>
                     </div>
                  </div>
-              </div>
-           </div>
-           <div className="row">
-              <div className="col-xs-12 col-sm-7">
+         </div>
+         <div className="flex flex-wrap -mx-2">
+            <div className="w-full sm:w-7/12 px-3.5">
                  {/* ABOUT ME */}
                  <div className="box">
-                    <h2>
-                       <i className="fas fa-user ico" /> About
+                  <h2 className=''>
+                     <FontAwesomeIcon icon={faUser} className="inline-block w-5 h-5" />
+                     About
                     </h2>
                     <p>
                      I'm a full stack web developer who can build web and mobile apps from the ground up.
@@ -47,14 +50,15 @@ export default function ResumeSection() {
                  {/* WORK EXPERIENCE */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-suitcase ico" /> Work Experience
+                     <FontAwesomeIcon icon={faSuitcase} className="inline-block w-5 h-5" />
+                     WORK EXPERIENCE
                     </h2>
                     <div className="job clearfix">
                        <div className="row">
                           <div className="details">
                              <div className="where">
                               AMEX
-                              <div className="pull-right">Phoinex</div>
+                              <div className="float-right">Phoinex</div>
                              </div>
                            <div className="year">Apr 2024 – Present</div>
                           </div>
@@ -82,7 +86,7 @@ export default function ResumeSection() {
                           <div className="details">
                              <div className="where">
                               STAGE
-                              <div className="pull-right">NOIDA</div>
+                              <div className="float-right">NOIDA</div>
                              </div>
                            <div className="year">Mar 2019 – Mar 2024</div>
                           </div>
@@ -127,7 +131,7 @@ export default function ResumeSection() {
                           <div className="details">
                              <div className="where">
                               WittyFeed
-                              <div className="pull-right">Indore</div>
+                              <div className="float-right">Indore</div>
                              </div>
                            <div className="year">Feb 2017 – Feb 2019</div>
                           </div>
@@ -262,12 +266,12 @@ export default function ResumeSection() {
                  {/* AWARDS */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-certificate ico" /> Awards
+                     <FontAwesomeIcon icon={faCertificate} className='inline-block w-5 h-5' /> Awards
                     </h2>
                     <ul id="awards" className="clearfix">
                        <li>
-                          <div className="year pull-left">October 2014</div>
-                          <div className="description pull-right">
+                        <div className="year float-left">October 2014</div>
+                        <div className="description float-right">
                              <h3>Fight For The Future</h3>
                              <p>
                                 <i className="fas fa-trophy ico" /> Defender of the Internet
@@ -283,7 +287,7 @@ export default function ResumeSection() {
                  {/* VOLUNTEER */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-users ico" /> Volunteer
+                     <FontAwesomeIcon icon={faUsers} className="inline-block w-5 h-5" /> Volunteer
                     </h2>
                     <div className="job clearfix">
                        <div className="row">
@@ -321,7 +325,7 @@ export default function ResumeSection() {
                  {/* PROJECTS */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-code-branch ico" /> Projects
+                     <FontAwesomeIcon icon={faCodeBranch} className='inline-block w-5 h-5' /> Projects
                     </h2>
                     <ul className="list-group">
                        <li className="list-group-item">
@@ -378,61 +382,64 @@ export default function ResumeSection() {
                     </ul>
                  </div>
               </div>
-              <div className="col-xs-12 col-sm-5">
+            <div className="w-full sm:w-5/12 px-3.5">
                  {/* CONTACT */}
                  <div className="box clearfix">
                     <h2>
-                       <i className="fas fa-bullseye ico" /> Contact
+                     <FontAwesomeIcon icon={faBullseye} className="inline-block w-5 h-5" />
+                     Contact
                     </h2>
                     <div className="contact-item">
-                       <div className="icon pull-left text-center">
-                          <span className="fas fa-map-marker fa-fw" />
+                     <div className="icon float-left text-center">
+
+                        <FontAwesomeIcon className='inline-block w-4 h-4' icon={faLocationPin} />
                        </div>
-                     <div className="title only  pull-right">New York US</div>
+                     <div className="title only  float-right">New York US</div>
                     </div>
                     <div className="contact-item">
-                       <div className="icon pull-left text-center">
-                          <span className="fas fa-phone fa-fw" />
+                     <div className="icon float-left text-center">
+                        <FontAwesomeIcon className='inline-block w-4 h-4' icon={faPhone} />
                        </div>
-                     <div className="title only pull-right">732-829-8338</div>
+                     <div className="title only float-right">732-829-8338</div>
                     </div>
                     <div className="contact-item">
-                       <div className="icon pull-left text-center">
-                          <span className="fas fa-envelope fa-fw" />
+                     <div className="icon float-left text-center">
+                        <FontAwesomeIcon className='inline-block w-4 h-4' icon={faEnvelope} />
                        </div>
-                       <div className="title only pull-right">
+                     <div className="title only float-right">
                           <a href="mailto:thomasalwyndavis@gmail.com" target="_blank">
                            jain.mrinal140@gmail.com
                           </a>
                        </div>
                     </div>
                     <div className="contact-item">
-                       <div className="icon pull-left text-center">
-                          <span className="fas fa-globe fa-fw" />
+                     <div className="icon float-left text-center">
+                        <FontAwesomeIcon className='inline-block w-4 h-4' icon={faGlobe} />
                        </div>
-                       <div className="title only pull-right">
+                     <div className="title only float-right">
                         <a href="https://mrinaljain.com" target="_blank">
                            https://mrinaljain.com
                           </a>
                        </div>
                     </div>
                     <div className="contact-item">
-                       <div className="icon pull-left text-center">
-                          <span className="fab fa-twitter fa-fw" />
+                     <div className="icon float-left text-center">
+                        <FontAwesomeIcon className='inline-block w-4 h-4' icon={faXTwitter} />
                        </div>
-                       <div className="title pull-right">twitter</div>
-                       <div className="description pull-right">
-                        <a href="https://twitter.com/mrinal_geek" target="_blank">
-                           mrinal_geek
+                     <div className="title float-right">twitter</div>
+                     <div className="description float-right">
+                        <a href="https://twitter.com/_mrinaljain" target="_blank">
+                           _mrinaljain
                           </a>
                        </div>
                     </div>
                     <div className="contact-item">
-                       <div className="icon pull-left text-center">
-                          <span className="fab fa-github fa-fw" />
+                     <div className="icon float-left text-center">
+
+                        <FontAwesomeIcon className='inline-block w-4 h-4' icon={faGithub} />
                        </div>
-                       <div className="title pull-right">github</div>
-                       <div className="description pull-right">
+                     <div className="title float-right">github</div>
+                     <div className="description float-right">
                         <a href="https://github.com/mrinaljain" target="_blank">
                            mrinaljain
                           </a>
@@ -442,12 +449,13 @@ export default function ResumeSection() {
                  {/* EDUCATION */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-university ico" /> Education
+                     <FontAwesomeIcon icon={faBuildingColumns} className="inline-block w-5 h-5" />
+                     Education
                     </h2>
                     <ul id="education" className="clearfix">
                        <li>
-                        <div className="year pull-left">2011 2015</div>
-                          <div className="description pull-right">
+                        <div className="year float-left">2011 2015</div>
+                        <div className="description float-right">
                            <h3>Rajiv Gandhi Proudyogiki Vishwavidyalaya</h3>
                              <div className="where" />
                              <p>
@@ -461,7 +469,8 @@ export default function ResumeSection() {
                  {/* SKILLS */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-tasks ico" /> Skills
+                     <FontAwesomeIcon icon={faListCheck} className="inline-block w-5 h-5" />
+                     Skills
                     </h2>
                     <div className="skills clearfix">
                        <div className="item-skills">
@@ -706,7 +715,7 @@ export default function ResumeSection() {
                  {/* HOBBIES */}
                  <div className="box">
                     <h2>
-                       <i className="fas fa-heart ico" /> Interests
+                     <FontAwesomeIcon icon={faHeart} className="inline-block w-5 h-5" /> Interests
                     </h2>
                     <div className="interests clearfix">
                        <div className="item-interests">Gardening</div>
@@ -739,7 +748,7 @@ export default function ResumeSection() {
                  </div>
                  <div className="box">
                     <h2>
-                       <i className="fas fa-check-square ico" /> References
+                     <FontAwesomeIcon icon={faSquareCheck} className="inline-block w-5 h-5" />References
                     </h2>
                     <blockquote>
                        <div>
