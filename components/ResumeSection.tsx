@@ -26,7 +26,7 @@ export default function ResumeSection() {
                      <h1 className=" ">
                         Mrinal Jain
                         <br />
-                        <span className="">Software Developer</span>
+                        <span className="">Web Developer</span>
                      </h1>
                   </div>
                </div>
@@ -73,10 +73,10 @@ export default function ResumeSection() {
                                  development.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">React / Next</li>
-                                    <li className="list-group-item">Node / Laravel</li>
-                                    <li className="list-group-item">LLM's</li>
-                                    <li className="list-group-item">Diagrams / Canvas</li>
+                                    <li className="listGroupItem">React / Next</li>
+                                    <li className="listGroupItem">Node / Laravel</li>
+                                    <li className="listGroupItem">LLM's</li>
+                                    <li className="listGroupItem">Diagrams / Canvas</li>
                                  </ul>
                               </div>
                            </div>
@@ -103,10 +103,10 @@ export default function ResumeSection() {
                                  and contracts.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">React</li>
-                                    <li className="list-group-item">Redux</li>
-                                    <li className="list-group-item">SCSS</li>
-                                    <li className="list-group-item">Product</li>
+                                    <li className="listGroupItem">React</li>
+                                    <li className="listGroupItem">Redux</li>
+                                    <li className="listGroupItem">SCSS</li>
+                                    <li className="listGroupItem">Product</li>
                                  </ul>
                               </div>
                               <div className="profession">Engineering Manager</div>
@@ -118,10 +118,10 @@ export default function ResumeSection() {
                                  and contracts.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">React</li>
-                                    <li className="list-group-item">Redux</li>
-                                    <li className="list-group-item">SCSS</li>
-                                    <li className="list-group-item">Product</li>
+                                    <li className="listGroupItem">React</li>
+                                    <li className="listGroupItem">Redux</li>
+                                    <li className="listGroupItem">SCSS</li>
+                                    <li className="listGroupItem">Product</li>
                                  </ul>
                               </div>
                            </div>
@@ -148,15 +148,15 @@ export default function ResumeSection() {
                                  us achieve liquid markets.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        React, Apollo, Styled Components
                                     </li>
-                                    <li className="list-group-item">Node.js / Rails</li>
-                                    <li className="list-group-item">Docker / Heroku / GCP</li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">Node.js / Rails</li>
+                                    <li className="listGroupItem">Docker / Heroku / GCP</li>
+                                    <li className="listGroupItem">
                                        Used Figma for design and UX work
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Optimizing markets with tens of millions of rows using SQL.
                                     </li>
                                  </ul>
@@ -181,16 +181,16 @@ export default function ResumeSection() {
                                  implementing a WebView)
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Worked with Postgres, Redis and Dynamodb for storage.
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Hosted on a mixture of Heroku Apps and EC2 servers.
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Caching by Fastly and Cloudflare
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Hybrid app supported on all platforms
                                     </li>
                                  </ul>
@@ -215,14 +215,14 @@ export default function ResumeSection() {
                                  entry when contacting congress.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Developed new tools for contacting congress
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Brainstormed campaign ideas to raise maximum awareness about
                                        issues
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Lots of social networking integration
                                     </li>
                                  </ul>
@@ -247,13 +247,13 @@ export default function ResumeSection() {
                                  collection of Rails web servers which are connected to MongoDB.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Managed a small team of developers and designers
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Built the entire frontend application with Backbone.js
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Transferred all of the infrastructure from Heroku to AWS
                                     </li>
                                  </ul>
@@ -311,10 +311,10 @@ export default function ResumeSection() {
                                  quality.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Fixed critical bugs and added new features.
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Mentored new contributors.
                                     </li>
                                  </ul>
@@ -329,33 +329,33 @@ export default function ResumeSection() {
                         <FontAwesomeIcon icon={faCodeBranch} className='inline-block w-5 h-5 mr-1.5' /> Projects
                      </h2>
                      <ul className="list-group">
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>JSON Resume</span>: JSON Resume
                            is a community driven open source initiative to create a JSON based
                            standard for resumes. There is no reason why there can't be a common
                            standard for writing a resume that can be extended with an ecosystem
                            of open source tools.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>Cdnjs</span>: Following
                            Google's CDN for jQuery, we decided to start a CDN for the less
                            popular Javascript frameworks. The CDN is community moderated and
                            open source on GitHub. We secured a partnership with Cloudflare who
                            now supports the infrastructure.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>MobTranslate</span>:
                            Open-source Indigenous language dictionary platform supporting
                            advanced search, real-time AI translation, and server-side
                            rendering. Built with Next.js and Turborepo.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>JsonBlog CLI</span>: Static
                            blog generator CLI supporting Markdown and JSON with flexible
                            deployment (GitHub Pages, Netlify, IPFS). Built in TypeScript with
                            strong extensibility and theming.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>
                               BLAH - Barely Logical Agent Host
                            </span>
@@ -363,7 +363,7 @@ export default function ResumeSection() {
                            publishing, discovery, and execution using the Model Context
                            Protocol (MCP). Features secure sandboxing and a comprehensive CLI.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>JSON Resume MCP Server</span>:
                            The JSON Resume MCP Server is an innovative tool that uses AI to
                            automate the process of updating a user's JSON Resume by analyzing
@@ -401,7 +401,7 @@ export default function ResumeSection() {
                         <div className="icon float-left text-center">
                            <FontAwesomeIcon className='inline-block w-4 h-4' icon={faPhone} />
                         </div>
-                        <div className="title only float-right">732-829-8338</div>
+                        <div className="title only float-right">7328298338</div>
                      </div>
                      <div className="contact-item">
                         <div className="icon float-left text-center">
