@@ -31,7 +31,7 @@ export default function ResumeSection() {
                   </div>
                </div>
             </div>
-            <div className="flex flex-wrap -mx-2">
+            <div className="flex flex-wrap">
                <div className="w-full sm:w-7/12 px-3.5 flex flex-col">
                   {/* ABOUT ME */}
                   <div className="box">
@@ -764,48 +764,41 @@ export default function ResumeSection() {
                      <br />
                      <blockquote>
                         <div>
-                           I've had the great pleasure of working with Thomas for the past
-                           three years at Earbits, and on a few side projects. Two years ago
-                           our CTO left on a moment's notice, Thomas saved our company by
-                           quickly stepping up to fill this role. He has been with our company
-                           through thick and thin and made serious personal sacrifices in order
-                           to help the company during tough times. He is a phenomenal hacker
-                           and a true team player. Highly recommended!
+                           Mrinal has been an outstanding Engineering Manager, leading our team to consistently meet project deadlines and exceed expectations. His leadership fosters a collaborative environment where innovation thrives. Mrinal's strategic vision and technical skills are exceptional. Highly recommend him for any leadership role.
                         </div>
                         <footer>
                            <a href="" target="_blank">
-                              Yotam Rosenbaum, SVP of Operations, Earbits, Inc.
+                              Mofidul Islam, Senior Flutter Developer, STAGE, Inc.
                            </a>
                         </footer>
                      </blockquote>
                      <br />
                      <blockquote>
                         <div>
-                           Thomas is an extremely talented engineer with a very broad range of
-                           skills and experience. From being a thought leader in the front-end
-                           community via backbonetutorials.com and cdnjs.com, to designing and
-                           implementing the API for cdnjs.com, working with Thomas has been
-                           fantastic learning experience. Thomas is truly a full stack develop,
-                           and his work output is incredible. If there is any opportunity to
-                           work with Thomas, I take it. He is the definition of an A player.
+                           I had a exceptional experience of working with Mrinal. During our time together at Yallaspree, Mrinal consistently demonstrated a high level of precision and attention to detail in his work.
+
+                           Mrinal's meticulous approach to tasks was truly commendable. He displayed a keen interest in learning and excelling in the field of technology and web development. His commitment to understanding intricate details and staying abreast of the latest industry trends was evident throughout our collaboration.
+
+                           Not only did Mrinal contribute significantly to our projects, but he also fostered a positive and collaborative work environment. His dedication to delivering quality results and his passion for continuous improvement made a lasting impression on our team.
+
+                           I am confident that Mrinal's skills and commitment to excellence will make him a valuable asset wherever he goes. I believe that he will continue to thrive and make significant contributions in any tech or web development role.
                         </div>
                         <footer>
                            <a href="" target="_blank">
-                              Ryan Kirkman, Senior Software Engineer at Nerdwallet
+                              Harish Lalwani, Solutions Architect at 
                            </a>
                         </footer>
                      </blockquote>
                      <br />
                      <blockquote>
                         <div>
-                           On Thomas Davis... Hire this guy. Do not be fooled. Incredibly
-                           capable and fast. Plays well with others. Unbelievable at front-end
-                           work end programming but that is just the start. Visionary. Hire him
-                           before I do.
+                           I met this wonderful person Mrinal at StageOTT, he very knowledgable person and tech enthusiast. I had wonderful learnings and guidance in very less time. He was always there to guide.
+
+                           I recommend to people who is working with him or people who have any kind of doubts, dont hesitate to reach out to him, you will find a best solution to your query
                         </div>
                         <footer>
                            <a href="" target="_blank">
-                              Greg Davis
+                              SaiNaveen
                            </a>
                         </footer>
                      </blockquote>
