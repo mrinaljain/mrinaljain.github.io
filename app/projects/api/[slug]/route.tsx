@@ -1,3 +1,7 @@
+export const dynamic = 'force-static'  //  for implementng caching
+export const revalidate = 60
+
+
 import { projectData } from "@/data/projectData";
 
 export async function GET(request: Request,
