@@ -26,7 +26,7 @@ export default function ResumeSection() {
                      <h1 className=" ">
                         Mrinal Jain
                         <br />
-                        <span className="">Software Developer</span>
+                        <span className="">Web Developer</span>
                      </h1>
                   </div>
                </div>
@@ -66,17 +66,17 @@ export default function ResumeSection() {
                         </div>
                         <div className="row">
                            <div className="job-details col-xs-11">
-                              <div className="profession">Software Developer</div>
+                              <div className="profession">Web Developer</div>
                               <div className="description">
-                                 Over the past several years, I've worked at various roles and
-                                 companies. Mostly early stage startups, doing full stack product
-                                 development.
+                                 Worked on an internal campaign analytics dashboard using React, Redux, and Storybook, enabling marketing teams to track multi-channel content performance. Developed modular components and integrated Azure DevOps pipelines for smooth releases.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">React / Next</li>
-                                    <li className="list-group-item">Node / Laravel</li>
-                                    <li className="list-group-item">LLM's</li>
-                                    <li className="list-group-item">Diagrams / Canvas</li>
+                                    <li className="listGroupItem">Developed analytics dashboard using React + Redux</li>
+                                    <li className="listGroupItem">Integrated Storybook for component testing</li>
+                                    <li className="listGroupItem">Built reusable components for internal marketing tools
+
+                                    </li>
+                                    <li className="listGroupItem">Supported campaign reporting across multiple regions</li>
                                  </ul>
                               </div>
                            </div>
@@ -86,7 +86,7 @@ export default function ResumeSection() {
                         <div className="row">
                            <div className="details">
                               <div className="where">
-                                 STAGE
+                                 STAGE OTT
                                  <div className="float-right">NOIDA</div>
                               </div>
                               <div className="year">Mar 2019 – Mar 2024</div>
@@ -96,32 +96,35 @@ export default function ResumeSection() {
                            <div className="job-details col-xs-11">
                               <div className="profession">Engineering Manager</div>
                               <div className="description">
-                                 Tokenized is a Bitcoin wallet for issuing, managing and trading
-                                 digital tokens. I built out the front end which was packaged as
-                                 an electron app. It was a difficult frontend to build because we
-                                 store the users keys locally and used them to sign transactions
-                                 and contracts.
+                                 Oversaw sprint planning, release cycles, and architectural decisions across web, mobile, and TV platforms. Collaborated cross-functionally with product, design, and marketing teams to align engineering goals with business growth—contributing to a major spike in platform scalability and user engagement.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">React</li>
-                                    <li className="list-group-item">Redux</li>
-                                    <li className="list-group-item">SCSS</li>
-                                    <li className="list-group-item">Product</li>
+                                    <li className="listGroupItem">Directed architecture decisions across mobile, web, and TV</li>
+                                    <li className="listGroupItem">Scaled platform to support 200k+ concurrent users</li>
+                                    <li className="listGroupItem">Reduced release time by 50% using automation</li>
+
                                  </ul>
                               </div>
-                              <div className="profession">Engineering Manager</div>
+                              <div className="profession">Lead Developer</div>
                               <div className="description">
-                                 Tokenized is a Bitcoin wallet for issuing, managing and trading
-                                 digital tokens. I built out the front end which was packaged as
-                                 an electron app. It was a difficult frontend to build because we
-                                 store the users keys locally and used them to sign transactions
-                                 and contracts.
+                                 Led a team of developers in delivering high-impact features like payment systems, analytics, and Firebase A/B testing. Standardized the codebase across multiple apps using Flutter flavors, improving release efficiency and reducing bugs by 40%.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">React</li>
-                                    <li className="list-group-item">Redux</li>
-                                    <li className="list-group-item">SCSS</li>
-                                    <li className="list-group-item">Product</li>
+                                    <li className="listGroupItem">Implemented real-time analytics and AB testing</li>
+                                    <li className="listGroupItem">Standardized codebase across 6+ apps</li>
+                                    <li className="listGroupItem">Led a cross-platform engineering team of 5+</li>
+                                    <li className="listGroupItem">Delivered sprint goals consistently in agile setup</li>
+                                 </ul>
+                              </div>
+                              <div className="profession"> Founding Engineer</div>
+                              <div className="description">
+                                 Built and optimized the STAGE OTT mobile and TV apps using Flutter, delivering a smooth cross-platform experience across Android, iOS, and Android TV. Integrated features like deep linking, secure video streaming, and in-app purchases, contributing to a 150% increase in user onboarding.
+                                 <div className="highlights">Highlights</div>
+                                 <ul className="list-group">
+                                    <li className="listGroupItem">Built mobile and Android TV apps using Flutter</li>
+                                    <li className="listGroupItem">Integrated deep linking and in-app purchases</li>
+                                    <li className="listGroupItem">Improved app stability with Firebase Crashlytics</li>
+                                    <li className="listGroupItem">Used Flutter flavors to support multiple app variants</li>
                                  </ul>
                               </div>
                            </div>
@@ -139,25 +142,18 @@ export default function ResumeSection() {
                         </div>
                         <div className="row">
                            <div className="job-details col-xs-11">
-                              <div className="profession">Senior Javascript Developer</div>
+                              <div className="profession">Web Developer</div>
                               <div className="description">
-                                 Blockbid is an Australian crypto currency exchange. I started
-                                 off on the frontend but eventually became lead tech and worked
-                                 on every moving piece of the exchange. I really enjoyed working
-                                 with liquidity providers and connecting their platforms to help
-                                 us achieve liquid markets.
+                                 Redesigned and scaled the content publishing platform using React to handle over 200,000 real-time users. Built an internal CMS and A/B testing tools that supported editorial workflows and improved content delivery speed and consistency across 12–15 websites.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
-                                       React, Apollo, Styled Components
+                                    <li className="listGroupItem">
+                                       Ran A/B testing across homepage and articles.
                                     </li>
-                                    <li className="list-group-item">Node.js / Rails</li>
-                                    <li className="list-group-item">Docker / Heroku / GCP</li>
-                                    <li className="list-group-item">
-                                       Used Figma for design and UX work
-                                    </li>
-                                    <li className="list-group-item">
-                                       Optimizing markets with tens of millions of rows using SQL.
+                                    <li className="listGroupItem">Created custom CMS for editorial team</li>
+                                    <li className="listGroupItem">Maintained 12–15 websites with one config</li>
+                                    <li className="listGroupItem">
+                                       Rebuilt the platform in React to handle viral traffic.
                                     </li>
                                  </ul>
                               </div>
@@ -167,31 +163,28 @@ export default function ResumeSection() {
                      <div className="job clearfix">
                         <div className="row">
                            <div className="details">
-                              <div className="where">Arya.ai</div>
+                              <div className="where">Arya.ai (Axis Bank)</div>
                               <div className="year">April 2016 – January 2017</div>
                            </div>
                         </div>
                         <div className="row">
                            <div className="job-details col-xs-11">
-                              <div className="profession">Developer</div>
+                              <div className="profession">Frontend Developer</div>
                               <div className="description">
-                                 Built a very large and complex React / Redux application. It
-                                 works on all platforms and has IOS/Android builds due to it
-                                 being a PWA. (wrapped it in React Native though only
-                                 implementing a WebView)
+                                 Built front-end tools using React for automating KYC verification, signature detection, and cheque scanning. Integrated Arya’s APIs for seamless data extraction from ID proofs, reducing manual effort and improving accuracy for Axis Bank.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
-                                       Worked with Postgres, Redis and Dynamodb for storage.
+                                    <li className="listGroupItem">
+                                       Built frontend for KYC automation tools.
                                     </li>
-                                    <li className="list-group-item">
-                                       Hosted on a mixture of Heroku Apps and EC2 servers.
+                                    <li className="listGroupItem">
+                                       Integrated signature detection and cheque scanning.
                                     </li>
-                                    <li className="list-group-item">
-                                       Caching by Fastly and Cloudflare
+                                    <li className="listGroupItem">
+                                       Used React + TypeScript for scalable components.
                                     </li>
-                                    <li className="list-group-item">
-                                       Hybrid app supported on all platforms
+                                    <li className="listGroupItem">
+                                       Improved KYC speed by 40%
                                     </li>
                                  </ul>
                               </div>
@@ -207,23 +200,19 @@ export default function ResumeSection() {
                         </div>
                         <div className="row">
                            <div className="job-details col-xs-11">
-                              <div className="profession">Developer</div>
+                              <div className="profession">Web Developer</div>
                               <div className="description">
-                                 Hired to take EFF's campaigning to the next level by building an
-                                 action centre in Ruby on Rails. The action centre is built
-                                 around some large open source tools that lower the barrier to
-                                 entry when contacting congress.
+                                 Developed a real-time e-commerce discovery app using Flutter, helping users explore shopping offers across malls in the Middle East. Focused on building location-aware UI and optimizing for both Android and iOS platforms.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
-                                       Developed new tools for contacting congress
+                                    <li className="listGroupItem">
+                                       Integrated mall APIs for live offers
                                     </li>
-                                    <li className="list-group-item">
-                                       Brainstormed campaign ideas to raise maximum awareness about
-                                       issues
+                                    <li className="listGroupItem">
+                                       Supported multilingual UI for Middle East market
                                     </li>
-                                    <li className="list-group-item">
-                                       Lots of social networking integration
+                                    <li className="listGroupItem">
+                                       Focused on performance and UX optimization.
                                     </li>
                                  </ul>
                               </div>
@@ -239,22 +228,19 @@ export default function ResumeSection() {
                         </div>
                         <div className="row">
                            <div className="job-details col-xs-11">
-                              <div className="profession">CTO</div>
+                              <div className="profession">Founding Organiser</div>
                               <div className="description">
-                                 Started off as a front end developer but took on the role of CTO
-                                 in early 2013. The application frontend is built with Javascript
-                                 and organized as a single page application that talks to a
-                                 collection of Rails web servers which are connected to MongoDB.
+                                 Started WittyHacks, Central India’s first 36-hour student-led hackathon, to foster innovation and collaboration among developers. The event became a launchpad for over 70% of participants experiencing their first hackathon, successfully building a strong local tech community.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
-                                       Managed a small team of developers and designers
+                                    <li className="listGroupItem">
+                                       Onboarded 70% first-time hackers.
                                     </li>
-                                    <li className="list-group-item">
-                                       Built the entire frontend application with Backbone.js
+                                    <li className="listGroupItem">
+                                       Partnered with 20+ sponsors and communities.
                                     </li>
-                                    <li className="list-group-item">
-                                       Transferred all of the infrastructure from Heroku to AWS
+                                    <li className="listGroupItem">
+                                       Hosted 300+ developers in-person.
                                     </li>
                                  </ul>
                               </div>
@@ -269,17 +255,28 @@ export default function ResumeSection() {
                      <h2 className='flex items-center'>
                         <FontAwesomeIcon icon={faCertificate} className='inline-block w-5 h-5 mr-1.5' /> Awards
                      </h2>
-                     <ul id="awards" className="clearfix">
+                     <ul id="awards" className="flex flex-col">
                         <li>
                            <div className="year float-left">October 2014</div>
                            <div className="description float-right">
-                              <h3>Fight For The Future</h3>
+                              <h3>30 Under 30</h3>
                               <p>
-                                 <i className="fas fa-trophy ico" /> Defender of the Internet
+                                 <i className="fas fa-trophy ico" /> Most Influential Techie 
                               </p>
                               <p>
-                                 For my work against mass surveillance and building out civic
-                                 tools for digital democracy.
+                                 For my work towards technical communites in Indore.
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <div className="year float-left">October 2014</div>
+                           <div className="description float-right">
+                              <h3>Developer Circle Lead of the Year</h3>
+                              <p>
+                                 <i className="fas fa-trophy ico" /> Most Influential Techie
+                              </p>
+                              <p>
+                                 For my work towards technical communites in Indore.
                               </p>
                            </div>
                         </li>
@@ -311,10 +308,42 @@ export default function ResumeSection() {
                                  quality.
                                  <div className="highlights">Highlights</div>
                                  <ul className="list-group">
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
                                        Fixed critical bugs and added new features.
                                     </li>
-                                    <li className="list-group-item">
+                                    <li className="listGroupItem">
+                                       Mentored new contributors.
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div className="job clearfix">
+                        <div className="row">
+                           <div className="details">
+                              <div className="where">Open Source Project</div>
+                              <div className="address">
+                                 <a href="http://opensourceproject.com" target="_blank">
+                                    <i className="fas fa-globe ico" />{" "}
+                                    http://opensourceproject.com
+                                 </a>
+                              </div>
+                              <div className="year">January 2016 – Present</div>
+                           </div>
+                        </div>
+                        <div className="row">
+                           <div className="job-details col-xs-11">
+                              <div className="profession">Contributor</div>
+                              <div className="description">
+                                 Contributing to open source projects to improve software
+                                 quality.
+                                 <div className="highlights">Highlights</div>
+                                 <ul className="list-group">
+                                    <li className="listGroupItem">
+                                       Fixed critical bugs and added new features.
+                                    </li>
+                                    <li className="listGroupItem">
                                        Mentored new contributors.
                                     </li>
                                  </ul>
@@ -329,33 +358,33 @@ export default function ResumeSection() {
                         <FontAwesomeIcon icon={faCodeBranch} className='inline-block w-5 h-5 mr-1.5' /> Projects
                      </h2>
                      <ul className="list-group">
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>JSON Resume</span>: JSON Resume
                            is a community driven open source initiative to create a JSON based
                            standard for resumes. There is no reason why there can't be a common
                            standard for writing a resume that can be extended with an ecosystem
                            of open source tools.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>Cdnjs</span>: Following
                            Google's CDN for jQuery, we decided to start a CDN for the less
                            popular Javascript frameworks. The CDN is community moderated and
                            open source on GitHub. We secured a partnership with Cloudflare who
                            now supports the infrastructure.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>MobTranslate</span>:
                            Open-source Indigenous language dictionary platform supporting
                            advanced search, real-time AI translation, and server-side
                            rendering. Built with Next.js and Turborepo.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>JsonBlog CLI</span>: Static
                            blog generator CLI supporting Markdown and JSON with flexible
                            deployment (GitHub Pages, Netlify, IPFS). Built in TypeScript with
                            strong extensibility and theming.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>
                               BLAH - Barely Logical Agent Host
                            </span>
@@ -363,7 +392,7 @@ export default function ResumeSection() {
                            publishing, discovery, and execution using the Model Context
                            Protocol (MCP). Features secure sandboxing and a comprehensive CLI.
                         </li>
-                        <li className="list-group-item">
+                        <li className="listGroupItem">
                            <span style={{ fontWeight: "bold" }}>JSON Resume MCP Server</span>:
                            The JSON Resume MCP Server is an innovative tool that uses AI to
                            automate the process of updating a user's JSON Resume by analyzing
@@ -401,7 +430,7 @@ export default function ResumeSection() {
                         <div className="icon float-left text-center">
                            <FontAwesomeIcon className='inline-block w-4 h-4' icon={faPhone} />
                         </div>
-                        <div className="title only float-right">732-829-8338</div>
+                        <div className="title only float-right">7328298338</div>
                      </div>
                      <div className="contact-item">
                         <div className="icon float-left text-center">

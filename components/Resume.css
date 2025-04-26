@@ -171,7 +171,6 @@
 
 .job .details {
    margin-left: 3%;
-   width: 95%;
    padding: 10px;
    margin-bottom: 10px;
    background: #eee;
@@ -298,4 +297,12 @@
    margin: 10px 0;
    padding-bottom: 10px;
    border-bottom: 1px solid #eee;
+}
+.listGroupItem {
+   position: relative;
+   display: block;
+   padding: 10px 15px;
+   margin-bottom: -1px;
+   background-color: #fff;
+   border: 1px solid #ddd;
 }
