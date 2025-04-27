@@ -5,21 +5,22 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuildingColumns, faBullseye, faCertificate, faCodeBranch, faEnvelope, faGlobe, faHeart, faListCheck, faLocationPin, faPhone, faSquareCheck, faSuitcase, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 export default function ResumeSection() {
    return (
-      <div className="body w-auto min-h-screen ">
+      <div className="body w-auto min-h-screen pt-1">
          <div className="container mx-auto">
             <div className="w-full flex flex-col">
                <div id="photoHeader" className="text-center">
                   {/* PHOTO (AVATAR) */}
-                  <div id="photo" className="inline-block justify-center mb-4 w-[160px] h-[160px]  rounded-full overflow-hidden p-[5px] bg-[#334960]">
+                  <div id="photo" className="inline-block justify-center mb-4 w-[162px] h-[162px]  rounded-full overflow-hidden p-[5px] bg-[#334960]">
                      <Image
                         src="./mrinal_jain.jpeg"
                         height={160}
                         width={160}
                         alt="avatar"
-                        className="rounded-full border-4 border-gray-200 shadow-md"
+                        className="rounded-full border-4 shadow-md"
                      />
                   </div>
                   <div id="textHeader">
@@ -35,7 +36,7 @@ export default function ResumeSection() {
                <div className="w-full sm:w-7/12 px-3.5 flex flex-col">
                   {/* ABOUT ME */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faUser} className="inline-block w-5 h-5 mr-1.5" />
                         About
                      </h2>
@@ -50,7 +51,7 @@ export default function ResumeSection() {
                   </div>
                   {/* WORK EXPERIENCE */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faSuitcase} className="inline-block w-5 h-5 mr-1.5" />
                         WORK EXPERIENCE
                      </h2>
@@ -252,7 +253,7 @@ export default function ResumeSection() {
                   </div>
                   {/* AWARDS */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faCertificate} className='inline-block w-5 h-5 mr-1.5' /> Awards
                      </h2>
                      <ul id="awards" className="flex flex-col">
@@ -284,7 +285,7 @@ export default function ResumeSection() {
                   </div>
                   {/* VOLUNTEER */}
                   <div className="box">
-                     <h2 className=''>
+                     <h2 className='mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faUsers} className="inline-block w-5 h-5 mr-1.5" /> Volunteer
                      </h2>
                      <div className="job clearfix">
@@ -292,10 +293,10 @@ export default function ResumeSection() {
                            <div className="details">
                               <div className="where">Open Source Project</div>
                               <div className="address">
-                                 <a href="http://opensourceproject.com" target="_blank">
+                                 <Link href="http://opensourceproject.com" target="_blank">
                                     <i className="fas fa-globe ico" />{" "}
                                     http://opensourceproject.com
-                                 </a>
+                                 </Link>
                               </div>
                               <div className="year">January 2016 – Present</div>
                            </div>
@@ -324,10 +325,10 @@ export default function ResumeSection() {
                            <div className="details">
                               <div className="where">Open Source Project</div>
                               <div className="address">
-                                 <a href="http://opensourceproject.com" target="_blank">
+                                 <Link href="http://opensourceproject.com" target="_blank">
                                     <i className="fas fa-globe ico" />{" "}
                                     http://opensourceproject.com
-                                 </a>
+                                 </Link>
                               </div>
                               <div className="year">January 2016 – Present</div>
                            </div>
@@ -354,7 +355,7 @@ export default function ResumeSection() {
                   </div>
                   {/* PROJECTS */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faCodeBranch} className='inline-block w-5 h-5 mr-1.5' /> Projects
                      </h2>
                      <ul className="list-group">
@@ -415,7 +416,7 @@ export default function ResumeSection() {
                <div className="w-full sm:w-5/12 px-3.5 flex flex-col">
                   {/* CONTACT */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faBullseye} className="inline-block w-5 h-5 mr-1.5" />
                         Contact
                      </h2>
@@ -437,9 +438,9 @@ export default function ResumeSection() {
                            <FontAwesomeIcon className='inline-block w-4 h-4' icon={faEnvelope} />
                         </div>
                         <div className="title only float-right">
-                           <a href="mailto:thomasalwyndavis@gmail.com" target="_blank">
+                           <Link href="mailto:thomasalwyndavis@gmail.com" target="_blank">
                               jain.mrinal140@gmail.com
-                           </a>
+                           </Link>
                         </div>
                      </div>
                      <div className="contact-item">
@@ -447,9 +448,9 @@ export default function ResumeSection() {
                            <FontAwesomeIcon className='inline-block w-4 h-4' icon={faGlobe} />
                         </div>
                         <div className="title only float-right">
-                           <a href="https://mrinaljain.com" target="_blank">
+                           <Link href="https://mrinaljain.com" target="_blank">
                               https://mrinaljain.com
-                           </a>
+                           </Link>
                         </div>
                      </div>
                      <div className="contact-item">
@@ -458,9 +459,9 @@ export default function ResumeSection() {
                         </div>
                         <div className="title float-right">twitter</div>
                         <div className="description float-right">
-                           <a href="https://twitter.com/_mrinaljain" target="_blank">
+                           <Link href="https://twitter.com/_mrinaljain" target="_blank">
                               _mrinaljain
-                           </a>
+                           </Link>
                         </div>
                      </div>
                      <div className="contact-item">
@@ -470,15 +471,15 @@ export default function ResumeSection() {
                         </div>
                         <div className="title float-right">github</div>
                         <div className="description float-right">
-                           <a href="https://github.com/mrinaljain" target="_blank">
+                           <Link href="https://github.com/mrinaljain" target="_blank">
                               mrinaljain
-                           </a>
+                           </Link>
                         </div>
                      </div>
                   </div>
                   {/* EDUCATION */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faBuildingColumns} className="inline-block w-5 h-5 mr-1.5" />
                         Education
                      </h2>
@@ -498,7 +499,7 @@ export default function ResumeSection() {
                   </div>
                   {/* SKILLS */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faListCheck} className="inline-block w-5 h-5 mr-1.5" />
                         Skills
                      </h2>
@@ -777,32 +778,32 @@ export default function ResumeSection() {
                      </div>
                   </div>
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faSquareCheck} className="inline-block w-5 h-5 mr-1.5" />References
                      </h2>
-                     <blockquote>
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
                         <div>
                            I’ve had the pleasure of working with Mrinal Jain at Wittyfeed and the Facebook Developer Circle. He is excellent in application development and great public speaker. As my mentor, Mrinal demonstrated impressive leadership, team management and planning skills. He’s also a vital contributor to the developer community in Central India and is truly an asset to any team. I highly recommend him.
                         </div>
-                        <footer>
-                           <a href="https://www.linkedin.com/in/bhavinjawade/" target="_blank">
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/bhavinjawade/" target="_blank">
                               Bhavin Jawade, Research Scientist Netflix, Inc.
-                           </a>
+                           </Link>
                         </footer>
                      </blockquote>
                      <br />
-                     <blockquote>
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
                         <div>
                            Mrinal has been an outstanding Engineering Manager, leading our team to consistently meet project deadlines and exceed expectations. His leadership fosters a collaborative environment where innovation thrives. Mrinal's strategic vision and technical skills are exceptional. Highly recommend him for any leadership role.
                         </div>
-                        <footer>
-                           <a href="" target="_blank">
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/iammofidul" target="_blank">
                               Mofidul Islam, Senior Flutter Developer, STAGE, Inc.
-                           </a>
+                           </Link>
                         </footer>
                      </blockquote>
                      <br />
-                     <blockquote>
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
                         <div>
                            I had a exceptional experience of working with Mrinal. During our time together at Yallaspree, Mrinal consistently demonstrated a high level of precision and attention to detail in his work.
 
@@ -812,26 +813,58 @@ export default function ResumeSection() {
 
                            I am confident that Mrinal's skills and commitment to excellence will make him a valuable asset wherever he goes. I believe that he will continue to thrive and make significant contributions in any tech or web development role.
                         </div>
-                        <footer>
-                           <a href="" target="_blank">
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/harishlalwani" target="_blank">
                               Harish Lalwani, Solutions Architect at 
-                           </a>
+                           </Link>
                         </footer>
                      </blockquote>
                      <br />
-                     <blockquote>
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
                         <div>
                            I met this wonderful person Mrinal at StageOTT, he very knowledgable person and tech enthusiast. I had wonderful learnings and guidance in very less time. He was always there to guide.
 
                            I recommend to people who is working with him or people who have any kind of doubts, dont hesitate to reach out to him, you will find a best solution to your query
                         </div>
-                        <footer>
-                           <a href="" target="_blank">
-                              SaiNaveen
-                           </a>
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/sainaveen-draksharapu-215869148" target="_blank">
+                              SaiNaveen, Senior Software Engineer
+                           </Link>
                         </footer>
                      </blockquote>
                      <br />
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
+                        <div>
+                           I worked with Mrinal for a year. He was a supportive leader with great technical skills. Mrinal created a positive and collaborative work environment, making him an outstanding manager and asset to any team. Highly recommend him as a manager!
+                        </div>
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/arora-aditya-" target="_blank">
+                              Aditya Arora, Software Development Engineer
+                           </Link>
+                        </footer>
+                     </blockquote>
+                     <br />
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
+                        <div>
+                           Mrinal is an excellent Engineering Manager. He sets realistic goals and provides reasonable deadlines, ensuring tasks are completed effectively. He is also a great listener and pays meticulous attention to detail. His exceptional understanding of team dynamics and individual needs creates a comfortable and supportive environment for everyone working under him. Additionally, Mrinal is a great motivator who instills positive energy in every team member, keeping everyone focused and driven to achieve their goals.
+                        </div>
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/rashmi-bhandari-6192448b" target="_blank">
+                              Rashmi Bhandari, Senior Software Engineer
+                           </Link>
+                        </footer>
+                     </blockquote>
+                     <br />
+                     <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
+                        <div>
+                           It Was Great time working with Mrinal. He is Passionate about his work and always take responsibility. He is always ready to sharing his knowledge and experience on web design & development.
+                        </div>
+                        < footer className="block text-sm leading-[1.42857143] text-gray-500">
+                           <Link href="https://www.linkedin.com/in/sunilbyadav0909" target="_blank">
+                              Sunil Yadav
+                           </Link>
+                        </footer>
+                     </blockquote>
                   </div>
                </div>
             </div>
