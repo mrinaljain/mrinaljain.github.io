@@ -9,18 +9,18 @@ import Link from 'next/link';
 
 export default function ResumeSection() {
    return (
-      <div className="body w-auto min-h-screen ">
+      <div className="body w-auto min-h-screen pt-1">
          <div className="container mx-auto">
             <div className="w-full flex flex-col">
                <div id="photoHeader" className="text-center">
                   {/* PHOTO (AVATAR) */}
-                  <div id="photo" className="inline-block justify-center mb-4 w-[160px] h-[160px]  rounded-full overflow-hidden p-[5px] bg-[#334960]">
+                  <div id="photo" className="inline-block justify-center mb-4 w-[162px] h-[162px]  rounded-full overflow-hidden p-[5px] bg-[#334960]">
                      <Image
                         src="./mrinal_jain.jpeg"
                         height={160}
                         width={160}
                         alt="avatar"
-                        className="rounded-full border-4 border-gray-200 shadow-md"
+                        className="rounded-full border-4 shadow-md"
                      />
                   </div>
                   <div id="textHeader">
@@ -36,7 +36,7 @@ export default function ResumeSection() {
                <div className="w-full sm:w-7/12 px-3.5 flex flex-col">
                   {/* ABOUT ME */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faUser} className="inline-block w-5 h-5 mr-1.5" />
                         About
                      </h2>
@@ -51,7 +51,7 @@ export default function ResumeSection() {
                   </div>
                   {/* WORK EXPERIENCE */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faSuitcase} className="inline-block w-5 h-5 mr-1.5" />
                         WORK EXPERIENCE
                      </h2>
@@ -253,7 +253,7 @@ export default function ResumeSection() {
                   </div>
                   {/* AWARDS */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faCertificate} className='inline-block w-5 h-5 mr-1.5' /> Awards
                      </h2>
                      <ul id="awards" className="flex flex-col">
@@ -285,7 +285,7 @@ export default function ResumeSection() {
                   </div>
                   {/* VOLUNTEER */}
                   <div className="box">
-                     <h2 className=''>
+                     <h2 className='mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faUsers} className="inline-block w-5 h-5 mr-1.5" /> Volunteer
                      </h2>
                      <div className="job clearfix">
@@ -355,7 +355,7 @@ export default function ResumeSection() {
                   </div>
                   {/* PROJECTS */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faCodeBranch} className='inline-block w-5 h-5 mr-1.5' /> Projects
                      </h2>
                      <ul className="list-group">
@@ -416,7 +416,7 @@ export default function ResumeSection() {
                <div className="w-full sm:w-5/12 px-3.5 flex flex-col">
                   {/* CONTACT */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faBullseye} className="inline-block w-5 h-5 mr-1.5" />
                         Contact
                      </h2>
@@ -479,7 +479,7 @@ export default function ResumeSection() {
                   </div>
                   {/* EDUCATION */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faBuildingColumns} className="inline-block w-5 h-5 mr-1.5" />
                         Education
                      </h2>
@@ -499,7 +499,7 @@ export default function ResumeSection() {
                   </div>
                   {/* SKILLS */}
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faListCheck} className="inline-block w-5 h-5 mr-1.5" />
                         Skills
                      </h2>
@@ -778,7 +778,7 @@ export default function ResumeSection() {
                      </div>
                   </div>
                   <div className="box">
-                     <h2 className='flex items-center'>
+                     <h2 className='flex items-center mt-5 mb-2.5'>
                         <FontAwesomeIcon icon={faSquareCheck} className="inline-block w-5 h-5 mr-1.5" />References
                      </h2>
                      <blockquote className="p-3 pl-6 mb-3 text-base border-l-4 border-gray-200">
