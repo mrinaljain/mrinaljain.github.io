@@ -8,8 +8,8 @@ export default function NotFound() {
          <Image
             src="/images/404.png" // <-- Replace with your own image path
             alt="404 Not Found"
-            width={300}
-            height={300}
+            width={280}
+            height={280}
             className="mb-6"
          />
 
