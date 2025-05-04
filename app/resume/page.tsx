@@ -12,8 +12,6 @@ import Projects from "@/components/resume/Projects";
 import Volunteer from "@/components/resume/Volunteer";
 import Awards from "@/components/resume/Awards";
 import Experience from "@/components/resume/Experience";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import "../../components/resume/Resume.css"
 import About from "@/components/resume/About";
