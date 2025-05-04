@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 
 function About() {
-   let delay = Promise.resolve(()=>{
+   const delay = Promise.resolve(() => {
       setTimeout(() => {
          return "data";
       }, 5000);
