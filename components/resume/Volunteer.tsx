@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import { faGlobe, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';

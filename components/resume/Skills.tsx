@@ -238,16 +238,7 @@ function Skills() {
               <span className="skill badge">Version Control</span>
            </div>
         </div>
-        <div className="skills clearfix">
-           <div className="item-skills">
-              JSON Resume
-              <span className="skill-level">Advanced</span>
-           </div>
-           <div className="col-sm-offset-1 col-sm-12 clearfix">
-              <span className="skill badge">JSON</span>
-              <span className="skill badge">Resume Standard</span>
-           </div>
-        </div>
+
      </div>
   )
 }
