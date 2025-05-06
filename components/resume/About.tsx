@@ -5,11 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 
 function About() {
-   const delay = Promise.resolve(() => {
-      setTimeout(() => {
-         return "data";
-      }, 5000);
-   });
+
   return (
      <div className="box">
         <h2 className='flex items-center mt-5 mb-2.5'>
