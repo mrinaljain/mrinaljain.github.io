@@ -16,6 +16,7 @@ import Image from "next/image";
 import "../../components/resume/Resume.css"
 import About from "@/components/resume/About";
 import { Suspense } from "react";
+import DownloadResume from "@/components/resume/DownloadResume";
 
 export const metadata: Metadata = {
    title: "Resume",
@@ -73,6 +74,7 @@ export default function Resume() {
                   </div>
                </div>
             </div>
+            <DownloadResume />
          </div>
       </>
    );
