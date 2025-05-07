@@ -20,7 +20,7 @@ export default function Home() {
           <p className="mt-4 text-lg text-gray-700">Software Engineer | Tech Consultant | Full Stack Developer</p>
           <div className="mt-6 flex justify-center gap-4">
             <Link href="https://www.linkedin.com/in/mrinaljain/" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Let&apos;s Connect</Link>
-            <Link href="/mrinaljain_cv_feb2025.pdf" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Resume</Link>
+            <Link href="/resume" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Resume</Link>
           </div>
           <SocialLinks />
           <TagList />
