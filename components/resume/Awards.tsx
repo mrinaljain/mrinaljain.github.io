@@ -10,7 +10,7 @@ function Awards() {
         </h2>
         <ul id="awards" className="flex flex-col">
            <li>
-              <div className="year float-left">October 2014</div>
+              <div className="year float-left">October 2020</div>
               <div className="description float-right">
                  <h3>30 Under 30</h3>
                  <p>
@@ -22,14 +22,14 @@ function Awards() {
               </div>
            </li>
            <li>
-              <div className="year float-left">October 2014</div>
+              <div className="year float-left">Januay 2019</div>
               <div className="description float-right">
                  <h3>Developer Circle Lead of the Year</h3>
                  <p>
                     <i className="fas fa-trophy ico" /> Most Influential Techie
                  </p>
                  <p>
-                    For my work towards technical communites in Indore.
+                    For my work towards Facebook communites in Central India.
                  </p>
               </div>
            </li>

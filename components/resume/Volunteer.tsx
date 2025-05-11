@@ -24,7 +24,7 @@ function Volunteer() {
                  <div className="year">January 2014 – Present</div>
               </div>
            </div>
-           <div className="row">
+           {/* <div className="row">
               <div className="job-details col-xs-11">
                  <div className="profession">Contributor</div>
                  <div className="description">
@@ -41,22 +41,22 @@ function Volunteer() {
                     </ul>
                  </div>
               </div>
-           </div>
+           </div> */}
         </div>
         <div className="job">
            <div className="row">
               <div className="details">
-                 <div className="where">Meta Developer Circle's</div>
+                 <div className="where">Meta Developer Circle</div>
                  <div className="address">
                     <Link href="" target="_blank">
                        <i className="fas fa-globe ico" />{" "}
-                       say
+
                     </Link>
                  </div>
                  <div className="year">January 2016 – Present</div>
               </div>
            </div>
-           <div className="row">
+           {/* <div className="row">
               <div className="job-details col-xs-11">
                  <div className="profession">Contributor</div>
                  <div className="description">
@@ -73,7 +73,7 @@ function Volunteer() {
                     </ul>
                  </div>
               </div>
-           </div>
+           </div> */}
         </div>
         <div className="job">
            <div className="row">
@@ -82,13 +82,13 @@ function Volunteer() {
                  <div className="address">
                     <Link href="" target="_blank">
                        <i className="fas fa-globe ico" />{" "}
-                       say
+
                     </Link>
                  </div>
                  <div className="year">January 2016 – Present</div>
               </div>
            </div>
-           <div className="row">
+           {/* <div className="row">
               <div className="job-details col-xs-11">
                  <div className="profession">Contributor</div>
                  <div className="description">
@@ -105,7 +105,7 @@ function Volunteer() {
                     </ul>
                  </div>
               </div>
-           </div>
+           </div> */}
         </div>
         <div className="job">
            <div className="row">
@@ -114,13 +114,13 @@ function Volunteer() {
                  <div className="address">
                     <Link href="" target="_blank">
                        <i className="fas fa-globe ico" />{" "}
-                       say
+
                     </Link>
                  </div>
                  <div className="year">January 2016 – Present</div>
               </div>
            </div>
-           <div className="row">
+           {/* <div className="row">
               <div className="job-details col-xs-11">
                  <div className="profession">Contributor</div>
                  <div className="description">
@@ -137,7 +137,7 @@ function Volunteer() {
                     </ul>
                  </div>
               </div>
-           </div>
+           </div> */}
         </div>
         <div className="job">
            <div className="row">
@@ -146,13 +146,13 @@ function Volunteer() {
                  <div className="address">
                     <Link href="" target="_blank">
                        <i className="fas fa-globe ico" />{" "}
-                       say
+
                     </Link>
                  </div>
                  <div className="year">January 2016 – Present</div>
               </div>
            </div>
-           <div className="row">
+           {/* <div className="row">
               <div className="job-details col-xs-11">
                  <div className="profession">Contributor</div>
                  <div className="description">
@@ -169,7 +169,7 @@ function Volunteer() {
                     </ul>
                  </div>
               </div>
-           </div>
+           </div> */}
         </div>
         <div className="job">
            <div className="row">
@@ -178,13 +178,13 @@ function Volunteer() {
                  <div className="address">
                     <Link href="https://mozilla.org" target="_blank">
                        <FontAwesomeIcon className='inline-block w-4 h-4 mr-1.5' icon={faGlobe} />{" "}
-                       https://mozilla.org
+
                     </Link>
                  </div>
                  <div className="year">January 2014 – Present</div>
               </div>
            </div>
-           <div className="row">
+           {/* <div className="row">
               <div className="job-details col-xs-11">
                  <div className="profession">Contributor</div>
                  <div className="description">
@@ -201,7 +201,7 @@ function Volunteer() {
                     </ul>
                  </div>
               </div>
-           </div>
+           </div> */}
         </div>
      </div>
   )

@@ -9,9 +9,9 @@ function Hobbies() {
            <FontAwesomeIcon icon={faHeart} className="inline-block w-5 h-5 mr-1.5" /> Interests
         </h2>
         <div className="interests clearfix">
-           <div className="item-interests">Gardening</div>
+           <div className="item-interests">Sports</div>
            <div className="col-sm-offset-1 col-sm-12 clearfix">
-              <span className="interest badge">Lazy Gardening</span>
+              <span className="interest badge">Table Tennis</span>
            </div>
         </div>
         <div className="interests clearfix">
@@ -19,14 +19,12 @@ function Hobbies() {
            <div className="col-sm-offset-1 col-sm-12 clearfix">
               <span className="interest badge">Guitar</span>
               <span className="interest badge">Singing</span>
-              <span className="interest badge">Dancing</span>
            </div>
         </div>
         <div className="interests clearfix">
            <div className="item-interests">Books</div>
            <div className="col-sm-offset-1 col-sm-12 clearfix">
               <span className="interest badge">Reading</span>
-              <span className="interest badge">Writing</span>
               <span className="interest badge">History</span>
            </div>
         </div>
