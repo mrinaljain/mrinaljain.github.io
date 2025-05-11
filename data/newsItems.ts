@@ -1,31 +1,44 @@
 export interface NewsItem {
-   id: number;
    title: string;
-   image: string;
-   date: string;
-   link: string;
+   description: string;
+   imageUrl: string;
+   publishedAt: Date;
+   articleUrl: string;
+   publisher: string;
+   showOnHomepage: boolean;
+   tags: string[];
+
 }
 
 export const newsItems: NewsItem[] = [
    {
-      id: 1,
       title: "Mrinal Jain Featured in TechCrunch",
-      image: "/newspaper1.jpg",
-      date: "March 10, 2024",
-      link: "https://techcrunch.com/article",
+      description: "Mrinal shares insights on scaling OTT platforms in vernacular India.",
+      imageUrl: "/newspaper1.jpg",
+      articleUrl: "",
+      publisher: "TechCrunch",
+      publishedAt: new Date("2024-06-10T00:00:00.000Z"),
+      showOnHomepage: true,
+      tags: ["OTT", "Scaling", "India"]
    },
    {
-      id: 2,
       title: "Interview with The Economic Times",
-      image: "/newspaper2.jpg",
-      date: "February 5, 2024",
-      link: "https://economictimes.com/interview",
+      description: "An in-depth interview with Mrinal on the future of digital content.",
+      imageUrl: "/newspaper2.jpg",
+      articleUrl: "",
+      publisher: "The Economic Times",
+      publishedAt: new Date("2024-02-05T00:00:00.000Z"),
+      showOnHomepage: true,
+      tags: ["Interview", "Digital India"]
    },
    {
-      id: 3,
       title: "Forbes 30 Under 30 Feature",
-      image: "/newspaper3.jpg",
-      date: "January 15, 2024",
-      link: "https://forbes.com/feature",
-   },
+      description: "Mrinal featured in Forbes 30 Under 30 for tech innovation and community building.",
+      imageUrl: "/newspaper3.jpg",
+      articleUrl: "",
+      publisher: "Forbes",
+      publishedAt: new Date("2024-01-15T00:00:00.000Z"),
+      showOnHomepage: true,
+      tags: ["Award", "Forbes", "Leadership"]
+   }
 ];

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { NewsItem, newsItems } from "@/data/newsItems";
 
-// Define TypeScript interface for news items
 
 
 export default function NewspaperSection() {
@@ -18,15 +17,20 @@ export default function NewspaperSection() {
          </h2>
 
          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-            {newsItems.map((news) => (
-               <div
-                  key={news.id}
+            {newsItems.map((news) => {
+               const formattedDate = new Intl.DateTimeFormat('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+               }).format(news.publishedAt);
+               return <div
+                  key={news.title}
                   className="group cursor-pointer bg-white shadow-lg rounded-lg overflow-hidden transition hover:shadow-xl"
                   onClick={() => setSelectedNews(news)}
                >
                   <div className="relative w-full h-48">
                      <Image
-                        src={news.image}
+                        src={news.imageUrl}
                         alt={news.title}
                         layout="fill"
                         objectFit="cover"
@@ -37,10 +41,10 @@ export default function NewspaperSection() {
                      <h3 className="text-lg font-semibold text-gray-900">
                         {news.title}
                      </h3>
-                     <p className="text-sm text-gray-500">{news.date}</p>
+                     <p className="text-sm text-gray-500">{formattedDate}</p>
                   </div>
                </div>
-            ))}
+            })}
          </div>
 
          {/* Modal */}
@@ -62,7 +66,7 @@ export default function NewspaperSection() {
                   >
                      <div className="relative w-full h-64">
                         <Image
-                           src={selectedNews.image}
+                           src={selectedNews.imageUrl}
                            alt={selectedNews.title}
                            layout="fill"
                            objectFit="cover"
@@ -70,9 +74,9 @@ export default function NewspaperSection() {
                      </div>
                      <div className="p-6">
                         <h3 className="text-xl font-semibold">{selectedNews.title}</h3>
-                        <p className="text-gray-500">{selectedNews.date}</p>
+                        <p className="text-gray-500">{selectedNews.publishedAt.toString()}</p>
                         <a
-                           href={selectedNews.link}
+                           href={selectedNews.articleUrl}
                            target="_blank"
                            rel="noopener noreferrer"
                            className="mt-4 inline-block text-blue-600 hover:underline"
