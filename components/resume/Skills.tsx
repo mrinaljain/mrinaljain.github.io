@@ -31,7 +31,6 @@ function Skills() {
            </div>
            <div className="col-sm-offset-1 col-sm-12 clearfix">
               <span className="skill badge">Node</span>
-              <span className="skill badge">Ruby</span>
               <span className="skill badge">Python</span>
               <span className="skill badge">Postgres</span>
               <span className="skill badge">Redis</span>
@@ -99,19 +98,11 @@ function Skills() {
            <div className="col-sm-offset-1 col-sm-12 clearfix">
               <span className="skill badge">Testing</span>
               <span className="skill badge">ESLint</span>
+              <span className="skill badge">Jest</span>
+              <span className="skill badge">RTL</span>
            </div>
         </div>
-        <div className="skills clearfix">
-           <div className="item-skills">
-              Blog Content Management
-              <span className="skill-level">Proficient</span>
-           </div>
-           <div className="col-sm-offset-1 col-sm-12 clearfix">
-              <span className="skill badge">Markdown</span>
-              <span className="skill badge">JSON</span>
-              <span className="skill badge">IPFS</span>
-           </div>
-        </div>
+
         <div className="skills clearfix">
            <div className="item-skills">
               JavaScript
@@ -130,8 +121,7 @@ function Skills() {
            </div>
            <div className="col-sm-offset-1 col-sm-12 clearfix">
               <span className="skill badge">OpenAI API</span>
-              <span className="skill badge">Supabase</span>
-              <span className="skill badge">Pinecone</span>
+
            </div>
         </div>
         <div className="skills clearfix">
@@ -141,6 +131,7 @@ function Skills() {
            </div>
            <div className="col-sm-offset-1 col-sm-12 clearfix">
               <span className="skill badge">GitHub Actions</span>
+              <span className="skill badge">GitHub Branching</span>
            </div>
         </div>
         <div className="skills clearfix">
@@ -163,28 +154,8 @@ function Skills() {
               <span className="skill badge">AI resume suggestions</span>
            </div>
         </div>
-        <div className="skills clearfix">
-           <div className="item-skills">
-              Golang
-              <span className="skill-level">Expert</span>
-           </div>
-           <div className="col-sm-offset-1 col-sm-12 clearfix">
-              <span className="skill badge">Web Servers</span>
-              <span className="skill badge">Concurrency</span>
-              <span className="skill badge">Error Handling</span>
-           </div>
-        </div>
-        <div className="skills clearfix">
-           <div className="item-skills">
-              Serverless Architecture
-              <span className="skill-level">Expert</span>
-           </div>
-           <div className="col-sm-offset-1 col-sm-12 clearfix">
-              <span className="skill badge">Deno Runtime</span>
-              <span className="skill badge">Efficient Resource Management</span>
-              <span className="skill badge">On-Demand Scaling</span>
-           </div>
-        </div>
+
+
         <div className="skills clearfix">
            <div className="item-skills">
               Web Hosting

@@ -8,7 +8,6 @@ import Hobbies from "@/components/resume/Hobbies";
 import Skills from "@/components/resume/Skills";
 import Education from "@/components/resume/Education";
 import Contact from "@/components/resume/Contact";
-import Projects from "@/components/resume/Projects";
 import Volunteer from "@/components/resume/Volunteer";
 import Awards from "@/components/resume/Awards";
 import Experience from "@/components/resume/Experience";
@@ -42,7 +41,7 @@ export default function Resume() {
                      <Experience />
                      <Awards />
                      <Volunteer />
-                     <Projects />
+                     {/* <Projects /> */}
                   </div>
                   <div className="w-full sm:w-5/12 px-3.5 flex flex-col">
                      <Contact />
