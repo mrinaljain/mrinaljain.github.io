@@ -32,8 +32,9 @@ export default function NewspaperSection() {
                      <Image
                         src={news.imageUrl}
                         alt={news.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        priority
+                        style={{ objectFit: "cover" }}
                         className="group-hover:scale-105 transition-transform duration-300"
                      />
                   </div>
@@ -67,9 +68,9 @@ export default function NewspaperSection() {
                      <div className="relative w-full h-64">
                         <Image
                            src={selectedNews.imageUrl}
+                           style={{ objectFit: "cover" }}
+                           fill
                            alt={selectedNews.title}
-                           layout="fill"
-                           objectFit="cover"
                         />
                      </div>
                      <div className="p-6">

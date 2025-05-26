@@ -14,7 +14,7 @@ export const newsItems: NewsItem[] = [
    {
       title: "Mrinal Jain Featured in TechCrunch",
       description: "Mrinal shares insights on scaling OTT platforms in vernacular India.",
-      imageUrl: "/newspaper1.jpg",
+      imageUrl: "images/news/newspaper1.jpg",
       articleUrl: "",
       publisher: "TechCrunch",
       publishedAt: new Date("2024-06-10T00:00:00.000Z"),
@@ -24,7 +24,7 @@ export const newsItems: NewsItem[] = [
    {
       title: "Interview with The Economic Times",
       description: "An in-depth interview with Mrinal on the future of digital content.",
-      imageUrl: "/newspaper2.jpg",
+      imageUrl: "images/news/newspaper2.jpg",
       articleUrl: "",
       publisher: "The Economic Times",
       publishedAt: new Date("2024-02-05T00:00:00.000Z"),
@@ -34,7 +34,7 @@ export const newsItems: NewsItem[] = [
    {
       title: "Forbes 30 Under 30 Feature",
       description: "Mrinal featured in Forbes 30 Under 30 for tech innovation and community building.",
-      imageUrl: "/newspaper3.jpg",
+      imageUrl: "images/news/newspaper3.jpg",
       articleUrl: "",
       publisher: "Forbes",
       publishedAt: new Date("2024-01-15T00:00:00.000Z"),
