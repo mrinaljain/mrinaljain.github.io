@@ -2,7 +2,7 @@ import Image from "next/image";
 import Modal from "@/components/modal";
 import galleryImages, { GalleryImage } from "@/data/galleryData";
 
-export default async function PhotoModal({
+export default async function PhotoModal({   
    params,
 }: {
    params: Promise<{ id: string }>;

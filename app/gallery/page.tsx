@@ -9,7 +9,7 @@ export default function Gallery() {
            New Wonders of the World
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-           {galleryImages.map(({ id, src, name }) => (
+           {galleryImages.map(({ id, name }) => (
               <Link key={id} href={`/gallery/${id}`}>
                  <Image alt={name} src={`https://picsum.photos/id/${id}/200/300`}
                     width={200}
@@ -17,7 +17,6 @@ export default function Gallery() {
                     className="w-full object-cover aspect-square" />
               </Link>
            ))}
-
         </div>
 
      </main>
