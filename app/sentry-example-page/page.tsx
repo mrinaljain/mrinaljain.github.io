@@ -3,6 +3,8 @@
 import Head from "next/head";
 import * as Sentry from "@sentry/nextjs";
 import { useState, useEffect } from "react";
+import { sendGTMEvent } from '@next/third-parties/google'
+
 
 class SentryExampleFrontendError extends Error {
   constructor(message: string | undefined) {
@@ -43,6 +45,11 @@ export default function Page() {
           Click the button below, and view the sample error on the Sentry <a target="_blank" href="https://mrinal-v3.sentry.io/issues/?project=4509409007960064">Issues Page</a>.
           For more details about setting up Sentry, <a target="_blank" href="https://docs.sentry.io/platforms/javascript/guides/nextjs/">read our docs</a>.
         </p>
+        <button
+          onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'xyz' })}
+        >
+          Send Event
+        </button>
 
         <button
           type="button"
