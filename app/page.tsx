@@ -2,6 +2,7 @@
 // import SocialLinks from "@/components/SocialLinks";
 import Experiences from "@/components/Experiences";
 import Header from "@/components/Header";
+import HomeFeaturedProjects from "@/components/HomeFeaturedProjects";
 import SocialLinks from "@/components/SocialLinks";
 import TagList from "@/components/TagList";
 import IntroVideo from "@/components/video";
@@ -29,6 +30,8 @@ export default function Home() {
       <YouTubeVideos />
       <Experiences />
       {/* <NewspaperSection /> */}
+      <HomeFeaturedProjects />
+
   </>
   );
 }
