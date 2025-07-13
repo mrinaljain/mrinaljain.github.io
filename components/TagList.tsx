@@ -1,3 +1,5 @@
+import { featuredItems } from "@/data/featured";
+import Image from "next/image";
 
 // Sample JSON data (you can also import it from a JSON file)
 const tags = [
@@ -24,16 +26,22 @@ const tags = [
 
 const TagList = () => {
    return (
-      <div className="mt-4 flex flex-wrap gap-2 text-sm ">
-         {tags.map((tag, index) => (
+      <div className="flex flex-wrap gap-4 items-center">
+         {featuredItems.map((item) => (
             <a
-               key={index}
-               href={tag.link}
+               key={item.name}
+               href={item.url}
                target="_blank"
                rel="noopener noreferrer"
-               className={`${tag.bgColor} ${tag.textColor} px-3 py-1 rounded-full`}
+               className="hover:scale-105 transition-transform"
             >
-               {tag.text}
+               <Image
+                  src={item.logo}
+                  alt={item.name}
+                  width={100}
+                  height={40}
+                  className="h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+               />
             </a>
          ))}
       </div>
