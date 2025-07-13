@@ -2,7 +2,6 @@
 // import SocialLinks from "@/components/SocialLinks";
 import Experiences from "@/components/Experiences";
 import Header from "@/components/Header";
-import SocialLinks from "@/components/SocialLinks";
 import TagList from "@/components/TagList";
 import IntroVideo from "@/components/video";
 import YouTubeVideos from "@/components/YouTubeVideos";
