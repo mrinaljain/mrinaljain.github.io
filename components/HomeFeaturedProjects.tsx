@@ -1,10 +1,11 @@
-// components/HomeFeaturedProjects.tsx
-import { sideProjects } from "@/data/projects";
 import TerminalProjectCard from "@/components/TerminalProjectCard";
 import Link from "next/link";
 
-const HomeFeaturedProjects = () => {
-   const featured = sideProjects.filter((proj) => proj.featured);
+const HomeFeaturedProjects = async () => {
+   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`, { cache: "no-store" });
+   console.log("res", res);
+
+   const projects: any[] = [];
 
    return (
       <section className="bg-gray-100 py-12 px-6">
@@ -12,7 +13,7 @@ const HomeFeaturedProjects = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-800">✨ Featured Projects</h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-               {featured.map((project) => (
+               {projects.map((project) => (
                   <TerminalProjectCard key={project.command} {...project} />
                ))}
             </div>
