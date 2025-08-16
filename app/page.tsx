@@ -1,4 +1,4 @@
-// import NewspaperSection from "@/components/NewsPaperSection";
+import NewspaperSection from "@/components/NewsPaperSection";
 // import SocialLinks from "@/components/SocialLinks";
 import Experiences from "@/components/Experiences";
 import Header from "@/components/Header";
@@ -27,7 +27,7 @@ export default function Home() {
       </section>
       <YouTubeVideos />
       <Experiences />
-      {/* <NewspaperSection /> */}
+      <NewspaperSection />
   </>
   );
 }
