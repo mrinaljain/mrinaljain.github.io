@@ -24,8 +24,8 @@ const TagList = () => {
                   <Image
                      src={item.logo}
                      alt={item.name}
-                     width={100}
-                     height={40}
+                     width={120}
+                     height={45}
                      className="h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
                   />
                </a>

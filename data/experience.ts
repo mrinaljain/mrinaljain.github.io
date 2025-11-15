@@ -25,11 +25,23 @@ export interface ExperienceItem {
 
 export const experienceData: ExperienceItem[] = [
    {
-      company: "AMEX",
+      company: "Lowe's",
+      logo: "/lowes-logo.png",
+      designation: "Senior Flutter Developer",
+      location: "Charlotte, NC",
+      year: "June 2025 – Present",
+      projects: [
+
+      ],
+      technologies: [faFlutter, faDartLang, faJs, faNodeJs, faGitAlt]
+
+   },
+   {
+      company: "American Express",
       logo: "/amex-logo.jpeg",
       designation: "Software Developer",
-      location: "Phoenix, AZ",
-      year: "Apr 2024 – Present",
+      location: "New York, NY",
+      year: "Apr 2024 – June 2025",
       projects: [
          "Migrated legacy frontend code from jQuery to React, improving scalability and feature development speed.",
          "Implemented Jest and Cypress tests, increasing test coverage from 5% to 50% and reducing production bugs by 40%.",
