@@ -28,6 +28,16 @@ export default function Home() {
       <YouTubeVideos />
       <Experiences />
       {/* <NewspaperSection /> */}
-  </>
+        <Link
+            href="https://topmate.io/introvert_influencer"
+            target="_blank"
+            className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-xl
+             transition-transform hover:scale-105 z-50 flex items-center gap-2"
+        >
+            <span className="hidden sm:inline">Book a 1:1 Call</span>
+            📞
+        </Link>
+
+    </>
   );
 }
