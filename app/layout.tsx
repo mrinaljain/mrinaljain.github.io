@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from '@next/third-parties/google'
 import React from "react";
+import AmplitudeProvider from "@/components/AmplitudeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,8 +62,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AmplitudeProvider />
         {children}
         {/* <GoogleAnalytics gaId="G-DY3RQS5E8M" /> */}
+        
         <GoogleTagManager gtmId="GTM-5GJ3RWV" />
 
       </body>
