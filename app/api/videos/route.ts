@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import * as mongoose from "mongoose";
-import dbConnect from "@/app/lib/db";
-import Video from "@/app/models/Video";
+
+import Video from "@/models/Video";
+import connectDB from "@/lib/db/mongodb";
 
 export async function GET() {
 
     try {
-        await dbConnect();
+        await connectDB();
         const videos = await Video.find({})
             .sort({ createdAt: -1 })
             .lean();
