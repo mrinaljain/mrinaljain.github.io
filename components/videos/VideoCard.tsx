@@ -1,11 +1,12 @@
 import Image from "next/image";
 import type { Video } from "@/types/video";
+import Link from "next/link";
 
 export function VideoCard({ video }: { video: Video }) {
     const href = `https://www.youtube.com/watch?v=${video.youtubeId}`;
 
     return (
-        <a
+        <Link
             href={href}
             target="_blank"
             rel="noreferrer"
@@ -33,13 +34,13 @@ export function VideoCard({ video }: { video: Video }) {
                 {!!video.tags?.length && (
                     <div className="mt-3 flex flex-wrap gap-2">
                         {video.tags.slice(0, 4).map((t) => (
-                            <span key={t} className="rounded-full bg-neutral-100 px-3 py-1 text-xs">
+                            <span key={t} className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-black">
                                 {t}
                             </span>
                         ))}
                     </div>
                 )}
             </div>
-        </a>
+        </Link>
     );
 }

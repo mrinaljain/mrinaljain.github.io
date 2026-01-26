@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { VideoGrid } from "@/components/videos/VideoGrid";
 import type { Video } from "@/types/video";
 
@@ -16,17 +17,20 @@ export default async function VideosPage() {
     const videos = await getVideos();
 
     return (
-        <main className="mx-auto max-w-6xl px-6 py-16">
-            <div className="flex flex-col gap-2">
-                <h1 className="text-4xl font-bold">Videos</h1>
-                <p className="text-neutral-600">
-                    Talks, tutorials, and sessions — all in one place.
-                </p>
-            </div>
+        <>
+            <Header />
+            <main className="mx-auto max-w-6xl px-6 py-16">
+                <div className="flex flex-col gap-2">
+                    <h1 className="text-4xl font-bold">Videos</h1>
+                    <p className="text-neutral-600">
+                        Talks, tutorials, and sessions — all in one place.
+                    </p>
+                </div>
 
-            <div className="mt-10">
-                <VideoGrid videos={videos} />
-            </div>
-        </main>
+                <div className="mt-10">
+                    <VideoGrid videos={videos} />
+                </div>
+            </main>
+        </>
     );
 }

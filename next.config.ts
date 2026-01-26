@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     unoptimized: true,
-    remotePatterns: [new URL('https://i.ytimg.com/**'), new URL('https://img.youtube.com/**'),], // Allow images from YouTube
+    remotePatterns: [new URL('https://i.ytimg.com/**'), new URL('https://img.youtube.com/**'), new URL('https://i3.ytimg.com/**')], // Allow images from YouTube
   },
 };
 
