@@ -1,12 +1,15 @@
 "use client"
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { usePathname } from 'next/navigation'
+
 import Link from "next/link";
 
 export default function Header() {
    const [isScrolled, setIsScrolled] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
-
+   const pathname = usePathname()
+   console.log(pathname);
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY > 100) {
@@ -23,7 +26,7 @@ export default function Header() {
    return (
       <header
          className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
-        ${isScrolled ? "backdrop-blur-lg bg-black/30 shadow-lg" : "opacity-0"}
+        ${isScrolled || pathname == "/videos" ? "backdrop-blur-lg bg-black/30 shadow-lg" : "opacity-0"}
       `}
       >
          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-4 flex justify-between items-center">
