@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/talk/index.js",
+    "src/app/talk/index.js",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [

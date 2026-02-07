@@ -1,7 +1,7 @@
 
 
 import { Metadata } from "next";
-import { structuredResumeJsonLd } from "@/data/jsonLdResume";
+import { structuredResumeJsonLd } from "@/src/data/jsonLdResume";
 import Script from "next/script";
 import Reffrences from "@/components/resume/Reffrences";
 import Hobbies from "@/components/resume/Hobbies";
