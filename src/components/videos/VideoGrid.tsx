@@ -1,4 +1,4 @@
-import type { Video } from "@/types/video";
+import type { Video } from "@/src/types/video";
 import { VideoCard } from "./VideoCard";
 
 export function VideoGrid({ videos }: { videos: Video[] }) {

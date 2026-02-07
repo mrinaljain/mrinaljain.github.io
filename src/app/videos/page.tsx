@@ -1,6 +1,7 @@
-import Header from "@/components/Header";
-import { VideoGrid } from "@/components/videos/VideoGrid";
-import type { Video } from "@/types/video";
+
+import Header from "@/src/components/Header";
+import { VideoGrid } from "@/src/components/videos/VideoGrid";
+import type { Video } from "@/src/types/video";
 
 async function getVideos(): Promise<Video[]> {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/videos?limit=60`, {

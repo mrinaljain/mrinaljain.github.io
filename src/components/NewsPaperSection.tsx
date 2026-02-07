@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { NewsItem, newsItems } from "@/data/newsItems";
+import { NewsItem, newsItems } from "@/src/data/newsItems";
 
 // Define TypeScript interface for news items
 

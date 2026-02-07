@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Video } from "@/types/video";
+import type { Video } from "@/src/types/video";
 import Link from "next/link";
 
 export function VideoCard({ video }: { video: Video }) {

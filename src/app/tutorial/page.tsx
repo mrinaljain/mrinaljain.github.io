@@ -1,4 +1,3 @@
-// app/about/page.tsx
 
 export default function Tutorial() {
    return (

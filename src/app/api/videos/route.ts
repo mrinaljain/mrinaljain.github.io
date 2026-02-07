@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import connectDB from "@/lib/db/mongodb";
-import { VideoModel } from "@/models/Video";
+import connectDB from "@/src/lib/db/mongodb";
+import { VideoModel } from "@/src/models/Video";
 
 export async function GET(req: Request) {
 
