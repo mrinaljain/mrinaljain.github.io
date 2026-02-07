@@ -1,5 +1,6 @@
-import Header from "@/components/Header";
-import { VideoGrid } from "@/components/videos/VideoGrid";
+
+import Header from "@/src/components/Header";
+import { VideoGrid } from "@/src/components/videos/VideoGrid";
 import type { Video } from "@/src/types/video";
 
 async function getVideos(): Promise<Video[]> {
