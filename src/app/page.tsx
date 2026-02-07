@@ -1,11 +1,9 @@
-// import NewspaperSection from "@/components/NewsPaperSection";
-// import SocialLinks from "@/components/SocialLinks";
-import Experiences from "@/components/Experiences";
-import Header from "@/components/Header";
-import TagList from "@/components/TagList";
-import IntroVideo from "@/components/video";
-import YouTubeVideos from "@/components/YouTubeVideos";
-// import Head from "next/head";
+
+import Experiences from "../components/Experiences";
+import Header from "../components/Header";
+import TagList from "../components/TagList";
+import IntroVideo from "../components/video";
+import YouTubeVideos from "../components/YouTubeVideos";
 import Link from "next/link";
 
 export default function Home() {

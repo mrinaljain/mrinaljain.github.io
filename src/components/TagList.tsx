@@ -1,4 +1,4 @@
-import { featuredItems } from "@/data/featured";
+import { featuredItems } from "@/src/data/featured";
 import Image from "next/image";
 
 const TagList = () => {
