@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET() {
     // const { id } = params;
 
     // demo dataset — replace with DB call

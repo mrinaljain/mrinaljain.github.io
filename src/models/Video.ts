@@ -2,6 +2,7 @@ import { Schema, models, model } from "mongoose";
 
 const VideoSchema = new Schema(
   {
+    id: { type: String, required: true, unique: true, index: true },
     title: { type: String, required: true, trim: true },
     slug: {
       type: String,
