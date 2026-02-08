@@ -1,6 +1,6 @@
 "use client";
 
-import { socialLinks } from "@/src/data/socialLinks";
+import { socialLinks } from "@/data/socialLinks";
 
 
 function SocialLinks() {
