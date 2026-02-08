@@ -1,6 +1,6 @@
 "use client";
 
-import { initAmplitude } from "@/src/app/amplitude";
+import { initAmplitude } from "@/app/amplitude";
 import { useEffect } from "react";
 
 export default function AmplitudeProvider() {

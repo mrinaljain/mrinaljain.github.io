@@ -1,20 +1,21 @@
 
 
 import { Metadata } from "next";
-import { structuredResumeJsonLd } from "@/src/data/jsonLdResume";
 import Script from "next/script";
-import Reffrences from "@/src/components/resume/Reffrences";
-import Hobbies from "@/src/components/resume/Hobbies";
-import Skills from "@/src/components/resume/Skills";
-import Education from "@/src/components/resume/Education";
-import Contact from "@/src/components/resume/Contact";
-import Volunteer from "@/src/components/resume/Volunteer";
-import Awards from "@/src/components/resume/Awards";
-import Experience from "@/src/components/resume/Experience";
+import Reffrences from "@/components/resume/Reffrences";
+import Hobbies from "@/components/resume/Hobbies";
+import Skills from "@/components/resume/Skills";
+import Education from "@/components/resume/Education";
+import Contact from "@/components/resume/Contact";
+import Volunteer from "@/components/resume/Volunteer";
+import Awards from "@/components/resume/Awards";
+import Experience from "@/components/resume/Experience";
 import "../../components/resume/Resume.css"
-import About from "@/src/components/resume/About";
-import DownloadResume from "@/src/components/resume/DownloadResume";
-import Header from "@/src/components/resume/Header";
+import About from "@/components/resume/About";
+import DownloadResume from "@/components/resume/DownloadResume";
+
+import { structuredResumeJsonLd } from "@/data/jsonLdResume";
+import Header from "@/components/resume/Header";
 
 export const metadata: Metadata = {
    title: "Resume",

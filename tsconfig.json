@@ -22,9 +22,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     }
   },
@@ -34,7 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/talk/index.js",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"
