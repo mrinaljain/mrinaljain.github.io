@@ -1,4 +1,4 @@
-import type { Video } from "@/src/types/video";
+import type { Video } from "@/types/video";
 import { VideoCard } from "./VideoCard";
 
 export function VideoGrid({ videos }: { videos: Video[] }) {
@@ -12,8 +12,8 @@ export function VideoGrid({ videos }: { videos: Video[] }) {
 
     return (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {videos.map((v) => (
-                <VideoCard key={v._id} video={v} />
+            {videos.map((video) => (
+                <VideoCard key={video.shortId} video={video} />
             ))}
         </div>
     );
