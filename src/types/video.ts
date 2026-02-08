@@ -1,14 +1,16 @@
 export type Video = {
-    _id: string;
+    id: string;
     title: string;
+    shortId: string;
+    slug: string;
     description?: string;
-    youtubeId: string;       // store just the YouTube ID (clean)
     thumbnailUrl: string;
     channelName?: string;
     tags: string[];
     publishedAt?: string;    // ISO
     durationSec?: number;
+    provider?: "SELF_HOSTED" | "YOUTUBE" | "VIMEO";
+    providerId?: string; // youtube id, etc.
+    mp4Url?: string;
     views?: number;
-    createdAt?: string;
-    updatedAt?: string;
 };

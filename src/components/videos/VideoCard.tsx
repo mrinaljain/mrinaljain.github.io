@@ -1,13 +1,13 @@
 import Image from "next/image";
-import type { Video } from "@/src/types/video";
+import type { Video } from "@/types/video";
 import Link from "next/link";
 
 export function VideoCard({ video }: { video: Video }) {
-    const href = `https://www.youtube.com/watch?v=${video.youtubeId}`;
+    const videoDetail = `/videos/${video.slug}-${video.shortId}`;
 
     return (
         <Link
-            href={href}
+            href={videoDetail}
             target="_blank"
             rel="noreferrer"
             className="group rounded-2xl border overflow-hidden hover:shadow-sm transition"

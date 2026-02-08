@@ -2,15 +2,50 @@ import { Schema, models, model } from "mongoose";
 
 const VideoSchema = new Schema(
   {
+    id: { type: String, required: true, unique: true, index: true },
     title: { type: String, required: true, trim: true },
+    slug: {
+      type: String,
+      required: true,
+      index: true
+    },
+    shortId: {
+      type: String, // e.g. "7f3k2c"
+      required: true,
+      unique: true,
+      index: true,
+    },
     description: { type: String },
-    youtubeId: { type: String, required: true, unique: true, index: true },
+    provider: {
+      type: String,
+      enum: ["YOUTUBE", "SELF_HOSTED", "VIMEO"],
+      required: true,
+      index: true,
+    },
+    providerId: {
+      type: String, // youtubeId, vimeoId, etc.
+      index: true,
+      unique: true
+    },
+    mp4Url: {
+      type: String, // only for self-hosted
+    },
     thumbnailUrl: { type: String, required: true },
     channelName: { type: String },
     tags: { type: [String], default: [] },
-    publishedAt: { type: Date },
+    publishedAt: { type: Date, index: true, },
+    status: {
+      type: String,
+      enum: ["draft", "published", "unlisted"],
+      default: "draft",
+      index: true,
+    },
     durationSec: { type: Number },
-    views: { type: Number },
+    isIndexable: {
+      type: Boolean,
+      default: true,
+    },
+    views: { type: Number, default: 0, },
   },
   { timestamps: true }
 );

@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import { experienceData } from "@/src/data/experience";
+import { experienceData } from "@/data/experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
