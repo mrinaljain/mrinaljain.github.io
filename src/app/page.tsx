@@ -27,9 +27,9 @@ export default function Home() {
         </div>
       </section>
       <YouTubeVideos />
-      <Experiences />
+      {/* <Experiences /> */}
       {/* <NewspaperSection /> */}
-      <HomeFeaturedProjects />
+      {/* <HomeFeaturedProjects /> */}
 
       <Link
         href="https://topmate.io/introvert_influencer"

@@ -6,9 +6,9 @@ export async function GET() {
    await connectDB();
    try {
       const projects = await Project.find({});
-      NextResponse.json(projects);
+      return NextResponse.json(projects);
    } catch (err) {
-      NextResponse.json({ error: err })
+      return NextResponse.json({ error: err })
    }
 
 }
@@ -18,9 +18,9 @@ export async function POST(req: Request) {
    try {
       const body = await req.json();
       const project = await Project.create(body);
-      NextResponse.json(project);
+      return NextResponse.json(project);
    } catch (err) {
-      NextResponse.json({ error: err })
+      return NextResponse.json({ error: err })
    }
 }
 
@@ -29,9 +29,9 @@ export async function DELETE(req: Request) {
    try {
       const { id } = await req.json();
       const project = await Project.findByIdAndDelete(id);
-      NextResponse.json(project);
+      return NextResponse.json(project);
    } catch (err) {
-      NextResponse.json({ error: err })
+      return NextResponse.json({ error: err })
    }
 }
 
@@ -40,9 +40,9 @@ export async function PUT(req: Request) {
    try {
       const body = await req.json();
       const project = await Project.findByIdAndUpdate(body._id, body);
-      NextResponse.json(project);
+      return NextResponse.json(project);
    } catch (err) {
-      NextResponse.json({ error: err })
+      return NextResponse.json({ error: err })
    }
 }
 
@@ -51,9 +51,9 @@ export async function PATCH(req: Request) {
    try {
       const body = await req.json();
       const project = await Project.findByIdAndUpdate(body._id, body);
-      NextResponse.json(project);
+      return NextResponse.json(project);
    } catch (err) {
-      NextResponse.json({ error: err })
+      return NextResponse.json({ error: err })
    }
 }
 
