@@ -9,20 +9,22 @@ export async function GET(req: Request) {
     try {
         // TODO: Move connect DB to a common place
         await connectDB();
-        const { searchParams } = new URL(req.url);
-        const q = searchParams.get("q")?.trim();
-        const tag = searchParams.get("tag")?.trim();
-        const limit = Number(searchParams.get("limit") || 24);
+        // TODO: use belo filter when advance filtering is required
+        // const { searchParams } = new URL(req.url);
+        // const q = searchParams.get("q")?.trim();
+        // const tag = searchParams.get("tag")?.trim();
+        // const limit = Number(searchParams.get("limit") || 24);
 
-        const filter: Record<string, any> = {};
-        if (q) filter.title = { $regex: q, $options: "i" };
-        if (tag) filter.tags = tag;
+        // const filter: Record<string, any> = {};
+        // if (q) filter.title = { $regex: q, $options: "i" };
+        // if (tag) filter.tags = tag;
 
-        const videos = await VideoModel.find(filter)
-            .sort({ publishedAt: -1, createdAt: -1 })
-            .limit(Math.min(limit, 100))
-            .lean();
+        // const videos = await VideoModel.find(filter)
+        //     .sort({ publishedAt: -1, createdAt: -1 })
+        //     .limit(Math.min(limit, 100))
+        //     .lean();
 
+        const videos = await VideoModel.find().lean();
         return NextResponse.json({ ok: true, videos }, { status: 200 });
     } catch (err) {
         console.error("GET /api/videos error:", err || err);
@@ -31,7 +33,6 @@ export async function GET(req: Request) {
             { status: 500 }
         );
     }
-
 }
 
 // TODO: This api should only work with credentials of admin
