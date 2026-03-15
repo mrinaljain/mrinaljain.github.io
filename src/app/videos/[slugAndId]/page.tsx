@@ -1,4 +1,3 @@
-// src/app/videos/[slugAndId]/page.tsx
 import { notFound, redirect } from "next/navigation";
 import { fetchVideoById, parseSlugAndId, canonicalSlugAndId } from "@/lib/videos";
 import { Metadata } from "next";

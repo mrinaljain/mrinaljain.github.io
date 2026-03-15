@@ -45,27 +45,10 @@ export async function POST(req: Request) {
         if (!body?.title) {
             return NextResponse.json({ ok: false, message: "title is required" }, { status: 400 });
         }
-
-        // Determine provider and providerId (support legacy `youtubeId`)
-        const provider = (body.provider || (body.youtubeId ? "YOUTUBE" : (body.mp4Url ? "SELF_HOSTED" : null)))?.toString().toUpperCase();
-        const providerId = body.providerId || body.youtubeId || null;
+        const provider = body.provider;
+        const providerId = body.providerId || null;
         const mp4Url = body.mp4Url || null;
 
-        // Require at least one playable source
-        if (!provider) {
-            return NextResponse.json(
-                { ok: false, message: "provider (YOUTUBE/SELF_HOSTED/VIMEO) or youtubeId/mp4Url is required" },
-                { status: 400 }
-            );
-        }
-
-        if (provider === "YOUTUBE" && !providerId) {
-            return NextResponse.json({ ok: false, message: "providerId (youtube id) is required for YOUTUBE provider" }, { status: 400 });
-        }
-
-        if (provider === "SELF_HOSTED" && !mp4Url) {
-            return NextResponse.json({ ok: false, message: "mp4Url is required for SELF_HOSTED provider" }, { status: 400 });
-        }
 
         // Prevent duplicate provider+providerId (e.g., same YouTube id twice)
         if (providerId) {
@@ -102,27 +85,13 @@ export async function POST(req: Request) {
             isIndexable: typeof body.isIndexable === "boolean" ? body.isIndexable : true,
         };
 
-        // Minimal required thumbnail check (you had this required previously)
-        if (!data.thumbnailUrl) {
-            return NextResponse.json({ ok: false, message: "thumbnailUrl is required" }, { status: 400 });
-        }
+
 
         const created = await VideoModel.create(data);
 
         return NextResponse.json({ ok: true, video: created }, { status: 201 });
     } catch (err: any) {
         console.error("POST /api/videos error:", err);
-
-        // Duplicate key handling (unique shortId or other unique indexes)
-        if (err?.code === 11000) {
-            // Inspect which key caused duplicate (helpful message)
-            const key = err?.keyValue ? Object.keys(err.keyValue)[0] : "duplicate key";
-            return NextResponse.json(
-                { ok: false, message: `Duplicate key error: ${key}` },
-                { status: 409 }
-            );
-        }
-
         return NextResponse.json({ ok: false, message: "Failed to create video" }, { status: 500 });
     }
 }
