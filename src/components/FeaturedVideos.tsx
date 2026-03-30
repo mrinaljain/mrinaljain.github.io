@@ -1,15 +1,23 @@
 
 import { Video } from "@/types/video";
-import Image from "next/image";
 import Link from "next/link";
 import { VideoCard } from "./videos/VideoCard";
 
 async function getVideos(): Promise<Video[]> {
-   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/videos`);
+   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+   if (!baseUrl) return [];
 
-   if (!res.ok) throw new Error("Failed to load videos");
-   const data = await res.json();
-   return data.videos as Video[];
+   try {
+      const res = await fetch(`${baseUrl}/api/videos`, {
+         next: { revalidate: 60 },
+      });
+
+      if (!res.ok) return [];
+      const data = await res.json();
+      return (data?.videos ?? []) as Video[];
+   } catch {
+      return [];
+   }
 }
 export default async function FeaturedVideos() {
 
