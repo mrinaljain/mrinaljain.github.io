@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { fetchVideoById, parseSlugAndId, canonicalSlugAndId } from "@/lib/videos";
 import { Metadata } from "next";
 import VideoPlayer from "@/components/videos/VideoPlayer";
+import { createPageMetadata } from "@/lib/seo";
 
 type ParamsShape = { slugAndId?: string };
 type Props = { params: ParamsShape | Promise<ParamsShape> };
@@ -22,37 +23,48 @@ async function resolveParams(params: ParamsShape | Promise<ParamsShape> | undefi
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolved = await resolveParams(params);
-    if (!resolved) return { title: "Video not found" };
+    if (!resolved) {
+        return createPageMetadata({
+            title: "Video not found",
+            description: "The requested video could not be found.",
+            path: "/videos",
+            noIndex: true,
+        });
+    }
 
     const { slugAndId } = resolved;
     const parsed = parseSlugAndId(slugAndId ?? "");
     const { id } = parsed;
-    if (!id) return { title: "Video not found" };
+    if (!id) {
+        return createPageMetadata({
+            title: "Video not found",
+            description: "The requested video could not be found.",
+            path: "/videos",
+            noIndex: true,
+        });
+    }
 
     const video = await fetchVideoById(id);
-    if (!video) return { title: "Video not found" };
+    if (!video) {
+        return createPageMetadata({
+            title: "Video not found",
+            description: "The requested video could not be found.",
+            path: "/videos",
+            noIndex: true,
+        });
+    }
 
     const title = video.title;
     const description = video.description ?? "";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL ?? ""}/videos/${canonicalSlugAndId(video)}`;
 
-    return {
+    return createPageMetadata({
         title,
         description,
-        openGraph: {
-            title,
-            description,
-            images: [{ url: video.thumbnailUrl }],
-            url,
-            type: "video.other",
-        },
-        twitter: {
-            card: "player",
-            title,
-            description,
-            images: [video.thumbnailUrl],
-        },
-    };
+        path: `/videos/${canonicalSlugAndId(video)}`,
+        image: video.thumbnailUrl,
+        type: "video.other",
+        twitterCard: "player",
+    });
 }
 
 export default async function VideoPage({ params }: Props) {

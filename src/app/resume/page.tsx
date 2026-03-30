@@ -16,11 +16,14 @@ import DownloadResume from "@/components/resume/DownloadResume";
 
 import { structuredResumeJsonLd } from "@/data/jsonLdResume";
 import Header from "@/components/resume/Header";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
    title: "Resume",
    description: "Mrinal Jain's resume as a Software Engineer with experience in OTT, B2C, Flutter, React, Node.js.",
-}
+   path: "/resume",
+   type: "article",
+});
 export default function Resume() {
    return (
       <>

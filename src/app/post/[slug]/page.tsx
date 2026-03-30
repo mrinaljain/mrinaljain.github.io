@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 type Props = {
    params: Promise<{ slug: string }>;
@@ -7,18 +8,12 @@ type Props = {
 
 export async function generateMetadata({ params, }: Props): Promise<Metadata> {
    const pageSlug = (await params).slug;
-   return {
+   return createPageMetadata({
       title: `#${pageSlug}`,
       description: `Talks with the tag ${pageSlug}`,
-      openGraph: {
-         title: `#${pageSlug}`,
-         description: `Talks with the tag ${pageSlug}`,
-         url: `https://mrinaljain.com/${pageSlug}`,
-         siteName: "Mrinal Jain - Portfolio",
-         type: "website",
-         locale: "en_US",
-      },
-   }
+      path: `/post/${pageSlug}`,
+      type: "article",
+   });
 }
 
 const Page = async ({ params, }: Props) => {
