@@ -9,7 +9,8 @@ export default function Header() {
    const [isScrolled, setIsScrolled] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
    const pathname = usePathname()
-   console.log(pathname);
+   const isHome = pathname === "/";
+
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY > 100) {
@@ -26,7 +27,7 @@ export default function Header() {
    return (
       <header
          className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
-        ${isScrolled || pathname == "/videos" ? "backdrop-blur-lg bg-black/30 shadow-lg" : "opacity-0"}
+        ${isScrolled || !isHome ? "backdrop-blur-lg bg-black/30 shadow-lg" : "opacity-0"}
       `}
       >
          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-4 flex justify-between items-center">
