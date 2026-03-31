@@ -1,0 +1,273 @@
+{
+  "examples": [
+    {
+      "name": "Welcome Popup",
+      "id": "welcome-popup",
+      "content": {
+        "title": "Welcome to My Portfolio!",
+        "description": "Explore my projects, experience, and latest work",
+        "imageUrl": "https://via.placeholder.com/600x400?text=Welcome",
+        "buttonAction": {
+          "label": "Start Exploring",
+          "url": "#projects",
+          "target": "_self",
+          "actionType": "link"
+        },
+        "backgroundColor": "#ffffff",
+        "textColor": "#000000",
+        "borderStyle": "rounded",
+        "borderRadius": 12
+      },
+      "isActive": true,
+      "displayFrequency": "once",
+      "displayDelay": 1,
+      "dismissibleAfter": null,
+      "targetPages": ["/"],
+      "priority": 1,
+      "description": "A simple welcome popup that appears once per visitor"
+    },
+    {
+      "name": "Video Promotion Popup",
+      "id": "video-promo",
+      "content": {
+        "title": "Featured Video",
+        "description": "Check out my latest tutorial",
+        "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "videoProvider": "youtube",
+        "videoDimensions": {
+          "width": 560,
+          "height": 315
+        },
+        "buttonAction": {
+          "label": "Subscribe",
+          "url": "https://www.youtube.com/@mrinaljain",
+          "target": "_blank",
+          "actionType": "link"
+        },
+        "backgroundColor": "#f8f9fa",
+        "textColor": "#1a1a1a"
+      },
+      "isActive": true,
+      "displayFrequency": "always",
+      "displayDelay": 3,
+      "dismissibleAfter": null,
+      "targetPages": ["/"],
+      "priority": 2,
+      "description": "Video popup that plays embedded YouTube videos. Shows every visit"
+    },
+    {
+      "name": "Time-Limited Campaign",
+      "id": "spring-campaign",
+      "content": {
+        "title": "Spring Portfolio Refresh",
+        "description": "Discover new projects and updates",
+        "imageUrl": "https://via.placeholder.com/600x400?text=New+Projects",
+        "buttonAction": {
+          "label": "View New Work",
+          "url": "/projects",
+          "target": "_self",
+          "actionType": "link"
+        },
+        "backgroundColor": "#f0f9ff",
+        "textColor": "#1e40af",
+        "borderStyle": "rounded",
+        "borderRadius": 16
+      },
+      "isActive": true,
+      "displayFrequency": "once",
+      "displayDelay": 2,
+      "dismissibleAfter": 30,
+      "targetPages": ["/"],
+      "priority": 1,
+      "startDate": "2024-03-21T00:00:00Z",
+      "endDate": "2024-03-31T23:59:59Z",
+      "description": "Time-limited campaign that only shows during a specific date range"
+    },
+    {
+      "name": "Animated Call-to-Action",
+      "id": "animated-cta",
+      "content": {
+        "title": "Let's Connect",
+        "description": "Schedule a consultation or chat with me",
+        "imageUrl": "https://via.placeholder.com/600x400?text=Let%27s+Connect",
+        "buttonAction": {
+          "label": "Book 1:1 Call",
+          "url": "https://topmate.io/introvert_influencer",
+          "target": "_blank",
+          "actionType": "link"
+        },
+        "backgroundColor": "#e0f2fe",
+        "textColor": "#0369a1",
+        "borderStyle": "rounded",
+        "borderRadius": 12
+      },
+      "isActive": true,
+      "displayFrequency": "session",
+      "displayDelay": 5,
+      "dismissibleAfter": null,
+      "targetPages": ["/"],
+      "priority": 2,
+      "customCss": "@keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } } .popup-animated { animation: fadeInScale 0.5s ease-out; }",
+      "description": "Session-based popup with custom animation. Includes external link for bookings"
+    },
+    {
+      "name": "Resume Highlight",
+      "id": "resume-highlight",
+      "content": {
+        "title": "View My Resume",
+        "description": "Check out my full professional background",
+        "imageUrl": "https://via.placeholder.com/600x400?text=Resume",
+        "buttonAction": {
+          "label": "Download Resume",
+          "url": "/resume",
+          "target": "_self",
+          "actionType": "link"
+        },
+        "backgroundColor": "#f5f3ff",
+        "textColor": "#5b21b6",
+        "borderStyle": "rounded",
+        "borderRadius": 12
+      },
+      "isActive": true,
+      "displayFrequency": "once",
+      "displayDelay": 2,
+      "dismissibleAfter": 20,
+      "targetPages": ["/"],
+      "priority": 1,
+      "description": "Promotes resume viewing with auto-dismiss timeout"
+    },
+    {
+      "name": "Blog/Articles Feature",
+      "id": "blog-feature",
+      "content": {
+        "title": "Latest Articles",
+        "description": "Read my newest blog posts and tutorials",
+        "imageUrl": "https://via.placeholder.com/600x400?text=Blog",
+        "buttonAction": {
+          "label": "Read Articles",
+          "url": "/post",
+          "target": "_self",
+          "actionType": "link"
+        },
+        "backgroundColor": "#fef3c7",
+        "textColor": "#78350f",
+        "borderStyle": "rounded",
+        "borderRadius": 12
+      },
+      "isActive": true,
+      "displayFrequency": "always",
+      "displayDelay": 4,
+      "dismissibleAfter": null,
+      "targetPages": ["/"],
+      "priority": 1,
+      "description": "Highlights blog content. Shows on every visit"
+    },
+    {
+      "name": "Email Signup",
+      "id": "newsletter-signup",
+      "content": {
+        "title": "Subscribe to Updates",
+        "description": "Get notified about new articles and projects",
+        "imageUrl": "https://via.placeholder.com/600x400?text=Newsletter",
+        "buttonAction": {
+          "label": "Subscribe",
+          "url": "https://example.com/newsletter",
+          "target": "_blank",
+          "actionType": "link"
+        },
+        "backgroundColor": "#dcfce7",
+        "textColor": "#15803d",
+        "borderStyle": "rounded",
+        "borderRadius": 12
+      },
+      "isActive": true,
+      "displayFrequency": "once",
+      "displayDelay": 3,
+      "dismissibleAfter": 25,
+      "targetPages": ["/"],
+      "priority": 2,
+      "description": "Newsletter signup popup with external link"
+    },
+    {
+      "name": "Vimeo Video Popup",
+      "id": "vimeo-demo",
+      "content": {
+        "title": "Product Demo Video",
+        "description": "See how the system works",
+        "videoUrl": "https://player.vimeo.com/video/76979871",
+        "videoProvider": "vimeo",
+        "videoDimensions": {
+          "width": 640,
+          "height": 360
+        },
+        "buttonAction": {
+          "label": "Learn More",
+          "url": "https://example.com/product",
+          "target": "_blank",
+          "actionType": "link"
+        },
+        "backgroundColor": "#ffffff",
+        "textColor": "#000000"
+      },
+      "isActive": true,
+      "displayFrequency": "always",
+      "displayDelay": 2,
+      "dismissibleAfter": null,
+      "targetPages": ["/"],
+      "priority": 2,
+      "description": "Embedded Vimeo video with product link"
+    },
+    {
+      "name": "Self-Hosted Video",
+      "id": "self-hosted-video",
+      "content": {
+        "title": "My Video",
+        "description": "Watch this exclusive video",
+        "videoUrl": "https://example.com/videos/demo.mp4",
+        "videoProvider": "self-hosted",
+        "videoDimensions": {
+          "width": 640,
+          "height": 360
+        },
+        "buttonAction": {
+          "label": "More Videos",
+          "url": "/videos",
+          "target": "_self",
+          "actionType": "link"
+        },
+        "backgroundColor": "#ffffff",
+        "textColor": "#000000"
+      },
+      "isActive": true,
+      "displayFrequency": "always",
+      "displayDelay": 3,
+      "dismissibleAfter": null,
+      "targetPages": ["/"],
+      "priority": 1,
+      "description": "Self-hosted MP4 video with controls"
+    }
+  ],
+  "apiEndpoints": {
+    "getForPage": "GET /api/popups?page=/",
+    "create": "POST /api/popups",
+    "getById": "GET /api/popups/{id}",
+    "updateById": "PUT /api/popups/{id}",
+    "deleteById": "DELETE /api/popups/{id}",
+    "trackAnalytics": "POST /api/popups/{id}/analytics"
+  },
+  "displayFrequencies": {
+    "once": "Shows once per browser (remembers dismissal)",
+    "always": "Shows every time user visits",
+    "session": "Shows once per browser session (clears on tab close)"
+  },
+  "buttonActionTypes": {
+    "link": "Opens URL in target (_blank or _self)",
+    "modal": "Opens a modal (extendable)",
+    "custom": "Custom action (extendable)"
+  },
+  "videoProviders": {
+    "youtube": "YouTube embedded videos",
+    "vimeo": "Vimeo embedded videos",
+    "self-hosted": "Self-hosted MP4 videos"
+  }
+}
