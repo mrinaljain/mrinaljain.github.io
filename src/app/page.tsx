@@ -4,11 +4,13 @@ import Header from "../components/Header";
 import TagList from "../components/TagList";
 import IntroVideo from "../components/video";
 import YouTubeVideos from "../components/YouTubeVideos";
+import DynamicPopup from "../components/DynamicPopup";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
+      <DynamicPopup page="/" />
       <Header />
       <section className="flex flex-col md:flex-row h-screen">
         <IntroVideo />
