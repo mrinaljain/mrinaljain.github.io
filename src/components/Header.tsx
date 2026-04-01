@@ -26,7 +26,7 @@ export default function Header() {
    return (
       <header
          className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
-        ${isScrolled || pathname == "/videos" ? "backdrop-blur-lg bg-black/30 shadow-lg" : "opacity-0"}
+           ${isScrolled || pathname === "/videos" || pathname?.startsWith("/maps") ? "backdrop-blur-lg bg-black/30 shadow-lg" : "opacity-0"}
       `}
       >
          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-4 flex justify-between items-center">
