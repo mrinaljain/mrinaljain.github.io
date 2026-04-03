@@ -1,5 +1,6 @@
 
 import Experiences from "../components/Experiences";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TagList from "../components/TagList";
 import IntroVideo from "../components/video";
@@ -26,6 +27,7 @@ export default function Home() {
       <YouTubeVideos />
       <Experiences />
       {/* <NewspaperSection /> */}
+      <Footer />
       <Link
         href="https://topmate.io/introvert_influencer"
         target="_blank"
