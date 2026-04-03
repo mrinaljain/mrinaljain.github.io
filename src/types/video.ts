@@ -1,7 +1,5 @@
 export type Video = {
-    id: string;
     title: string;
-    shortId: string;
     slug: string;
     description?: string;
     thumbnailUrl: string;
@@ -10,7 +8,10 @@ export type Video = {
     publishedAt?: string;    // ISO
     durationSec?: number;
     provider?: "SELF_HOSTED" | "YOUTUBE" | "VIMEO";
-    providerId?: string; // youtube id, etc.
+    providerId?: string;
     mp4Url?: string;
     views?: number;
+    language?: string;
+    transcriptUrl?: string;
+    sourceUrl?: string;
 };

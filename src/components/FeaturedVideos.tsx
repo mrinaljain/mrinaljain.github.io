@@ -1,18 +1,14 @@
 
 import { Video } from "@/types/video";
+import Image from "next/image";
 import Link from "next/link";
-import { VideoCard } from "./videos/VideoCard";
 
 async function getVideos(): Promise<Video[]> {
    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-   const isBuildPhase = process.env.NEXT_PHASE === "phase-production-build";
-   if (!baseUrl || isBuildPhase) return [];
+   if (!baseUrl) return [];
 
    try {
-      const res = await fetch(`${baseUrl}/api/videos`, {
-         next: { revalidate: 60 },
-         signal: AbortSignal.timeout(4000),
-      });
+      const res = await fetch(`${baseUrl}/api/videos`);
 
       if (!res.ok) return [];
       const data = await res.json();
@@ -21,9 +17,36 @@ async function getVideos(): Promise<Video[]> {
       return [];
    }
 }
+
+function FeaturedSlimVideoCard({ video }: { video: Video }) {
+   return (
+      <Link
+         href={`/videos/${video.slug}`}
+         className="group block overflow-hidden rounded-xl border border-neutral-200 bg-white transition hover:border-neutral-300 hover:shadow-sm"
+      >
+         <div className="relative aspect-video bg-neutral-100">
+            <Image
+               src={video.thumbnailUrl}
+               alt={video.title}
+               fill
+               className="object-cover"
+               sizes="(max-width: 640px) 80vw, 340px"
+            />
+         </div>
+
+         <div className="px-3 py-2.5">
+            <h3 className="line-clamp-2 text-sm font-medium text-neutral-900 group-hover:underline sm:text-base">
+               {video.title}
+            </h3>
+         </div>
+      </Link>
+   );
+}
+
 export default async function FeaturedVideos() {
 
    const videos = await getVideos();
+   const shouldUseSlider = videos.length > 3;
 
    return (
       <section className="py-12">
@@ -56,24 +79,25 @@ export default async function FeaturedVideos() {
                </Link>
 
             </div>
-            {/* Mobile Slider */}
-            <div className="flex gap-6 overflow-x-auto  pb-4 md:hidden scrollbar-hide w-[90vw]">
-               {videos.map((video) => (
-                  <div
-                     key={video.shortId}
-                     className="min-w-[85%] snap-start flex-shrink-0"
-                  >
-                     <VideoCard video={video} />
-                  </div>
-               ))}
-            </div>
 
-            {/* Desktop Grid */}
-            <div className="hidden md:grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-               {videos.map((video) => (
-                  <VideoCard key={video.shortId} video={video} />
-               ))}
-            </div>
+            {shouldUseSlider ? (
+               <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 scrollbar-hide">
+                  {videos.map((video) => (
+                     <div
+                        key={video.slug}
+                        className="w-[78vw] shrink-0 snap-start sm:w-75 lg:w-85"
+                     >
+                        <FeaturedSlimVideoCard video={video} />
+                     </div>
+                  ))}
+               </div>
+            ) : (
+               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {videos.map((video) => (
+                     <FeaturedSlimVideoCard key={video.slug} video={video} />
+                  ))}
+               </div>
+            )}
 
          </div>
       </section>

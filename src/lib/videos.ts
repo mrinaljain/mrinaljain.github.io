@@ -1,17 +1,13 @@
 import { Video } from "@/types/video";
-import { slugAndIdFrom } from "@/utils/slugify";
+import { toSlug } from "@/utils/slugify";
 
 
-export async function fetchVideoById(id: string): Promise<Video | null> {
-    // Replace with real fetch from your DB or API.
+export async function fetchVideoBySlug(slug: string): Promise<Video | null> {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
     if (!baseUrl) return null;
 
     try {
-        const res = await fetch(`${baseUrl}/api/videos/${id}`, {
-            cache: "no-store",
-            signal: AbortSignal.timeout(4000),
-        });
+        const res = await fetch(`${baseUrl}/api/videos/${slug}`, { cache: "no-store" });
         if (!res.ok) return null;
         return (await res.json()) as Video;
     } catch {
@@ -19,16 +15,6 @@ export async function fetchVideoById(id: string): Promise<Video | null> {
     }
 }
 
-// Given slugAndId (string from url), return {slug, id}
-export function parseSlugAndId(slugAndId: string) {
-    // id is everything after the last hyphen
-    const idx = slugAndId.lastIndexOf("-");
-    if (idx === -1) return { slug: slugAndId, id: "" };
-    const slug = slugAndId.slice(0, idx);
-    const id = slugAndId.slice(idx + 1);
-    return { slug, id };
-}
-
-export function canonicalSlugAndId(video: Video) {
-    return slugAndIdFrom(video.title, video.shortId);
+export function canonicalSlug(video: Video) {
+    return video.slug || toSlug(video.title);
 }

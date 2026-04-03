@@ -5,14 +5,21 @@ import type { Video } from "@/types/video";
 
 async function getVideos(): Promise<Video[]> {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+<<<<<<< HEAD
     const isBuildPhase = process.env.NEXT_PHASE === "phase-production-build";
 
     if (!baseUrl || isBuildPhase) return [];
+=======
+    if (!baseUrl) return [];
+>>>>>>> master
 
     try {
         const res = await fetch(`${baseUrl}/api/videos?limit=60`, {
             next: { revalidate: 60 },
+<<<<<<< HEAD
             signal: AbortSignal.timeout(4000),
+=======
+>>>>>>> master
         });
 
         if (!res.ok) return [];
@@ -33,7 +40,7 @@ export default async function VideosPage() {
             <main className="mx-auto max-w-6xl px-6 py-16">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-4xl font-bold">Videos</h1>
-                    <p className="text-neutral-600">
+                    <p className="text-neutral-600 dark:text-neutral-300">
                         Talks, tutorials, and sessions — all in one place.
                     </p>
                 </div>

@@ -5,6 +5,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import React from "react";
 import AmplitudeProvider from "../components/AmplitudeProvider";
 import { siteMetadata } from "@/lib/seo";
+import ThemeProvider from "../components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AmplitudeProvider />
-        {children}
+        <ThemeProvider>
+          <AmplitudeProvider />
+          {children}
+        </ThemeProvider>
         {/* <GoogleAnalytics gaId="G-DY3RQS5E8M" /> */}
 
         <GoogleTagManager gtmId="GTM-5GJ3RWV" />
