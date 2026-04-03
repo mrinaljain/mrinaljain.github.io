@@ -1,12 +1,19 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import type { NextConfig } from "next";
 
+const isDeployedProduction =
+  process.env.NODE_ENV === "production" &&
+  (process.env.VERCEL === "1" || process.env.NETLIFY === "true");
+
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
     unoptimized: true,
     remotePatterns: [new URL('https://i.ytimg.com/**'), new URL('https://img.youtube.com/**'), new URL('https://i3.ytimg.com/**')], // Allow images from YouTube
   },
+  // Enable Fast Refresh optimizations
+  reactStrictMode: true,
+
 };
 
 export default withSentryConfig(nextConfig, {
@@ -29,7 +36,8 @@ export default withSentryConfig(nextConfig, {
   // This can increase your server load as well as your hosting bill.
   // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
   // side errors will fail.
-  tunnelRoute: process.env.NODE_ENV === "production" ? "/monitoring" : undefined,
+  // Keep the tunnel enabled in real deployments, but avoid local prod-mode proxy TLS issues.
+  tunnelRoute: isDeployedProduction ? "/monitoring" : undefined,
 
   // Automatically tree-shake Sentry logger statements to reduce bundle size
   disableLogger: true,

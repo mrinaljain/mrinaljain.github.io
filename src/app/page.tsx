@@ -25,9 +25,7 @@ export default function Home() {
           <TagList />
         </div>
       </section>
-      <Suspense>
-        <FeaturedVideos />
-      </Suspense>
+      <FeaturedVideos />
       <Experiences />
       {/* <NewspaperSection /> */}
       <Link

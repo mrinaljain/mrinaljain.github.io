@@ -1,7 +1,5 @@
 export type Video = {
-    // id: string;
     title: string;
-    shortId: string;
     slug: string;
     description?: string;
     thumbnailUrl: string;
@@ -13,4 +11,7 @@ export type Video = {
     providerId?: string;
     mp4Url?: string;
     views?: number;
+    language?: string;
+    transcriptUrl?: string;
+    sourceUrl?: string;
 };

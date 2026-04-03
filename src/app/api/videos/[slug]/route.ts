@@ -1,21 +1,19 @@
 import { VideoModel } from "@/models/Video";
 import { NextResponse } from "next/server";
+import connectDB from "@/lib/db/mongodb";
 
-type ParamsPromise = Promise<{ id: string }>;
+type ParamsPromise = Promise<{ slug: string }>;
 
 
 export async function GET(_req: Request, context: { params: ParamsPromise }) {
-    const { id } = await context.params;
-    if (!id) {
-        return NextResponse.json({ message: "Missing id" }, { status: 400 });
+    await connectDB();
+    const { slug } = await context.params;
+    if (!slug) {
+        return NextResponse.json({ message: "Missing slug" }, { status: 400 });
     }
+
     const video = await VideoModel.findOne({
-        $or: [
-            { shortId: id },
-            { slug: id },
-            { providerId: id },
-            { _id: id },
-        ],
+        slug: slug
     }).lean();
 
     if (!video) {

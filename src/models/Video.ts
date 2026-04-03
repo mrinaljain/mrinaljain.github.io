@@ -2,18 +2,12 @@ import { Schema, models, model } from "mongoose";
 
 const VideoSchema = new Schema(
   {
-    // id: { type: String, required: true, unique: true, index: true },
     title: { type: String, required: true, trim: true },
     slug: {
       type: String,
       required: true,
-      index: true
-    },
-    shortId: {
-      type: String, // e.g. "7f3k2c"
-      required: true,
       unique: true,
-      index: true,
+      index: true
     },
     description: { type: String },
     provider: {
@@ -30,8 +24,13 @@ const VideoSchema = new Schema(
     mp4Url: {
       type: String, // only for self-hosted
     },
+    sourceUrl: {
+      type: String,
+    },
     thumbnailUrl: { type: String, required: true },
+    transcriptUrl: { type: String },
     channelName: { type: String },
+    language: { type: String, default: "en" },
     tags: { type: [String], default: [] },
     publishedAt: { type: Date, index: true, },
     status: {
