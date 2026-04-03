@@ -12,20 +12,20 @@ const ExperienceTimeline = () => {
          {experienceData.map((exp, index) => (
             <div
                key={index}
-               className="relative w-full md:w-2/3 bg-white shadow-lg rounded-lg p-5 transition-all duration-300 hover:scale-[1.01] hover:shadow-[-10px_10px_15px_-4px_rgba(0,0,0,0.25)]"
+               className="relative w-full md:w-2/3 bg-white dark:bg-slate-900 shadow-lg rounded-lg p-5 transition-all duration-300 hover:scale-[1.01] hover:shadow-[-10px_10px_15px_-4px_rgba(0,0,0,0.25)]"
             >
                {/* Company Info Section */}
                <div className="flex items-center gap-4">
                   <Image src={exp.logo} width={56} height={56} alt={exp.company} className="w-14 h-14 rounded-md" />
                   <div>
                      <h2 className="text-xl font-bold">{exp.company}</h2>
-                     <h3 className="text-md text-gray-600">{exp.designation}</h3>
-                     <p className="text-sm text-gray-500">{exp.location} • {exp.year}</p>
+                     <h3 className="text-md text-slate-600 dark:text-slate-300">{exp.designation}</h3>
+                     <p className="text-sm text-slate-500 dark:text-slate-400">{exp.location} • {exp.year}</p>
                   </div>
                </div>
 
                {/* Project Highlights */}
-               <ul className="mt-3 list-disc list-inside text-sm text-gray-700">
+               <ul className="mt-3 list-disc list-inside text-sm text-slate-700 dark:text-slate-300">
                   {exp.projects.map((project, idx) => (
                      <li key={idx}>{project}</li>
                   ))}

@@ -62,7 +62,7 @@ export default async function VideoPage({ params }: Props) {
     const { slugAndId } = resolved;
     if (!slugAndId) return notFound();
 
-    const { slug, id } = parseSlugAndId(slugAndId);
+    const { id } = parseSlugAndId(slugAndId);
     if (!id) return notFound();
 
     const video = await fetchVideoById(id);
@@ -89,7 +89,7 @@ export default async function VideoPage({ params }: Props) {
 
     return (
         <>
-            <section className="w-full bg-black">
+            <section className="w-full bg-slate-900 dark:bg-black">
                 <div className="relative w-full aspect-video">
                     <VideoPlayer
                         provider={video.provider}
@@ -100,8 +100,8 @@ export default async function VideoPage({ params }: Props) {
                     />
                 </div>
             </section>
-            <main className="max-w-3xl p-6 ">
-                <h1 className="text-2xl font-bold mb-4 ">{video.title}</h1>
+            <main className="max-w-3xl p-6">
+                <h1 className="text-2xl font-bold mb-4">{video.title}</h1>
 
 
 

@@ -24,7 +24,7 @@ export default async function VideosPage() {
             <main className="mx-auto max-w-6xl px-6 py-16">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-4xl font-bold">Videos</h1>
-                    <p className="text-neutral-600">
+                    <p className="text-neutral-600 dark:text-neutral-300">
                         Talks, tutorials, and sessions — all in one place.
                     </p>
                 </div>

@@ -6,8 +6,8 @@ const TagList = () => {
       <div className="mt-10">
 
          <div className="relative my-4">
-            <hr className="border-gray-300" />
-            <span className="absolute left-1/2 -top-3 transform -translate-x-1/2 bg-white px-3 text-xs text-gray-500 uppercase tracking-wide">
+            <hr className="border-slate-300 dark:border-slate-700" />
+            <span className="absolute left-1/2 -top-3 transform -translate-x-1/2 bg-white dark:bg-slate-950 px-3 text-xs text-slate-500 dark:text-slate-300 uppercase tracking-wide">
                Featured On
             </span>
          </div>

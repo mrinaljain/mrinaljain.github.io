@@ -10,9 +10,9 @@ export function VideoCard({ video }: { video: Video }) {
             href={videoDetail}
             target="_blank"
             rel="noreferrer"
-            className="group rounded-2xl border overflow-hidden hover:shadow-sm transition"
+            className="group rounded-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden hover:shadow-sm transition"
         >
-            <div className="relative aspect-video bg-neutral-100">
+            <div className="relative aspect-video bg-neutral-100 dark:bg-neutral-800">
                 <Image
                     src={video.thumbnailUrl}
                     alt={video.title}
@@ -28,13 +28,13 @@ export function VideoCard({ video }: { video: Video }) {
                 </h3>
 
                 {video.channelName && (
-                    <p className="mt-1 text-sm text-neutral-600">{video.channelName}</p>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">{video.channelName}</p>
                 )}
 
                 {!!video.tags?.length && (
                     <div className="mt-3 flex flex-wrap gap-2">
                         {video.tags.slice(0, 4).map((t) => (
-                            <span key={t} className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-black">
+                            <span key={t} className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1 text-xs text-black dark:text-white">
                                 {t}
                             </span>
                         ))}
