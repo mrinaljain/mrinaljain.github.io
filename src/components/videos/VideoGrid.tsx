@@ -4,7 +4,7 @@ import { VideoCard } from "./VideoCard";
 export function VideoGrid({ videos }: { videos: Video[] }) {
     if (!videos?.length) {
         return (
-            <div className="rounded-2xl border p-10 text-center text-neutral-600">
+            <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-10 text-center text-neutral-600 dark:text-neutral-300">
                 No videos found.
             </div>
         );
