@@ -5,21 +5,11 @@ import type { Video } from "@/types/video";
 
 async function getVideos(): Promise<Video[]> {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-<<<<<<< HEAD
-    const isBuildPhase = process.env.NEXT_PHASE === "phase-production-build";
-
-    if (!baseUrl || isBuildPhase) return [];
-=======
     if (!baseUrl) return [];
->>>>>>> master
 
     try {
         const res = await fetch(`${baseUrl}/api/videos?limit=60`, {
             next: { revalidate: 60 },
-<<<<<<< HEAD
-            signal: AbortSignal.timeout(4000),
-=======
->>>>>>> master
         });
 
         if (!res.ok) return [];
