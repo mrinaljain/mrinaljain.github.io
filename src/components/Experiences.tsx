@@ -2,12 +2,18 @@
 import Image from "next/image";
 import { experienceData } from "@/data/experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 
 const ExperienceTimeline = () => {
    return (
       <div className="relative flex flex-col items-center gap-10 p-6">
-         <h2 className="text-3xl font-semibold text-center mb-8">Experience</h2>
+         <div className="flex items-center gap-3">
+            <span className="h-6 w-1.5 bg-black rounded-full"></span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+               Experience
+            </h2>
+         </div>
 
          {experienceData.map((exp, index) => (
             <div

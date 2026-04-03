@@ -4,14 +4,20 @@ import { VideoGrid } from "@/components/videos/VideoGrid";
 import type { Video } from "@/types/video";
 
 async function getVideos(): Promise<Video[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/videos?limit=60`, {
-        // If your videos change often, use revalidate:
-        next: { revalidate: 60 }, // seconds
-    });
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+    if (!baseUrl) return [];
 
-    if (!res.ok) throw new Error("Failed to load videos");
-    const data = await res.json();
-    return data.videos as Video[];
+    try {
+        const res = await fetch(`${baseUrl}/api/videos?limit=60`, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) return [];
+        const data = await res.json();
+        return (data?.videos ?? []) as Video[];
+    } catch {
+        return [];
+    }
 }
 
 export default async function VideosPage() {
