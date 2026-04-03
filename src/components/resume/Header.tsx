@@ -5,7 +5,7 @@ function Header() {
    return (
       <div id="photoHeader" className="text-center">
          {/* PHOTO (AVATAR) */}
-         <div id="photo" className="inline-block justify-center mb-4 w-[162px] h-[162px]  rounded-full overflow-hidden p-[5px] bg-[#334960]">
+         <div id="photo" className="inline-block justify-center mb-4 w-[162px] h-[162px] rounded-full overflow-hidden p-[5px] bg-slate-700 dark:bg-slate-800">
             <Image
                src="./mrinal_jain.jpeg"
                height={160}

@@ -1,0 +1,5 @@
+cat <<EOF > .git/config
+[user]
+    name = mrinaljain
+    email = jain.mrinal140@gmail.com
+EOF

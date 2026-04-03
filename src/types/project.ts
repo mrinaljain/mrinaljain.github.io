@@ -1,11 +1,14 @@
 export type Project = {
+    _id?: string;
     name: string;
-    command: string;
+    slug: string;
     description: string;
-    stack: string[];
+    tags: string[];
+    imageUrl: string;
     githubUrl?: string;
     liveUrl?: string;
-    imageUrl?: string;
     featured: boolean;
-    createdAt?: Date;
+    order?: number;
+    createdAt?: string;
+    updatedAt?: string;
 };

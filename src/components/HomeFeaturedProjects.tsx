@@ -1,34 +1,47 @@
-import TerminalProjectCard from "@/components/TerminalProjectCard";
+import ProjectCard from "@/components/ProjectCard";
+import { getBaseUrl } from "@/lib/url";
+import type { Project } from "@/types/project";
 import Link from "next/link";
 
-const HomeFeaturedProjects = async () => {
-   const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/projects`, { cache: "no-store" });
-   console.log("res", res);
+async function getFeaturedProjects(): Promise<Project[]> {
+   try {
+      const res = await fetch(`${getBaseUrl()}/api/projects?featured=true&limit=6`, {
+         next: { revalidate: 120 },
+      });
 
-   const projects: any[] = [];
+      if (!res.ok) return [];
+
+      const data = await res.json();
+      return (data?.projects ?? []) as Project[];
+   } catch {
+      return [];
+   }
+}
+
+const HomeFeaturedProjects = async () => {
+   const projects = await getFeaturedProjects();
 
    return (
-      <section className="bg-gray-100 py-12 px-6">
+      <section className="bg-slate-50 py-16 px-6">
          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-800">✨ Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">All Creative Works.</h2>
+            <p className="mt-3 text-slate-600">Here are some projects that I have worked on recently.</p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                {projects.map((project) => (
-                  <TerminalProjectCard key={project.command} {...project} />
+                  <ProjectCard key={project.slug} project={project} showCodeButton={false} />
                ))}
             </div>
-            {/* View All Projects Button */}
+
             <div className="mt-10 text-center">
                <Link
                   href="/projects"
-                  className="inline-block bg-blue-600 text-white px-5 py-3 rounded-full shadow-md hover:bg-blue-700 transition"
+                  className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-700"
                >
-                  View All Projects →
+                  Explore more →
                </Link>
             </div>
-         
          </div>
-         
       </section>
    );
 };
