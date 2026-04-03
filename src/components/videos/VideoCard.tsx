@@ -3,7 +3,7 @@ import type { Video } from "@/types/video";
 import Link from "next/link";
 
 export function VideoCard({ video }: { video: Video }) {
-    const videoDetail = `/videos/${video.slug}-${video.shortId}`;
+    const videoDetail = `/videos/${video.slug}`;
 
     return (
         <Link

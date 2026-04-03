@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import crypto from "crypto";
 import connectDB from "@/lib/db/mongodb";
 import { VideoModel } from "@/models/Video";
 import { toSlug } from "@/utils/slugify";
@@ -7,22 +6,9 @@ import { toSlug } from "@/utils/slugify";
 export async function GET(req: Request) {
 
     try {
-        // TODO: Move connect DB to a common place
         await connectDB();
-        const { searchParams } = new URL(req.url);
-        const q = searchParams.get("q")?.trim();
-        const tag = searchParams.get("tag")?.trim();
-        const limit = Number(searchParams.get("limit") || 24);
 
-        const filter: Record<string, any> = {};
-        if (q) filter.title = { $regex: q, $options: "i" };
-        if (tag) filter.tags = tag;
-
-        const videos = await VideoModel.find(filter)
-            .sort({ publishedAt: -1, createdAt: -1 })
-            .limit(Math.min(limit, 100))
-            .lean();
-
+        const videos = await VideoModel.find().lean();
         return NextResponse.json({ ok: true, videos }, { status: 200 });
     } catch (err) {
         console.error("GET /api/videos error:", err || err);
@@ -31,7 +17,6 @@ export async function GET(req: Request) {
             { status: 500 }
         );
     }
-
 }
 
 // TODO: This api should only work with credentials of admin
@@ -40,119 +25,105 @@ export async function POST(req: Request) {
         await connectDB();
         const body = await req.json();
 
-        // Basic validations
-        if (!body?.title) {
-            return NextResponse.json({ ok: false, message: "title is required" }, { status: 400 });
-        }
-
-        // Determine provider and providerId (support legacy `youtubeId`)
-        const provider = (body.provider || (body.youtubeId ? "YOUTUBE" : (body.mp4Url ? "SELF_HOSTED" : null)))?.toString().toUpperCase();
-        const providerId = body.providerId || body.youtubeId || null;
-        const mp4Url = body.mp4Url || null;
-
-        // Require at least one playable source
-        if (!provider) {
-            return NextResponse.json(
-                { ok: false, message: "provider (YOUTUBE/SELF_HOSTED/VIMEO) or youtubeId/mp4Url is required" },
-                { status: 400 }
-            );
-        }
-
-        if (provider === "YOUTUBE" && !providerId) {
-            return NextResponse.json({ ok: false, message: "providerId (youtube id) is required for YOUTUBE provider" }, { status: 400 });
-        }
-
-        if (provider === "SELF_HOSTED" && !mp4Url) {
-            return NextResponse.json({ ok: false, message: "mp4Url is required for SELF_HOSTED provider" }, { status: 400 });
-        }
-
-        // Prevent duplicate provider+providerId (e.g., same YouTube id twice)
-        if (providerId) {
-            const dup = await VideoModel.findOne({ provider: provider, providerId: providerId }).lean();
-            if (dup) {
-                return NextResponse.json(
-                    { ok: false, message: "Video already exists for this providerId" },
-                    { status: 409 }
-                );
-            }
-        }
-
-        // Generate shortId (unique) and slug (from title, ensure unique-ish)
-        const shortId = await makeUniqueShortId();
-        const baseSlug = toSlug(body.title);
-        const slug = await makeUniqueSlug(baseSlug);
-
-        // Build DB object
-        const data = {
-            title: body.title,
-            slug,
-            shortId,
-            description: body.description || "",
-            provider,
-            providerId: providerId || undefined,
-            mp4Url: mp4Url || undefined,
-            thumbnailUrl: body.thumbnailUrl || body.thumbnail || "", // require thumbnail later maybe
-            channelName: body.channelName || undefined,
-            tags: Array.isArray(body.tags) ? body.tags : (body.tags ? String(body.tags).split(",").map((t: string) => t.trim()) : []),
-            publishedAt: body.publishedAt ? new Date(body.publishedAt) : undefined,
-            durationSec: typeof body.durationSec === "number" ? body.durationSec : body.duration ? Number(body.duration) : undefined,
-            views: typeof body.views === "number" ? body.views : 0,
-            status: body.status || "published",
-            isIndexable: typeof body.isIndexable === "boolean" ? body.isIndexable : true,
-        };
-
-        // Minimal required thumbnail check (you had this required previously)
-        if (!data.thumbnailUrl) {
-            return NextResponse.json({ ok: false, message: "thumbnailUrl is required" }, { status: 400 });
-        }
-
-        const created = await VideoModel.create(data);
+        const payload = await buildVideoPayload(body);
+        const created = await VideoModel.create(payload);
 
         return NextResponse.json({ ok: true, video: created }, { status: 201 });
     } catch (err: any) {
         console.error("POST /api/videos error:", err);
-
-        // Duplicate key handling (unique shortId or other unique indexes)
-        if (err?.code === 11000) {
-            // Inspect which key caused duplicate (helpful message)
-            const key = err?.keyValue ? Object.keys(err.keyValue)[0] : "duplicate key";
-            return NextResponse.json(
-                { ok: false, message: `Duplicate key error: ${key}` },
-                { status: 409 }
-            );
+        if (err?.statusCode) {
+            return NextResponse.json({ ok: false, message: err.message }, { status: err.statusCode });
         }
-
         return NextResponse.json({ ok: false, message: "Failed to create video" }, { status: 500 });
     }
 }
 
-function generateShortId(len = 6) {
-    const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const bytes = crypto.randomBytes(len);
-    let id = "";
-    for (let i = 0; i < len; i++) {
-        id += chars[bytes[i] % chars.length];
-    }
-    return id;
+function badRequest(message: string) {
+    return { message, statusCode: 400 };
 }
 
-async function makeUniqueShortId(maxAttempts = 5) {
-    for (let i = 0; i < maxAttempts; i++) {
-        const candidate = generateShortId();
-        const exists = await VideoModel.findOne({ shortId: candidate }).lean();
-        if (!exists) return candidate;
+function parseTags(tags: unknown): string[] {
+    if (Array.isArray(tags)) return tags.map((t) => String(t).trim()).filter(Boolean);
+    if (typeof tags === "string") return tags.split(",").map((t) => t.trim()).filter(Boolean);
+    return [];
+}
+
+function parseDurationSec(body: Record<string, any>): number | undefined {
+    const raw = typeof body.durationSec === "number" ? body.durationSec : Number(body.duration);
+    if (!Number.isFinite(raw)) return undefined;
+    return raw > 0 ? Math.floor(raw) : undefined;
+}
+
+function parseProvider(body: Record<string, any>) {
+    const provider = body.provider;
+    const providerId = body.providerId ? String(body.providerId).trim() : undefined;
+    const mp4Url = body.mp4Url ? String(body.mp4Url).trim() : undefined;
+
+    if (!provider) {
+        throw badRequest("provider is required");
     }
-    throw new Error("Failed to generate unique shortId");
+    if (provider === "YOUTUBE" && !providerId) {
+        throw badRequest("providerId is required for YOUTUBE");
+    }
+    if (provider === "SELF_HOSTED" && !mp4Url) {
+        throw badRequest("mp4Url is required for SELF_HOSTED videos");
+    }
+
+    return { provider, providerId, mp4Url };
+}
+
+async function ensureProviderIsUnique(provider: string, providerId?: string) {
+    if (!providerId) return;
+    const duplicate = await VideoModel.findOne({ provider, providerId }).lean();
+    if (duplicate) {
+        throw { message: "Video already exists for this providerId", statusCode: 409 };
+    }
 }
 
 async function makeUniqueSlug(baseSlug: string) {
-    // Slug uniqueness is not strictly required because we use shortId in URL,
-    // but it's nicer to avoid identical slugs for readability.
-    let slug = baseSlug;
+    const seed = baseSlug || "video";
+    let slug = seed;
     let counter = 1;
     while (await VideoModel.findOne({ slug }).lean()) {
         counter += 1;
-        slug = `${baseSlug}-${counter}`;
+        slug = `${seed}-${counter}`;
     }
     return slug;
+}
+
+async function buildVideoPayload(body: Record<string, any>) {
+    const title = body?.title ? String(body.title).trim() : "";
+    if (!title) {
+        throw badRequest("title is required");
+    }
+
+    const thumbnailUrl = body.thumbnailUrl || body.thumbnail;
+    if (!thumbnailUrl) {
+        throw badRequest("thumbnailUrl is required");
+    }
+
+    const { provider, providerId, mp4Url } = parseProvider(body);
+    await ensureProviderIsUnique(provider, providerId);
+
+    const slug = await makeUniqueSlug(toSlug(title));
+
+    return {
+        title,
+        slug,
+        description: body.description ? String(body.description) : "",
+        provider,
+        providerId,
+        mp4Url,
+        sourceUrl: body.sourceUrl ? String(body.sourceUrl) : undefined,
+        transcriptUrl: body.transcriptUrl ? String(body.transcriptUrl) : undefined,
+        thumbnailUrl: String(thumbnailUrl),
+        channelName: body.channelName ? String(body.channelName) : undefined,
+        language: body.language ? String(body.language) : "en",
+        tags: parseTags(body.tags),
+        publishedAt: body.publishedAt ? new Date(body.publishedAt) : undefined,
+        durationSec: parseDurationSec(body),
+        views: typeof body.views === "number" ? body.views : 0,
+        status: body.status || "published",
+        isIndexable: typeof body.isIndexable === "boolean" ? body.isIndexable : true,
+    };
 }

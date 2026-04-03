@@ -1,10 +1,13 @@
 
 import Experiences from "../components/Experiences";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TagList from "../components/TagList";
 import IntroVideo from "../components/video";
-import YouTubeVideos from "../components/YouTubeVideos";
+import FeaturedVideos from "../components/FeaturedVideos";
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -19,13 +22,14 @@ export default function Home() {
             <Link href="https://www.linkedin.com/in/mrinaljain/" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Let&apos;s Connect</Link>
             <Link href="/resume" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Resume</Link>
           </div>
-          {/* <SocialLinks /> */}
+          <SocialLinks />
           <TagList />
         </div>
       </section>
-      <YouTubeVideos />
+      <FeaturedVideos />
       <Experiences />
       {/* <NewspaperSection /> */}
+      <Footer />
       <Link
         href="https://topmate.io/introvert_influencer"
         target="_blank"
