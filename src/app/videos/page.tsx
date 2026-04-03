@@ -1,7 +1,9 @@
 
 import Header from "@/components/Header";
 import { VideoGrid } from "@/components/videos/VideoGrid";
+import { createPageMetadata } from "@/lib/seo";
 import type { Video } from "@/types/video";
+import type { Metadata } from "next";
 
 async function getVideos(): Promise<Video[]> {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
@@ -18,6 +20,21 @@ async function getVideos(): Promise<Video[]> {
     } catch {
         return [];
     }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+    const videos = await getVideos();
+    const count = videos.length;
+
+    return createPageMetadata({
+        title: "Videos",
+        description:
+            count > 0
+                ? `Browse ${count} talks, tutorials, and recorded sessions by Mrinal Jain.`
+                : "Browse talks, tutorials, and recorded sessions by Mrinal Jain.",
+        path: "/videos",
+        type: "website",
+    });
 }
 
 export default async function VideosPage() {

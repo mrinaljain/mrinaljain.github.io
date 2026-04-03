@@ -4,6 +4,7 @@ import "./globals.css";
 import { GoogleTagManager } from '@next/third-parties/google'
 import React from "react";
 import AmplitudeProvider from "../components/AmplitudeProvider";
+import { siteMetadata } from "@/lib/seo";
 import ThemeProvider from "../components/ThemeProvider";
 
 const geistSans = Geist({
@@ -16,42 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://mrinaljain.com/"),
-  title: { default: "Mrinal Jain | Introvert Influencer", template: ' Mrinal Jain | %s' },
-  description: "Tech Consultant, Developer, and Speaker with expertise in Flutter, React, and SaaS applications. Explore my projects, talks, and insights.",
-  keywords: "Mrinal Jain, Introvert Influencer, Tech Consultant, Flutter Developer, React Developer, Engineering Manager, Tech Speaker, Software Engineer",
-  applicationName: "Mrinal Jain",
-  authors: [{ name: "Mrinal Jain", url: "https://www.linkedin.com/in/mrinaljain/" }],
-  robots: { index: true, follow: true },
-  referrer: "no-referrer-when-downgrade",
-  creator: "Mrinal Jain",
-  publisher: "Mrinal Jain",
-  alternates: {
-    canonical: "https://mrinaljain.com/",
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-  generator: "VSCode",
-  openGraph: {
-    title: "Mrinal Jain | Tech Consultant, Speaker & Developer",
-    description: "Tech Consultant, Developer, and Speaker with expertise in Flutter, React, and SaaS applications. Explore my projects, talks, and insights",
-    url: "https://mrinaljain.com/",
-    siteName: "Mrinal Jain - Portfolio",
-    type: "website",
-    locale: "en_US",
-  },
-  formatDetection: {
-    telephone: false,
-    email: false,
-    address: false
-  },
-  verification: {
-    google: "0e75-VwaqN5FEq06g4S0sJ5JVbV6OK5WShoxiy2Y2Fk",
-    yandex: "63db5177f1385edc"
-  },
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
   children,
