@@ -1,4 +1,5 @@
 
+import type { Metadata } from "next";
 import Experiences from "../components/Experiences";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -7,7 +8,15 @@ import IntroVideo from "../components/video";
 import FeaturedVideos from "../components/FeaturedVideos";
 import Link from "next/link";
 import SocialLinks from "@/components/SocialLinks";
-import { Suspense } from "react";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Home",
+  description:
+    "Mrinal Jain's portfolio featuring talks, videos, and software engineering experience.",
+  path: "/",
+  type: "website",
+});
 
 export default function Home() {
   return (

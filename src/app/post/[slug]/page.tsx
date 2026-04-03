@@ -10,7 +10,7 @@ export async function generateMetadata({ params, }: Props): Promise<Metadata> {
    const pageSlug = (await params).slug;
    return createPageMetadata({
       title: `#${pageSlug}`,
-      description: `Talks with the tag ${pageSlug}`,
+      description: `Posts tagged with ${pageSlug}`,
       path: `/post/${pageSlug}`,
       type: "article",
    });

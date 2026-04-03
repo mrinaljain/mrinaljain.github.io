@@ -20,7 +20,7 @@ export async function generateMetadata({ params, }: Props): Promise<Metadata> {
 
 const Page = async ({ params, }: Props) => {
    const pageslug = (await params).slug;
-   return <div>My Post page : {pageslug}</div>;
+   return <div>My Talk page : {pageslug}</div>;
 };
 
 

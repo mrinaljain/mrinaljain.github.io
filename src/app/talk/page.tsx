@@ -1,4 +1,14 @@
 
+import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Talks",
+  description: "Explore speaking sessions and conference talks by Mrinal Jain.",
+  path: "/talk",
+  type: "website",
+});
+
 export default function TalkPage() {
   return (
     <div>
