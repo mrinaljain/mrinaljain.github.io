@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { experienceSeedData } from "@/data/experience";
 import connectDB from "@/lib/db/mongodb";
 import { ExperienceModel } from "@/models/Experience";
 import type { Experience, ExperienceStatus, ExperienceTechnologyKey } from "@/types/experience";
@@ -87,30 +86,9 @@ async function ensureUniqueSlug(baseSlug: string) {
   return slug;
 }
 
-async function seedExperiencesIfEmpty() {
-  const count = await ExperienceModel.countDocuments();
-  if (count > 0) {
-    return;
-  }
-
-  const seededDocs = await Promise.all(
-    experienceSeedData.map(async (item) => ({
-      ...item,
-      slug: await ensureUniqueSlug(toSlug(`${item.company}-${item.designation}`)),
-      status: item.status ?? "published",
-      isFeatured: item.isFeatured ?? true,
-      isCurrent: item.isCurrent ?? !item.endDate,
-      yearLabel: item.yearLabel || toYearLabel(item.startDate, item.endDate, item.isCurrent),
-    }))
-  );
-
-  await ExperienceModel.insertMany(seededDocs);
-}
-
 export async function GET() {
   try {
     await connectDB();
-    await seedExperiencesIfEmpty();
 
     const experiences = await ExperienceModel.find({ status: "published" })
       .sort({ order: 1, startDate: -1, createdAt: -1 })

@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
    faAngular,
@@ -22,6 +19,8 @@ import type {
    ExperienceApiResponse,
    ExperienceTechnologyKey,
 } from "@/types/experience";
+import connectDB from "@/lib/db/mongodb";
+import { ExperienceModel } from "@/models/Experience";
 
 const technologyIcons: Record<ExperienceTechnologyKey, IconDefinition> = {
    angular: faAngular,
@@ -37,52 +36,85 @@ const technologyIcons: Record<ExperienceTechnologyKey, IconDefinition> = {
    react: faReact,
 };
 
-const ExperienceTimeline = () => {
-   const [experiences, setExperiences] = useState<Experience[]>([]);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState("");
+type ExperienceDocument = {
+   _id: { toString(): string };
+   company: string;
+   slug: string;
+   logo: string;
+   companyUrl?: string;
+   designation: string;
+   employmentType?: string;
+   location: string;
+   yearLabel: string;
+   startDate?: Date;
+   endDate?: Date | null;
+   isCurrent?: boolean;
+   summary?: string;
+   projects?: string[];
+   technologyKeys?: ExperienceTechnologyKey[];
+   order: number;
+   accentColor?: string;
+   status: "draft" | "published";
+   isFeatured?: boolean;
+};
 
-   useEffect(() => {
-      let isMounted = true;
+function serializeExperience(doc: ExperienceDocument): Experience {
+   return {
+      id: doc._id.toString(),
+      company: doc.company,
+      slug: doc.slug,
+      logo: doc.logo,
+      companyUrl: doc.companyUrl,
+      designation: doc.designation,
+      employmentType: doc.employmentType,
+      location: doc.location,
+      yearLabel: doc.yearLabel,
+      startDate: doc.startDate ? new Date(doc.startDate).toISOString() : undefined,
+      endDate: doc.endDate ? new Date(doc.endDate).toISOString() : null,
+      isCurrent: doc.isCurrent,
+      summary: doc.summary,
+      projects: doc.projects ?? [],
+      technologyKeys: doc.technologyKeys ?? [],
+      order: doc.order,
+      accentColor: doc.accentColor,
+      status: doc.status,
+      isFeatured: doc.isFeatured,
+   };
+}
 
-      async function fetchExperiences() {
-         try {
-            const response = await fetch("/api/experiences");
+async function getExperiences(): Promise<ExperienceApiResponse> {
+   try {
+      await connectDB();
+      const docs = await ExperienceModel.find({ status: "published" })
+         .sort({ order: 1, startDate: -1, createdAt: -1 })
+         .lean<ExperienceDocument[]>();
 
-            if (!response.ok) {
-               throw new Error("Failed to fetch experiences");
-            }
-
-            const data = (await response.json()) as ExperienceApiResponse;
-
-            if (isMounted) {
-               setExperiences(data.experiences ?? []);
-            }
-         } catch (fetchError) {
-            if (isMounted) {
-               setError(fetchError instanceof Error ? fetchError.message : "Unable to load experiences");
-            }
-         } finally {
-            if (isMounted) {
-               setLoading(false);
-            }
-         }
-      }
-
-      fetchExperiences();
-
-      return () => {
-         isMounted = false;
+      return {
+         ok: true,
+         experiences: docs.map(serializeExperience),
       };
-   }, []);
+   } catch {
+      return {
+         ok: false,
+         experiences: [],
+      };
+   }
+}
+
+const ExperienceTimeline = async () => {
+   const { ok, experiences } = await getExperiences();
 
    return (
-      <section id="experience" className="relative flex flex-col items-center gap-10 p-6">
-         <h2 className="text-3xl font-semibold text-center mb-8">Experience</h2>
+      <div className="relative flex flex-col items-center gap-10 p-6">
+         <div className="flex items-center gap-3">
+            <span className="h-6 w-1.5 bg-black rounded-full"></span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+               Experience
+            </h2>
+         </div>
 
-         {loading && <p className="text-sm text-gray-500">Loading experience...</p>}
-         {!loading && error && <p className="text-sm text-red-500">{error}</p>}
-         {!loading && !error && experiences.length === 0 && (
+         {!ok && <p className="text-sm text-red-500">Unable to load experiences</p>}
+         {ok && experiences.length === 0 && (
             <p className="text-sm text-gray-500">No experience entries available.</p>
          )}
 
@@ -136,7 +168,7 @@ const ExperienceTimeline = () => {
                </div>
             </article>
          ))}
-      </section>
+      </div>
    );
 };
 

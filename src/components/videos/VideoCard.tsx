@@ -3,13 +3,11 @@ import type { Video } from "@/types/video";
 import Link from "next/link";
 
 export function VideoCard({ video }: { video: Video }) {
-    const videoDetail = `/videos/${video.slug}-${video.shortId}`;
+    const videoDetail = `/videos/${video.slug}`;
 
     return (
         <Link
             href={videoDetail}
-            target="_blank"
-            rel="noreferrer"
             className="group rounded-2xl border overflow-hidden hover:shadow-sm transition"
         >
             <div className="relative aspect-video bg-neutral-100">
