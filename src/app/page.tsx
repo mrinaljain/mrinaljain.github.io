@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TagList from "../components/TagList";
 import IntroVideo from "../components/video";
+import { LeetCodeStatsWrapper } from "../components/leetcode";
 import FeaturedVideos from "../components/FeaturedVideos";
 import Link from "next/link";
 import SocialLinks from "@/components/SocialLinks";
@@ -36,6 +37,28 @@ export default function Home() {
         </div>
       </section>
       <FeaturedVideos />
+      <section className="py-16 px-4 md:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Coding Progress
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <LeetCodeStatsWrapper />
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-gray-900">
+                My Coding Journey
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                I continuously solve coding challenges on LeetCode to improve my problem-solving skills and keep up with algorithms and data structures. This helps me build better, more efficient software.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Check out my LeetCode profile to see my progress, accepted solutions, and contest participation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <Experiences />
       {/* <NewspaperSection /> */}
       <Footer />
