@@ -1,0 +1,8 @@
+{
+    "servers": {
+        "mrinaljain.github.io Docs": {
+            "type": "sse",
+            "url": "https://gitmcp.io/mrinaljain/mrinaljain.github.io"
+        }
+    }
+}

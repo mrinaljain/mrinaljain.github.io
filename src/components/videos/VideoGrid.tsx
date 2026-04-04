@@ -1,0 +1,20 @@
+import type { Video } from "@/types/video";
+import { VideoCard } from "./VideoCard";
+
+export function VideoGrid({ videos }: { videos: Video[] }) {
+    if (!videos?.length) {
+        return (
+            <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-10 text-center text-neutral-600 dark:text-neutral-300">
+                No videos found.
+            </div>
+        );
+    }
+
+    return (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {videos.map((video) => (
+                <VideoCard key={video.slug} video={video} />
+            ))}
+        </div>
+    );
+}
