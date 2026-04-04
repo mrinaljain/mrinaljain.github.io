@@ -3,6 +3,7 @@ import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaFacebook, FaYoutube } fr
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Resume", href: "/resume" },
   { label: "Videos", href: "/videos" },
   { label: "Talks", href: "/talk" },
