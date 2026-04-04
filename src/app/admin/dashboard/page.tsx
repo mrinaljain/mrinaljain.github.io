@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import AdminDashboard from "@/components/admin/AdminDashboard";
-import AdminFooter from "@/components/admin/AdminFooter";
-import AdminHeader from "@/components/admin/AdminHeader";
 import { getAdminSession } from "@/lib/admin-auth";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -24,12 +22,6 @@ export default async function AdminDashboardPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
-      <AdminHeader />
-      <main className="mx-auto flex w-full max-w-6xl flex-1 items-center justify-center px-4 py-16">
-        <AdminDashboard displayName={session.user.displayName || session.user.username} />
-      </main>
-      <AdminFooter />
-    </div>
+    <AdminDashboard displayName={session.user.displayName || session.user.username} />
   );
 }
