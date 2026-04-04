@@ -3,7 +3,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { getBaseUrl } from "@/lib/url";
 
-export const revalidate = 60 * 60; // Refresh sitemap every hour.
+export const revalidate = 3600; // Refresh sitemap every hour.
 
 const APP_DIR = path.join(process.cwd(), "src", "app");
 const PAGE_FILE_REGEX = /^page\.(ts|tsx|js|jsx|mdx)$/;
