@@ -1,11 +1,23 @@
 
+import type { Metadata } from "next";
 import Experiences from "../components/Experiences";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TagList from "../components/TagList";
 import IntroVideo from "../components/video";
-import YouTubeVideos from "../components/YouTubeVideos";
 import { LeetCodeStatsWrapper } from "../components/leetcode";
+import FeaturedVideos from "../components/FeaturedVideos";
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Home",
+  description:
+    "Mrinal Jain's portfolio featuring talks, videos, and software engineering experience.",
+  path: "/",
+  type: "website",
+});
 
 export default function Home() {
   return (
@@ -13,18 +25,18 @@ export default function Home() {
       <Header />
       <section className="flex flex-col md:flex-row h-screen">
         <IntroVideo />
-        <div className="w-full md:w-2/5 flex flex-col items-center justify-center p-8 text-center md:text-left bg-white">
+        <div className="w-full md:w-2/5 flex flex-col items-center justify-center p-8 text-center md:text-left bg-white dark:bg-slate-950">
           <h1 className="text-4xl font-bold">Hi, I&apos;m Mrinal Jain</h1>
-          <p className="mt-4 text-lg text-gray-700">I build scalable web & mobile products used by millions.”</p>
+          <p className="mt-4 text-lg text-slate-700 dark:text-slate-300">I build scalable web & mobile products used by millions.”</p>
           <div className="mt-6 flex justify-center gap-4">
             <Link href="https://www.linkedin.com/in/mrinaljain/" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Let&apos;s Connect</Link>
             <Link href="/resume" className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 active:scale-95 transition transform duration-150">Resume</Link>
           </div>
-          {/* <SocialLinks /> */}
+          <SocialLinks />
           <TagList />
         </div>
       </section>
-      <YouTubeVideos />
+      <FeaturedVideos />
       <section className="py-16 px-4 md:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -46,8 +58,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
       <Experiences />
       {/* <NewspaperSection /> */}
+      <Footer />
       <Link
         href="https://topmate.io/introvert_influencer"
         target="_blank"
