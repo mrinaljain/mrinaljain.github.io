@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "migrate:experiences": "node scripts/migrate-experiences-to-db.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.33.1",

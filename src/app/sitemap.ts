@@ -86,12 +86,12 @@ async function getVideoDetailRoutes(): Promise<string[]> {
       status: "published",
       isIndexable: true,
     })
-      .select("slug shortId")
-      .lean<Array<{ slug?: string; shortId?: string }>>();
+      .select("slug")
+      .lean<Array<{ slug?: string }>>();
 
     return videos
-      .filter((video) => Boolean(video.slug) && Boolean(video.shortId))
-      .map((video) => `/videos/${video.slug}-${video.shortId}`);
+      .filter((video) => Boolean(video.slug))
+      .map((video) => `/videos/${video.slug}`);
   } catch {
     // If DB isn't available during build/deploy, still return static routes.
     return [];
