@@ -7,7 +7,7 @@ export const revalidate = 3600; // Refresh sitemap every hour.
 
 const APP_DIR = path.join(process.cwd(), "src", "app");
 const PAGE_FILE_REGEX = /^page\.(ts|tsx|js|jsx|mdx)$/;
-const EXCLUDED_SEGMENTS = new Set(["api"]);
+const EXCLUDED_SEGMENTS = new Set(["api", "admin"]);
 
 // Fallback used when the src/ directory is unavailable at runtime
 // (e.g. Vercel ISR revalidation — src/ is not included in the function bundle).
