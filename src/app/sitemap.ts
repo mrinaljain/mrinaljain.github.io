@@ -9,6 +9,17 @@ const APP_DIR = path.join(process.cwd(), "src", "app");
 const PAGE_FILE_REGEX = /^page\.(ts|tsx|js|jsx|mdx)$/;
 const EXCLUDED_SEGMENTS = new Set(["api"]);
 
+// Fallback used when the src/ directory is unavailable at runtime
+// (e.g. Vercel ISR revalidation — src/ is not included in the function bundle).
+const STATIC_ROUTES_FALLBACK: string[] = [
+  "/",
+  "/post",
+  "/resume",
+  "/talk",
+  "/tutorial",
+  "/videos",
+];
+
 type DynamicRouteProvider = () => Promise<string[]>;
 
 function toRoute(parts: string[]): string {
@@ -64,7 +75,13 @@ async function collectStaticRoutes(): Promise<string[]> {
     );
   }
 
-  await walk(APP_DIR, [], false);
+  try {
+    await walk(APP_DIR, [], false);
+  } catch {
+    // src/ is not present in the deployed serverless bundle on most platforms.
+    // Return known static routes so ISR revalidation doesn't cause a 500.
+    return STATIC_ROUTES_FALLBACK;
+  }
 
   return Array.from(routes).sort((a, b) => a.localeCompare(b));
 }
