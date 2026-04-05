@@ -112,9 +112,6 @@ async function sendInquiryEmail(data: {
   }
 
   const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: smtpPort,
-    family: smtpFamily === 6 ? 6 : 4,
     secure: smtpPort === 465,
     auth: {
       user: smtpUser,
