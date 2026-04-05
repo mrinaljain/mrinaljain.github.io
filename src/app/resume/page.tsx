@@ -3,6 +3,7 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import ResumeContent from "@/components/resume/ResumeContent";
+import { getGitHubUser } from "@/lib/github";
 
 import { structuredResumeJsonLd } from "@/data/jsonLdResume";
 import { createPageMetadata } from "@/lib/seo";
@@ -13,7 +14,11 @@ export const metadata: Metadata = createPageMetadata({
    path: "/resume",
    type: "article",
 });
-export default function Resume() {
+
+export default async function Resume() {
+   const GITHUB_USERNAME = 'mrinaljain';
+   const gitHubUser = await getGitHubUser(GITHUB_USERNAME);
+   
    return (
       <>
          <Script
@@ -23,7 +28,7 @@ export default function Resume() {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredResumeJsonLd) }}
          />
 
-         <ResumeContent />
+         <ResumeContent gitHubUser={gitHubUser} />
       </>
    );
 }
