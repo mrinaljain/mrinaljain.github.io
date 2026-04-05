@@ -56,21 +56,65 @@ async function sendInquiryEmail(data: {
   message: string;
   submittedAt: string;
 }) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const resendFromEmail = process.env.RESEND_FROM_EMAIL;
+
+  if (resendApiKey && resendFromEmail) {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: resendFromEmail,
+        to: [CONTACT_EMAIL],
+        reply_to: data.email,
+        subject: `[Contact Inquiry] ${data.subject}`,
+        html: `
+          <h2>New Contact Inquiry</h2>
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Submitted At:</strong> ${data.submittedAt}</p>
+          <p><strong>Subject:</strong> ${data.subject}</p>
+          <p><strong>Message:</strong></p>
+          <p>${data.message.replace(/\n/g, "<br />")}</p>
+        `,
+        text: [
+          `Name: ${data.name}`,
+          `Email: ${data.email}`,
+          `Submitted At: ${data.submittedAt}`,
+          "",
+          "Message:",
+          data.message,
+        ].join("\n"),
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Resend request failed with status ${response.status}`);
+    }
+
+    return;
+  }
+
   const smtpHost = process.env.CONTACT_SMTP_HOST;
   const smtpPort = Number(process.env.CONTACT_SMTP_PORT || "587");
+  const smtpFamily = Number(process.env.CONTACT_SMTP_FAMILY || "4");
   const smtpUser = process.env.CONTACT_SMTP_USER;
   const smtpPass = process.env.CONTACT_SMTP_PASS;
   const fromEmail = process.env.CONTACT_FROM_EMAIL || smtpUser;
 
   if (!smtpHost || !smtpUser || !smtpPass || !fromEmail) {
     throw new Error(
-      "Missing SMTP config. Expected CONTACT_SMTP_HOST, CONTACT_SMTP_USER, CONTACT_SMTP_PASS, and CONTACT_FROM_EMAIL or CONTACT_SMTP_USER"
+      "Missing email config. Set RESEND_API_KEY + RESEND_FROM_EMAIL, or SMTP vars CONTACT_SMTP_HOST, CONTACT_SMTP_USER, CONTACT_SMTP_PASS, and CONTACT_FROM_EMAIL or CONTACT_SMTP_USER"
     );
   }
 
   const transporter = nodemailer.createTransport({
     host: smtpHost,
     port: smtpPort,
+    family: smtpFamily === 6 ? 6 : 4,
     secure: smtpPort === 465,
     auth: {
       user: smtpUser,

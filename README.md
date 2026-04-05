@@ -105,13 +105,33 @@ The config includes:
 The contact form on `/contact` submits inquiries to two destinations:
 
 - Google Sheet via webhook URL (for spreadsheet logging)
-- SMTP email delivery to `jain.mrinal140@gmail.com`
+- Email delivery to `jain.mrinal140@gmail.com`
+
+Preferred email path (recommended when local or cloud network blocks SMTP):
+
+- Resend HTTPS API
+
+Fallback email path:
+
+- SMTP (Gmail or other provider)
+
+### Option A: Resend (recommended)
+
+Set these:
+
+- `RESEND_API_KEY`: API key from Resend
+- `RESEND_FROM_EMAIL`: verified sender in Resend (example: `Contact <onboarding@resend.dev>` for testing)
+
+When both variables are present, the API uses Resend and skips SMTP.
+
+### Option B: SMTP
 
 Set these environment variables in `.env.local` and production:
 
 - `CONTACT_SHEET_WEBHOOK_URL`: your Google Apps Script (or other webhook) endpoint for writing rows
 - `CONTACT_SMTP_HOST`: SMTP host (example: `smtp.gmail.com`)
 - `CONTACT_SMTP_PORT`: SMTP port (example: `587` or `465`)
+- `CONTACT_SMTP_FAMILY`: optional IP family, `4` (default) or `6`
 - `CONTACT_SMTP_USER`: SMTP username/login
 - `CONTACT_SMTP_PASS`: SMTP password or app password
 - `CONTACT_FROM_EMAIL`: optional from-address shown on outgoing emails (defaults to `CONTACT_SMTP_USER`)
