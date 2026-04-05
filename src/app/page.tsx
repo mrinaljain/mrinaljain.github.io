@@ -9,6 +9,8 @@ import FeaturedVideos from "../components/FeaturedVideos";
 import Link from "next/link";
 import SocialLinks from "@/components/SocialLinks";
 import { createPageMetadata } from "@/lib/seo";
+import HomeFeaturedProjects from "@/components/HomeFeaturedProjects";
+// import YouTubeVideos from "@/components/YouTubeVideos";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Home",
@@ -35,6 +37,11 @@ export default function Home() {
           <TagList />
         </div>
       </section>
+      {/* <YouTubeVideos /> */}
+      {/* <Experiences /> */}
+      {/* <NewspaperSection /> */}
+      <HomeFeaturedProjects />
+
       <FeaturedVideos />
       <Experiences />
       {/* <NewspaperSection /> */}
