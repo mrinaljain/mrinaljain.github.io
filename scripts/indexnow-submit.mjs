@@ -1,7 +1,46 @@
 #!/usr/bin/env node
 
-const MAX_URLS_PER_REQUEST = 10000;
+import fs from "node:fs";
+import http from "node:http";
+import https from "node:https";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Load environment variables from .env files
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.join(__dirname, "..");
+
+function loadEnvFile(filePath) {
+  if (!fs.existsSync(filePath)) return;
+
+  const content = fs.readFileSync(filePath, "utf-8");
+  const lines = content.split("\n");
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    const [key, ...valueParts] = trimmed.split("=");
+    if (!key) continue;
+
+    const value = valueParts.join("=").trim();
+    // Only set if not already in process.env
+    if (!process.env[key]) {
+      process.env[key] = value;
+    }
+  }
+}
+
+// Load .env files in order of precedence for IndexNow usage:
+// .env -> .env.production -> .env.local
+// We intentionally load production before local so submissions always target prod.
+loadEnvFile(path.join(projectRoot, ".env"));
+loadEnvFile(path.join(projectRoot, ".env.production"));
+loadEnvFile(path.join(projectRoot, ".env.local"));
+
+const MAX_URLS_PER_REQUEST = 100;
 const DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow";
+const DEFAULT_CA_FILE = path.join(projectRoot, "certs", "local-root-ca.pem");
 
 function parseArgs(argv) {
   const args = {
@@ -74,6 +113,23 @@ function normalizeBaseUrl(input) {
   return baseUrl.toString().replace(/\/$/, "");
 }
 
+function assertProductionBaseUrl(input) {
+  const parsed = new URL(input);
+  const hostname = parsed.hostname.toLowerCase();
+
+  const isLocalHost =
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname === "0.0.0.0" ||
+    hostname.endsWith(".local");
+
+  if (parsed.protocol !== "https:" || isLocalHost) {
+    throw new Error(
+      `NEXT_PUBLIC_SITE_URL must be a production HTTPS URL (got: ${input}).`
+    );
+  }
+}
+
 function validateSinceDate(sinceArg) {
   if (!sinceArg) return null;
 
@@ -135,12 +191,68 @@ function chunk(array, size) {
   return chunks;
 }
 
+function getRequestOptions(url, method, headers = {}, body = "") {
+  const parsed = new URL(url);
+  const isHttps = parsed.protocol === "https:";
+
+  const caFilePath = process.env.INDEXNOW_CA_FILE?.trim() || DEFAULT_CA_FILE;
+  const ca = isHttps && fs.existsSync(caFilePath) ? fs.readFileSync(caFilePath, "utf-8") : undefined;
+
+  return {
+    protocol: parsed.protocol,
+    hostname: parsed.hostname,
+    port: parsed.port || (isHttps ? 443 : 80),
+    path: `${parsed.pathname}${parsed.search}`,
+    method,
+    headers: {
+      ...headers,
+      ...(body ? { "Content-Length": Buffer.byteLength(body) } : {}),
+    },
+    ...(ca ? { ca } : {}),
+  };
+}
+
+function requestText(url, method = "GET", headers = {}, body = "") {
+  return new Promise((resolve, reject) => {
+    const options = getRequestOptions(url, method, headers, body);
+    const requester = options.protocol === "https:" ? https : http;
+
+    const req = requester.request(options, (res) => {
+      let data = "";
+
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
+
+      res.on("end", () => {
+        resolve({
+          status: res.statusCode || 0,
+          statusText: res.statusMessage || "",
+          body: data,
+        });
+      });
+    });
+
+    req.on("error", (error) => {
+      reject(error);
+    });
+
+    if (body) {
+      req.write(body);
+    }
+
+    req.end();
+  });
+}
+
 async function fetchText(url) {
-  const response = await fetch(url, { cache: "no-store" });
-  if (!response.ok) {
+  const response = await requestText(url, "GET");
+
+  if (response.status < 200 || response.status >= 300) {
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
-  return response.text();
+
+  return response.body;
 }
 
 function ensureUrlsBelongToHost(urls, host) {
@@ -171,20 +283,20 @@ async function submitBatch({ endpoint, host, key, keyLocation, urlList }) {
     urlList,
   };
 
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
+  const bodyString = JSON.stringify(payload);
+  const response = await requestText(
+    endpoint,
+    "POST",
+    {
       "Content-Type": "application/json; charset=utf-8",
     },
-    body: JSON.stringify(payload),
-  });
-
-  const body = await response.text();
+    bodyString
+  );
 
   return {
     status: response.status,
     statusText: response.statusText,
-    body,
+    body: response.body,
   };
 }
 
@@ -195,6 +307,7 @@ async function main() {
   const key = getEnv("INDEXNOW_KEY", true);
 
   const baseUrl = normalizeBaseUrl(baseUrlRaw);
+  assertProductionBaseUrl(baseUrl);
   const endpoint = getEnv("INDEXNOW_ENDPOINT") || DEFAULT_ENDPOINT;
   const sitemapUrl = getEnv("INDEXNOW_SITEMAP_URL") || `${baseUrl}/sitemap.xml`;
   const keyLocation = getEnv("INDEXNOW_KEY_LOCATION") || `${baseUrl}/${key}.txt`;
@@ -267,6 +380,7 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error(`[error] ${error.message}`);
+  const causeMessage = error?.cause?.message ? ` | cause: ${error.cause.message}` : "";
+  console.error(`[error] ${error.message}${causeMessage}`);
   process.exit(1);
 });
