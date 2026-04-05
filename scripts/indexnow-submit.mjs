@@ -39,7 +39,7 @@ loadEnvFile(path.join(projectRoot, ".env.production"));
 loadEnvFile(path.join(projectRoot, ".env.local"));
 
 const MAX_URLS_PER_REQUEST = 100;
-const DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow";
+const DEFAULT_ENDPOINT = "https://api.indexnow.org";
 const DEFAULT_CA_FILE = path.join(projectRoot, "certs", "local-root-ca.pem");
 
 function parseArgs(argv) {
