@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation'
 import ThemeToggle from "./ThemeToggle";
 
 import Link from "next/link";
@@ -20,8 +20,7 @@ export default function Header() {
    const [isOpen, setIsOpen] = useState(false);
    const pathname = usePathname();
    const isHomePage = pathname === "/";
-   const isSpecialTransparentPage = pathname === "/videos" || pathname?.startsWith("/maps");
-   const useSolidHeader = isScrolled || !isHomePage || isSpecialTransparentPage;
+   const useSolidHeader = isScrolled || !isHomePage;
 
    useEffect(() => {
       const handleScroll = () => {
