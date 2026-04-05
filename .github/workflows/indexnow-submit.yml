@@ -45,6 +45,7 @@ jobs:
       INDEXNOW_KEY_LOCATION: ${{ secrets.INDEXNOW_KEY_LOCATION }}
       INDEXNOW_SITEMAP_URL: ${{ secrets.INDEXNOW_SITEMAP_URL }}
       INDEXNOW_ENDPOINT: ${{ secrets.INDEXNOW_ENDPOINT }}
+      INDEXNOW_CA_FILE: /etc/ssl/certs/ca-certificates.crt
 
     steps:
       - name: Checkout
