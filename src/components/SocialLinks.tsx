@@ -13,7 +13,7 @@ function SocialLinks() {
                               href={href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-gray-600 hover:text-gray-900 text-2xl transition"
+                              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 text-2xl transition"
                          >
                               <Icon />
                          </a>

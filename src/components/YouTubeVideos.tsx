@@ -31,7 +31,7 @@ export default function YouTubeVideos() {
    }, []);
 
    return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-slate-50 dark:bg-slate-950">
          <div className="container mx-auto px-6">
             <h2 className="text-3xl font-semibold text-center mb-8">Featured Videos</h2>
             {/* <Link href="/talk"> View All</Link> */}
@@ -55,9 +55,9 @@ export default function YouTubeVideos() {
                            className="w-full h-56 object-cover rounded-lg transition-transform transform group-hover:scale-110"
                         />
                      </a>
-                     <div className="p-4 bg-white rounded-lg shadow-lg absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <p className="text-lg font-semibold text-gray-900">{video.title}</p>
-                        <p className="text-sm text-gray-600 truncate">{video.description}</p>
+                     <div className="p-4 bg-white dark:bg-slate-900 rounded-lg shadow-lg absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <p className="text-lg font-semibold text-slate-900 dark:text-slate-100">{video.title}</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-300 truncate">{video.description}</p>
                      </div>
                   </div>
                ))}

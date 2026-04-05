@@ -1,12 +1,24 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import type { NextConfig } from "next";
 
+const isDeployedProduction =
+  process.env.NODE_ENV === "production" &&
+  (process.env.VERCEL === "1" || process.env.NETLIFY === "true");
+
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
     unoptimized: true,
-    remotePatterns: [new URL('https://i.ytimg.com/**'), new URL('https://img.youtube.com/**'), new URL('https://i3.ytimg.com/**')], // Allow images from YouTube
+    remotePatterns: [
+      new URL('https://i.ytimg.com/**'),
+      new URL('https://img.youtube.com/**'),
+      new URL('https://i3.ytimg.com/**'),
+      new URL('https://avatars.githubusercontent.com/**'), // GitHub user avatars
+    ],
   },
+  // Enable Fast Refresh optimizations
+  reactStrictMode: true,
+
 };
 
 export default withSentryConfig(nextConfig, {
@@ -29,14 +41,18 @@ export default withSentryConfig(nextConfig, {
   // This can increase your server load as well as your hosting bill.
   // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
   // side errors will fail.
-  tunnelRoute: "/monitoring",
+  // Keep the tunnel enabled in real deployments, but avoid local prod-mode proxy TLS issues.
+  tunnelRoute: isDeployedProduction ? "/monitoring" : undefined,
 
   // Automatically tree-shake Sentry logger statements to reduce bundle size
-  disableLogger: true,
-
+  webpack:{
+    treeshake:{
+      removeDebugLogging: true,
+    },
+    automaticVercelMonitors: true,
+  },
   // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
   // See the following for more information:
   // https://docs.sentry.io/product/crons/
   // https://vercel.com/docs/cron-jobs
-  automaticVercelMonitors: true,
 });

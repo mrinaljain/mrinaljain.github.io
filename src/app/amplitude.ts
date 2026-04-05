@@ -10,8 +10,7 @@ export function initAmplitude() {
     process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY!,
     undefined,
     {
-      // optional Amplitude init options
-      // like autocapture, session tracking, etc.
+      defaultTracking: true, // enable default tracking of page views, clicks, etc.
     }
   );
 }
