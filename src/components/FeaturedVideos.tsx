@@ -55,7 +55,7 @@ export default async function FeaturedVideos() {
             <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
 
                <div className="flex items-center gap-3">
-                  <span className="h-6 w-1.5 bg-black rounded-full"></span>
+                  <span className="h-6 w-1.5 bg-black rounded-full" />
                   <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
                      Featured Videos
                   </h2>
