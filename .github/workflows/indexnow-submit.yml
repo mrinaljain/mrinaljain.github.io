@@ -1,0 +1,145 @@
+name: IndexNow Submit
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Submission mode"
+        required: true
+        default: "since"
+        type: choice
+        options:
+          - all
+          - since
+          - url
+      since:
+        description: "Used when mode=since (YYYY-MM-DD)"
+        required: false
+        type: string
+      url:
+        description: "Used when mode=url"
+        required: false
+        type: string
+      dry_run:
+        description: "Prepare URLs only, do not submit"
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      INDEXNOW_KEY_LOCATION: ${{ secrets.INDEXNOW_KEY_LOCATION }}
+      INDEXNOW_SITEMAP_URL: ${{ secrets.INDEXNOW_SITEMAP_URL }}
+      INDEXNOW_ENDPOINT: ${{ secrets.INDEXNOW_ENDPOINT }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate required secrets
+        run: |
+          set -euo pipefail
+          if [[ -z "${NEXT_PUBLIC_SITE_URL:-}" ]]; then
+            echo "Missing required secret: NEXT_PUBLIC_SITE_URL"
+            exit 1
+          fi
+
+          if [[ -z "${INDEXNOW_KEY:-}" ]]; then
+            echo "Missing required secret: INDEXNOW_KEY"
+            exit 1
+          fi
+
+      - name: Build CLI args
+        id: args
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          MODE="since"
+          SINCE=""
+          URL=""
+          DRY_RUN="false"
+
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            MODE="${{ inputs.mode }}"
+            SINCE="${{ inputs.since }}"
+            URL="${{ inputs.url }}"
+            DRY_RUN="${{ inputs.dry_run }}"
+          fi
+
+          ARGS=""
+
+          case "$MODE" in
+            all)
+              ARGS="--all"
+              ;;
+            since)
+              if [[ -z "$SINCE" ]]; then
+                SINCE="$(date -u -d '2 days ago' +%F)"
+              fi
+              ARGS="--since=$SINCE"
+              ;;
+            url)
+              if [[ -z "$URL" ]]; then
+                echo "mode=url requires a URL input"
+                exit 1
+              fi
+              ARGS="--url=$URL"
+              ;;
+            *)
+              echo "Unsupported mode: $MODE"
+              exit 1
+              ;;
+          esac
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            ARGS="$ARGS --dry-run"
+          fi
+
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+          echo "Using args: $ARGS"
+
+      - name: Verify sitemap and key file availability
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SITEMAP_URL="${INDEXNOW_SITEMAP_URL:-${NEXT_PUBLIC_SITE_URL%/}/sitemap.xml}"
+          KEY_FILE_URL="${INDEXNOW_KEY_LOCATION:-${NEXT_PUBLIC_SITE_URL%/}/${INDEXNOW_KEY}.txt}"
+
+          echo "Checking sitemap: $SITEMAP_URL"
+          curl -fsSL "$SITEMAP_URL" >/dev/null
+
+          echo "Checking key file: $KEY_FILE_URL"
+          KEY_CONTENT="$(curl -fsSL "$KEY_FILE_URL" | tr -d '\r\n')"
+
+          if [[ "$KEY_CONTENT" != "$INDEXNOW_KEY" ]]; then
+            echo "Key file content mismatch at $KEY_FILE_URL"
+            exit 1
+          fi
+
+      - name: Submit to IndexNow
+        run: npm run indexnow:submit -- ${{ steps.args.outputs.args }}

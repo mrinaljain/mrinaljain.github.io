@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:strict": "eslint . --max-warnings=0"
+    "lint:strict": "eslint . --max-warnings=0",
+    "indexnow:submit": "node scripts/indexnow-submit.mjs",
+    "indexnow:submit:all": "node scripts/indexnow-submit.mjs --all"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.33.1",
