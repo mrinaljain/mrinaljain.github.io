@@ -20,7 +20,14 @@ function Header({ gitHubUser }: HeaderProps) {
                priority
             />
          </div>
-        
+         <div id="textHeader">
+            <h1 className=" ">
+               {gitHubUser?.name || 'Mrinal Jain'}
+               <br />
+               <span className="">Web Developer</span>
+            </h1>
+            
+         </div>
       </div>
    )
 }
