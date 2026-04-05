@@ -1,0 +1,95 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { NewsItem, newsItems } from "@/data/newsItems";
+
+// Define TypeScript interface for news items
+
+
+export default function NewspaperSection() {
+   const [selectedNews, setSelectedNews] = useState<NewsItem | undefined>(undefined);
+
+   return (
+      <section className="bg-slate-100 dark:bg-slate-900 py-16 px-6 md:px-12">
+         <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-slate-100 mb-8">
+            Media Coverages
+         </h2>
+
+         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            {newsItems.map((news) => (
+               <div
+                  key={news.id}
+                  className="group cursor-pointer bg-white dark:bg-slate-800 shadow-lg rounded-lg overflow-hidden transition hover:shadow-xl"
+                  onClick={() => setSelectedNews(news)}
+               >
+                  <div className="relative w-full h-48">
+                     <Image
+                        src={news.image}
+                        alt={news.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="group-hover:scale-105 transition-transform duration-300"
+                     />
+                  </div>
+                  <div className="p-4">
+                     <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                        {news.title}
+                     </h3>
+                     <p className="text-sm text-slate-500 dark:text-slate-300">{news.date}</p>
+                  </div>
+               </div>
+            ))}
+         </div>
+
+         {/* Modal */}
+         <AnimatePresence>
+            {selectedNews && (
+               <motion.div
+                  className="fixed inset-0 bg-black/60 flex items-center justify-center p-6 z-50"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setSelectedNews(undefined)}
+               >
+                  <motion.div
+                     className="bg-white dark:bg-slate-900 rounded-lg shadow-lg max-w-lg w-full overflow-hidden"
+                     initial={{ scale: 0.8 }}
+                     animate={{ scale: 1 }}
+                     exit={{ scale: 0.8 }}
+                     onClick={(e) => e.stopPropagation()} // Prevent modal close on click inside
+                  >
+                     <div className="relative w-full h-64">
+                        <Image
+                           src={selectedNews.image}
+                           alt={selectedNews.title}
+                           layout="fill"
+                           objectFit="cover"
+                        />
+                     </div>
+                     <div className="p-6">
+                        <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{selectedNews.title}</h3>
+                        <p className="text-slate-500 dark:text-slate-300">{selectedNews.date}</p>
+                        <a
+                           href={selectedNews.link}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="mt-4 inline-block text-blue-600 hover:underline"
+                        >
+                           Read Full Article →
+                        </a>
+                        <button
+                           onClick={() => setSelectedNews(undefined)}
+                           className="mt-4 bg-slate-800 dark:bg-slate-700 text-white px-4 py-2 rounded-md hover:bg-slate-700 dark:hover:bg-slate-600"
+                        >
+                           Close
+                        </button>
+                     </div>
+                  </motion.div>
+               </motion.div>
+            )}
+         </AnimatePresence>
+      </section>
+   );
+}

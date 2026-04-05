@@ -42,3 +42,12 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Sentry Config File
+.env.sentry-build-plugin
+
+#
+package-lock.json
+
+#
+*/.idea/workspace.xml
