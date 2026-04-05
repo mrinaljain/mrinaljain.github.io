@@ -99,3 +99,90 @@ The config includes:
 - `eslint-config-next/typescript`
 - the recommended rule sets from `eslint-plugin-react`, `eslint-plugin-react-hooks`, and `@next/eslint-plugin-next`
 - `eslint-config-prettier/flat` to avoid formatter conflicts
+
+## IndexNow Setup
+
+This project includes a script to submit URLs from your sitemap to IndexNow.
+
+### 1) Add environment variables
+
+Copy values from `.env.example` into your local `.env.local` (and production env on your host):
+
+- `NEXT_PUBLIC_SITE_URL`
+- `INDEXNOW_KEY`
+- `INDEXNOW_KEY_LOCATION` (optional)
+- `INDEXNOW_SITEMAP_URL` (optional)
+- `INDEXNOW_ENDPOINT` (optional)
+
+### 2) Prove site ownership (required by IndexNow)
+
+Create a text file in `public/` named exactly `{INDEXNOW_KEY}.txt`.
+The file content must be only your key.
+
+Example:
+
+- file path: `public/f34f184d10c049ef99aa7637cdc4ef04.txt`
+- file content: `f34f184d10c049ef99aa7637cdc4ef04`
+
+After deploy, verify:
+
+- `https://<your-domain>/<INDEXNOW_KEY>.txt` returns the key text.
+
+### 3) Submit URLs
+
+Submit all URLs from sitemap:
+
+```bash
+npm run indexnow:submit:all
+```
+
+Submit URLs changed after a date:
+
+```bash
+npm run indexnow:submit -- --since=2026-01-01
+```
+
+Submit one URL:
+
+```bash
+npm run indexnow:submit -- --url=https://<your-domain>/post/example
+```
+
+Dry run (prepare URLs only, no API call):
+
+```bash
+npm run indexnow:submit -- --all --dry-run
+```
+
+Notes:
+
+- IndexNow accepts up to 10,000 URLs per request. The script auto-batches.
+- Non-200/202 responses fail the command so you can retry or debug quickly.
+
+### 4) GitHub Actions automation (optional)
+
+Workflow file:
+
+- `.github/workflows/indexnow-submit.yml`
+
+Add these GitHub Actions repository secrets:
+
+- `NEXT_PUBLIC_SITE_URL` (required)
+- `INDEXNOW_KEY` (required)
+- `INDEXNOW_KEY_LOCATION` (optional)
+- `INDEXNOW_SITEMAP_URL` (optional)
+- `INDEXNOW_ENDPOINT` (optional)
+
+What it does:
+
+- Runs daily on a schedule (UTC).
+- Supports manual runs with `all`, `since`, or `url` mode.
+- Verifies sitemap and key file are reachable before submitting.
+
+Manual run from GitHub UI:
+
+1. Open **Actions** -> **IndexNow Submit** -> **Run workflow**.
+2. Choose `all` to submit all sitemap URLs.
+3. Choose `since` to submit URLs changed after a date (`YYYY-MM-DD`).
+4. Choose `url` to submit one URL.
+5. Optionally enable `dry_run` to validate without calling IndexNow.
