@@ -84,3 +84,18 @@ Examples:
 
 - https://dev.to/khanrabiul/nextjs-tailwindcss-v4-how-to-add-darklight-theme-with-next-themes-3c6l
 - https://medium.com/@aashekmahmud/implementing-dark-and-light-mode-themes-in-next-js-a-comprehensive-guide-bf2c34ecd50d
+
+## Linting
+
+This project uses the ESLint CLI with a Next.js 16 flat config.
+
+- `npm run lint` runs ESLint across the project.
+- `npm run lint:fix` applies safe autofixes.
+- `npm run lint:strict` fails on any warning.
+
+The config includes:
+
+- `eslint-config-next/core-web-vitals`
+- `eslint-config-next/typescript`
+- the recommended rule sets from `eslint-plugin-react`, `eslint-plugin-react-hooks`, and `@next/eslint-plugin-next`
+- `eslint-config-prettier/flat` to avoid formatter conflicts

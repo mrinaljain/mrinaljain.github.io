@@ -107,7 +107,7 @@ const ExperienceTimeline = async () => {
    return (
       <div className="relative flex flex-col items-center gap-10 p-6">
          <div className="flex items-center gap-3">
-            <span className="h-6 w-1.5 bg-black rounded-full"></span>
+            <span className="h-6 w-1.5 bg-black rounded-full" />
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
                Experience
             </h2>

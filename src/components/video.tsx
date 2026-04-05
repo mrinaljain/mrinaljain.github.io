@@ -55,12 +55,11 @@ function IntroVideo() {
            muted
            playsInline
            className="absolute inset-0 w-full h-full object-cover">
-           <source src="/mrinal_intro.mp4" type="video/mp4">
-           </source>
-           <meta itemProp="name" content="Mrinal Jain | Introvert Influencer"></meta>
+           <source src="/mrinal_intro.mp4" type="video/mp4" />
+           <meta itemProp="name" content="Mrinal Jain | Introvert Influencer" />
         </video>
         {/* Overlay for Better Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/10" />
 
         {/* Video Controls */}
         <div className="absolute bottom-5 right-5 flex space-x-3">
