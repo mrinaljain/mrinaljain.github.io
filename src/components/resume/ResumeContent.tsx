@@ -12,13 +12,18 @@ import Experience from "@/components/resume/Experience";
 import About from "@/components/resume/About";
 import DownloadResume from "@/components/resume/DownloadResume";
 import Header from "@/components/resume/Header";
+import { GitHubUser } from "@/lib/github";
 
-export default function ResumeContent() {
+interface ResumeContentProps {
+  gitHubUser: GitHubUser | null;
+}
+
+export default function ResumeContent({ gitHubUser }: ResumeContentProps) {
   return (
     <div className="body w-auto min-h-screen pt-1">
       <div className="container mx-auto">
         <div className="w-full flex flex-col">
-          <Header />
+          <Header gitHubUser={gitHubUser} />
         </div>
         <div className="flex flex-wrap">
           <div className="w-full sm:w-7/12 px-3.5 flex flex-col">
